@@ -1,0 +1,43 @@
+.bg {
+  height: 100vh;
+  background-image: url('/assets/welcome-bg.jpg');
+  background-size: cover;
+  // background-position: cent;ler;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 100px;
+}
+
+.login-btn {
+  --background: #414042;
+  --background-activated: #414042;
+  --border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 80px;
+  --box-shadow: none;
+
+}
+
+.signup-btn {
+  --background: #414042;
+  --background-activated: #414042;
+  --border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  --box-shadow: none;
+
+}

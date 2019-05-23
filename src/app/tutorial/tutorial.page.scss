@@ -1,0 +1,73 @@
+.green-bg {
+  --background: #37B34A;
+}
+
+.logo {
+  position: absolute;
+  top: 30px;
+  height: 90px;
+  width: 100px;
+}
+
+.title-service {
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 15px;
+  color: rgb(255, 255, 255);
+  padding-bottom: 120px;
+}
+
+.circle-img {
+  width: 150px;
+  height: 150px;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tutorial-first-card {
+  box-shadow: none;
+}
+
+.service-info {
+  line-height: 25px;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+}
+
+ion-slides {
+  --bullet-background: rgb(255, 255, 255);
+  --bullet-background-active: rgb(255, 255, 255);
+}
+
+.start-btn {
+  --background: rgb(255, 255, 255);
+  --background-activated: #FFC93A;
+  --border-radius: 25px;
+  --box-shadow: none;
+}
+
+.skip-btn {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  font-weight: 700;
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  --box-shadow: none;
+}
+
+.done-btn {
+  --background: #414042;
+  --background-activated: #414042;
+  --border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 50px;
+  --box-shadow: none;
+}

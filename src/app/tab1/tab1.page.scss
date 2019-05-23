@@ -1,0 +1,54 @@
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.arrow-icon {
+  color: rgb(255, 255, 255);
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 100px;
+}
+
+.borders {
+  // border-bottom: 1px solid rgb(199, 199, 199);
+  background-color: #37B34A;
+  height: 100px;
+}
+
+.card-btn {
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 1px solid #37B34A;
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card-btn2 {
+  box-shadow: none;
+  border-radius: 0;
+  margin: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.grooming-btn {
+  margin-left: auto;
+  margin-right: auto;
+  --border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  --background: transparent;
+  --background-activated: transparent;
+}

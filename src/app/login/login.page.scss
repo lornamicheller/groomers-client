@@ -1,0 +1,99 @@
+.bg {
+  height: 100vh;
+  background-image: url('/assets/loginscreen.png');
+  background-size: cover;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 100px;
+}
+
+.email,
+.password {
+  font-weight: 700;
+  font-size: 13px;
+  color: grey;
+  border-bottom: 2px solid #37B34A;
+  margin-bottom: 10px
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  color: #37B34A;
+  margin-right: 10px;
+}
+
+.input-card {
+  box-shadow: none;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.login-btn {
+  --background: #37B34A;
+  --background-activated: #414042;
+  --border-radius: 25px;
+  height: 40px;
+  margin-top: 20px;
+  --box-shadow: none;
+  font-size: 13px;
+}
+
+.register-btn {
+  --background: #414042;
+  --background-activated: #37B34A;
+  --border-radius: 25px;
+  height: 40px;
+  margin-top: 10px;
+  --box-shadow: none;
+  font-size: 13px;
+}
+
+.forgot {
+  --background: rgba(255, 255, 255, 0);
+  --background-activated: rgba(97, 77, 77, 0);
+  color: rgb(122, 122, 122);
+  --color-activated: rgb(122, 122, 122);
+  font-size: 13px;
+  font-weight: 700;
+  // margin-top: 5px;
+  padding: 0;
+}
+
+.fb-btn {
+  --background: transparent;
+  --background-activated: transparent;
+  color: rgb(122, 122, 122);
+  --color-activated: rgb(122, 122, 122);
+  font-weight: 300;
+  --box-shadow: none;
+  font-size: 12px;
+}
+
+.fb-icon {
+  margin: 0;
+  padding: 0;
+  color: #4e76ce;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+}
