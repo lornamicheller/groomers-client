@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
+import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+
 
 
 @NgModule({
@@ -18,6 +20,7 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     NativePageTransitions,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

@@ -1,0 +1,50 @@
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+}
+
+.add-btn {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  color: #37B34A;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 120px;
+}
+
+.search {
+  border: 2px solid rgb(167, 167, 167);
+  border-radius: 15px;
+  --padding-start: 5px;
+  --placeholder-font-weight: 700;
+  --placeholder-opacity: 10;
+  --placeholder-color: rgb(167, 167, 167);
+  font-size: 12px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  color: #37B34A;
+}

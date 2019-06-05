@@ -1,0 +1,154 @@
+
+
+.bg {
+  --padding-bottom: 150px;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+}
+
+.add-btn {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  color: #37B34A;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 120px;
+}
+
+.search {
+  border: 2px solid rgb(167, 167, 167);
+  border-radius: 15px;
+  --padding-start: 5px;
+  --placeholder-font-weight: 700;
+  --placeholder-opacity: 10;
+  --placeholder-color: rgb(167, 167, 167);
+  font-size: 12px;
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  color: #37B34A;
+}
+
+.borders {
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+}
+
+.order-card {
+  box-shadow: 0 8px 6px -6px black;
+  height: 140px;
+  border-radius: 25px;
+}
+
+.green-bg {
+  background-color: #37B34A;
+  height: 200px;
+}
+
+.grey-bg {
+  background-color: #E6E7E8;
+}
+
+.avatar-border {
+  z-index: 100;
+  width: 70px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 3px solid #37B34A;
+}
+
+.imgFit {
+  object-fit: cover;
+}
+
+// .ratings {
+//   padding-top: 35px;
+// }
+
+.logo {
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 20px;
+  color: #37B34A;
+  margin-bottom: 7px;
+  text-align: center;
+  font-family: 'Acme', sans-serif;
+  padding-top: 15px;
+}
+
+.edit-btn {
+  --border-radius: 25px;
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  --background: #37B34A;
+  --background-activated: #37B34A;
+}
+
+.edit {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+ion-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+[ion-button][disabled] {
+  opacity: 1;
+}
+
+ion-icon {
+  color: gray;
+}
+
+ion-icon.filled {
+  color: orange;
+}
