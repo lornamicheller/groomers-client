@@ -1,0 +1,68 @@
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.add-btn {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  color: #37B34A;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 100px;
+}
+
+.borders {
+  // border-bottom: 1px solid rgb(199, 199, 199);
+  background-color: rgba(255, 255, 255, 0.596);
+  height: 100px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bg {
+  background-image: url('/assets/perritopati.jpg');
+  background-size: cover;
+  height: 100vh;
+  position: bottom;
+}
+
+.address-btn {
+  --background: #414042;
+  --background-activated: #414042;
+  --border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  height: 50px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  --box-shadow: none;
+}

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+.bg {
+  --padding-bottom: 150px;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 120px;
+}
+
+.borders {
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+}
+
+.imgFit {
+  object-fit: contain;
+  width: 50px;
+  height: 50px;
+}
+
+.dogBtn {
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  --border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.catBtn {
+  border: 2px solid #37B34A;
+  --background: transparent;
+  --background-activated: transparent;
+  border-radius: 25px;
+  --color: #37B34A;
+  --color-activated: #37B34A;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.name,
+.age,
+.size,
+.breed {
+  font-weight: 700;
+  font-size: 12px;
+  color: grey;
+  --padding-start: 10px;
+  --placeholder-opacity: 10;
+  border-bottom: 1px solid #37B34A;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.saveBtn {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  height: 50px;
+  --border-radius: 25px;
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.profile-btn {
+  --background: transparent;
+  --background-activated: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #37B34A;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}

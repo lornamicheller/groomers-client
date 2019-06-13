@@ -1,0 +1,47 @@
+<ion-content class="bg">
+    <div class="borders">
+        <ion-card style="box-shadow: none; height: 80px; margin: 0;">
+            <img class="logo" src="assets/logoverde.svg">
+            <!-- <ion-button href="/login" class="arrow-btn">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </ion-button> -->
+            <ion-button href="tabs/tabs/address-form" class="add-btn">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-icon class="add-icon" ios="ios-add" md="md-add"></ion-icon>
+            </ion-button>
+        </ion-card>
+    </div>
+
+    <ion-card *ngFor="let ad of addrs" ion-button (click)="openPage()" class="card">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="11">
+                    <p [(ngModel)]=placeName
+                        style="text-align: left; font-weight: 700; font-size: 13px; color: #37B34A;">{{ad.get("name")}}
+                    </p>
+                    <p [(ngModel)]=address [(ngModel)]=apt
+                        style="text-align: left; font-weight: 700; font-size: 13px; color: rgb(168, 168, 168);">
+                        {{ad.get("address1")}} {{ad.get("address2")}}</p>
+                    <p [(ngModel)]=city [(ngModel)]=state [(ngModel)]=zip
+                        style="text-align: left; font-weight: 700; font-size: 13px; color: rgb(168, 168, 168);">
+                        {{ad.get("city")}} {{ad.get("state")}} {{ad.get("zipcode")}}</p>
+                    <p [(ngModel)]=phone
+                        style="text-align: left; font-weight: 700; font-size: 13px; color: rgb(168, 168, 168);">
+                        {{ad.get("phone")}}</p>
+
+
+                </ion-col>
+                <ion-col size="1">
+                    <ion-button class="delete-btn">
+                        <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+
+
+</ion-content>

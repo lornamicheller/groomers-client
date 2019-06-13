@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="green-container">
+    <ion-card style="box-shadow: none; margin: 0;">
+      <img class="logo" src="assets/logoblanco.svg" width="100px" height="80px;">
+    </ion-card>
+    <ion-icon class="edit-btn" ion-button ios="ios-create" md="md-create">
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-icon>
+  </div>
+
+  <ion-input class="input-color" clearInput type="text" placeholder="Full Name"></ion-input>
+  <ion-input class="input-color" clearInput type="text" placeholder="Email"></ion-input>
+  <ion-input class="input-color" clearInput type="tel" placeholder="Phone"></ion-input>
+
+
+<ion-card class="card-btn">
+  <p class="terms-btn" ion-button>Terms and Conditions</p>
+  <p class="privacy-btn" ion-button>Privacy Policy</p>
+  <p class="facebook-btn" ion-button>Facebook</p>
+</ion-card>
+
+<h5 style="text-align: center; font-size: 13px; font-family: 'Poppins', sans-serif;">Developed by PIXNABI</h5>
+
+<ion-button (click)="closeAccount()" class="logout-btn" expand="block">
+  <ion-ripple-effect></ion-ripple-effect>
+  Logout</ion-button>
+
+
+</ion-content>

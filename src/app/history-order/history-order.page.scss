@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+.bg {
+  --background: url('/assets/dogback.jpg');
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-size: cover;
+}
+
+.green-container {
+  height: 100px;
+  width: 100%;
+  background: #37b34a;
+}
+
+.logo {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.bg {
+  --background: url('/assets/dogback.jpg');
+  height: 100vh;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+}
+
+.card-order {
+  box-shadow: 0 8px 6px -6px black;
+  border-radius: 25px;
+  background-color: #E6E7E8;
+  height: 150px;
+}
+
+.frame {
+  width: 170px;
+  height: 150px;
+  --border-radius: 0;
+}
+
+.img-fit {
+  height: 150px;
+  width: 170px;
+  object-fit: cover;
+}
+
+.appointment-date {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.status-app {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: red;
+}
+
+.status-app2 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #37b34a;
+}
+
+.view-btn {
+  margin-left: auto;
+  margin-right: auto;
+  --background: #37b34a;
+  --background-activated: #37b34a;
+  --border-radius: 25px;
+  width: 100px;
+}

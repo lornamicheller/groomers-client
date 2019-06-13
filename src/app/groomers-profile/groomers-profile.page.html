@@ -1,0 +1,55 @@
+<div class="borders">
+  <ion-card style="box-shadow: none; height: 80px;">
+    <img class="logo" src="assets/logoblanco.svg">
+    <ion-button href="/tabs/tabs/appointment" class="arrow-btn">
+      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </ion-button>
+  </ion-card>
+</div>
+
+<ion-content>
+  <ion-slides pager="false">
+    <ion-slide>
+      <!-- <ion-button class="skip-btn" expand="full">Skip</ion-button> -->
+      <ion-card class="tutorial-first-card">
+        <ion-img class="circle-img" src="/assets/fotogroo1.jpg"></ion-img>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="tutorial-first-card">
+        <ion-img class="circle-img" src="/assets/fotogroo2.jpg"></ion-img>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="tutorial-first-card">
+        <ion-img class="circle-img" src="/assets/fotogroo3.jpg"></ion-img>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card class="tutorial-first-card">
+        <ion-img class="circle-img" src="/assets/fotogroo4.jpg"></ion-img>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <h1 class="business-name">Jane Doe's Grooming</h1>
+
+  <ion-card style="box-shadow: none;">
+    <div class="star-ratings">
+     <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon></span>
+      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon></span>
+      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon></span>
+      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon></span>
+      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon></span>
+      <ion-button expand="full" class="view-btn">View</ion-button>
+    </div>
+  </ion-card>
+
+  <ion-button (click)="openPage()" class="proceed-btn" expand="block">
+    <ion-ripple-effect></ion-ripple-effect>
+    Proceed to Book</ion-button>
+</ion-content>

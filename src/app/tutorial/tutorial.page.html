@@ -29,7 +29,9 @@
               rating.
             </ion-card-title>
           </ion-card-header>
-          <ion-button class="done-btn" href="/login" expand="block">START</ion-button>
+          <ion-button class="done-btn" (click)="openPage()" expand="block">
+            <ion-ripple-effect></ion-ripple-effect>
+            START</ion-button>
         </ion-card>
       </ion-slide>
     </ion-slides>

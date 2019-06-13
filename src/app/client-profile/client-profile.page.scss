@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+.bg {
+  --background: url('/assets/dogback.jpg');
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-size: cover;
+}
+
+.green-container {
+  height: 100px;
+  width: 100%;
+  background: #37b34a;
+}
+
+.logo {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.edit-btn {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  color: white;
+  height: 25px;
+  width: 25px;
+}
+
+.card-btn {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  background: rgba(228, 228, 228, 0.479);
+  box-shadow: none;
+}
+
+.input-color {
+  background: rgba(228, 228, 228, 0.479);
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  --padding-start: 10px;
+  border-top: 1px solid rgb(216, 216, 216);
+  opacity: 10;
+}
+
+.terms-btn {
+  border-bottom: 1px solid rgb(216, 216, 216);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.privacy-btn {
+  border-bottom: 1px solid rgb(216, 216, 216);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.facebook-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logout-btn {
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  --border-radius: 25px;
+  height: 40px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  --box-shadow: none;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  bottom: 0;
+  width: 300px;
+}

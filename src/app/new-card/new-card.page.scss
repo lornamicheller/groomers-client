@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.add-btn {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #37B34A;
+  --color-activated: #37B34A;
+  font-family: 'Poppins', sans-serif;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  color: #37B34A;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 100px;
+}
+
+.borders {
+  // border-bottom: 1px solid rgb(199, 199, 199);
+  background-color: rgba(255, 255, 255, 0.596);
+  height: 100px;
+  width: 100%;
+}
+
+.payment-card {
+  box-shadow: none;
+}
+
+.input-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.name {
+  border-bottom: 2px solid #37B34A;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+}
+
+.card-logos {
+  background: url('/assets/pagos.png');
+  background-size: cover;
+  height: 300px;
+}

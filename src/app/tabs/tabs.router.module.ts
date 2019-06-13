@@ -71,6 +71,177 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'choose-groomer',
+        children: [
+          {
+            path: '',
+            loadChildren: '../choose-groomer/choose-groomer.module#ChooseGroomerPageModule'
+          }
+        ]
+      },
+      {
+        path: 'add-pet',
+        children: [
+          {
+            path: '',
+            loadChildren: '../add-pet/add-pet.module#AddPetPageModule'
+          }
+        ]
+      },
+      {
+        path: 'new-pet',
+        children: [
+          {
+            path: '',
+            loadChildren: '../new-pet/new-pet.module#NewPetPageModule'
+          }
+        ]
+      },
+      {
+        path: 'address-form',
+        children: [
+          {
+            path: '',
+            loadChildren: '../address-form/address-form.module#AddressFormPageModule'
+          }
+        ]
+      },
+      {
+        path: 'choose-groomer',
+        children: [
+          {
+            path: '',
+            loadChildren: '../choose-groomer/choose-groomer.module#ChooseGroomerPageModule'
+          }
+        ]
+      },
+      {
+        path: 'address-receiver',
+        children: [
+          {
+            path: '',
+            loadChildren: '../address-receiver/address-receiver.module#AddressReceiverPageModule'
+          }
+        ]
+      },
+      {
+        path: 'appointment',
+        children: [
+          {
+            path: '',
+            loadChildren: '../appointment/appointment.module#AppointmentPageModule'
+          }
+        ]
+      },
+      {
+        path: 'groomers-profile',
+        children: [
+          {
+            path: '',
+            loadChildren: '../groomers-profile/groomers-profile.module#GroomersProfilePageModule'
+          }
+        ]
+      },
+      {
+        path: 'add-credit-card',
+        children: [
+          {
+            path: '',
+            loadChildren: '../add-credit-card/add-credit-card.module#AddCreditCardPageModule'
+          }
+        ]
+      },
+      {
+        path: 'card-info',
+        children: [
+          {
+            path: '',
+            loadChildren: '../card-info/card-info.module#CardInfoPageModule'
+          }
+        ]
+      },
+      {
+        path: 'card-receiver',
+        children: [
+          {
+            path: '',
+            loadChildren: '../card-receiver/card-receiver.module#CardReceiverPageModule'
+          }
+        ]
+      },
+      {
+        path: 'new-card',
+        children: [
+          {
+            path: '',
+            loadChildren: '../new-card/new-card.module#NewCardPageModule'
+          }
+        ]
+      },
+      {
+        path: 'make-payment',
+        children: [
+          {
+            path: '',
+            loadChildren: '../make-payment/make-payment.module#MakePaymentPageModule'
+          }
+        ]
+      },
+      {
+        path: 'order-success',
+        children: [
+          {
+            path: '',
+            loadChildren: '../order-success/order-success.module#OrderSuccessPageModule'
+          }
+        ]
+      },
+      {
+        path: 'order-summary',
+        children: [
+          {
+            path: '',
+            loadChildren: '../order-summary/order-summary.module#OrderSummaryPageModule'
+          }
+        ]
+      },
+      {
+        path: 'client-profile',
+        children: [
+          {
+            path: '',
+            loadChildren: '../client-profile/client-profile.module#ClientProfilePageModule'
+          }
+        ]
+      },
+      {
+        path: 'history-order',
+        children: [
+          {
+            path: '',
+            loadChildren: '../history-order/history-order.module#HistoryOrderPageModule'
+          }
+        ]
+      },
+      {
+        path: 'status-appointment',
+        children: [
+          {
+            path: '',
+            loadChildren: '../status-appointment/status-appointment.module#StatusAppointmentPageModule'
+          }
+        ]
+      },
+      {
+        path: 'groomers-availability',
+        children: [
+          {
+            path: '',
+            loadChildren: '../groomers-availability/groomers-availability.module#GroomersAvailabilityPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

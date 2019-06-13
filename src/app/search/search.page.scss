@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
 
 
 .bg {
@@ -46,6 +47,8 @@
   --placeholder-opacity: 10;
   --placeholder-color: rgb(167, 167, 167);
   font-size: 12px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .search-icon {
@@ -58,6 +61,15 @@
 .borders {
   background-color: rgb(255, 255, 255);
   height: 100px;
+}
+
+.btnCard {
+  border-radius: 25px; 
+  --background-activated: transparent; 
+  --background: transparent; 
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .order-card {
@@ -108,7 +120,7 @@
   color: #37B34A;
   margin-bottom: 7px;
   text-align: center;
-  font-family: 'Acme', sans-serif;
+  font-family: 'Poppins', sans-serif;
   padding-top: 15px;
 }
 

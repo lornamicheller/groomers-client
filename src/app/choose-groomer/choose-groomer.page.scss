@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
 .arrow-btn {
   position: absolute;
   top: 17px;
@@ -40,6 +42,7 @@
   --placeholder-opacity: 10;
   --placeholder-color: rgb(167, 167, 167);
   font-size: 12px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .search-icon {
@@ -47,4 +50,119 @@
   height: 20px;
   margin-left: 10px;
   color: #37B34A;
+}
+
+.allBtn {
+  font-size: 11px;
+  font-weight: 700;
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  --border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.preferredBtn {
+  font-size: 11px;
+  font-weight: 700;
+  --background: rgba(255, 255, 255, 0);
+  --background-activated: rgba(255, 255, 255, 0);
+  border-radius: 25px;
+  border: 1px solid #37b34a;
+  color: #37b34a;
+  font-family: 'Poppins', sans-serif;
+}
+
+.borders {
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+}
+
+.btnCard {
+  border-radius: 25px;
+  --background-activated: transparent;
+  --background: transparent;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.order-card {
+  box-shadow: 0 8px 6px -6px black;
+  height: 160px;
+  border-radius: 25px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.green-bg {
+  background-color: #37B34A;
+  height: 200px;
+}
+
+.grey-bg {
+  background-color: #E6E7E8;
+}
+
+.avatar-border {
+  z-index: 100;
+  width: 70px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border: 3px solid #37B34A;
+}
+
+.imgFit {
+  object-fit: cover;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 15px;
+  color: #37B34A;
+  margin-bottom: 7px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.kind-groo {
+  color: grey;
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+ion-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+[ion-button][disabled] {
+  opacity: 1;
+}
+
+ion-icon {
+  color: gray;
+  // width: 12px;
+  // height: 12px;
+}
+
+ion-icon.filled {
+  color: orange;
+}
+
+.price {
+  font-weight: 700;
+  color: #37b34a;
+  font-size: 30px;
+  margin: 0;
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
 }

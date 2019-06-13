@@ -1,6 +1,6 @@
 .bg {
   height: 100vh;
-  background-image: url('/assets/registerperro.png');
+  --background: url('/assets/registerperro.png');
   background-size: cover;
 }
 
@@ -61,6 +61,8 @@
   --box-shadow: none;
   margin-right: 25px;
   margin-left: 25px;
+  font-weight: 700;
+  font-size: 13px;
 }
 
 .terms {

@@ -1,0 +1,41 @@
+<ion-content class="bg">
+  <div class="green-container">
+    <ion-card style="box-shadow: none; margin: 0;">
+      <img class="logo" src="assets/logoblanco.svg" width="100px" height="80px;">
+    </ion-card>
+  </div>
+
+  <ion-card class="card-order">
+    <ion-grid style="margin: 0; padding: 0;">
+      <ion-row>
+        <ion-col size="6" style="padding: 0;">
+          <ion-avatar class="frame">
+            <img class="img-fit" src="assets/fotogroo3.jpg">
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="6" style="padding: 0;">
+          <p class="appointment-date">05-17-2019</p>
+          <p class="status-app">Canceled</p>
+          <ion-button (click)="openPage()" expand="block" class="view-btn">View</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card class="card-order">
+    <ion-grid style="margin: 0; padding: 0;">
+      <ion-row>
+        <ion-col size="6" style="padding: 0;">
+          <ion-avatar class="frame">
+            <img class="img-fit" src="assets/fotogroo3.jpg">
+          </ion-avatar>
+        </ion-col>
+        <ion-col size="6" style="padding: 0;">
+          <p class="appointment-date">05-17-2019</p>
+          <p class="status-app2">Accepted</p> 
+          <ion-button (click)="openPage()" expand="block" class="view-btn">View</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

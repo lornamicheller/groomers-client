@@ -1,8 +1,8 @@
 <div class="borders">
   <ion-card style="box-shadow: none; height: 80px;">
     <img class="logo" src="assets/logoverde.svg">
-    <ion-button href="/login" class="arrow-btn">
-      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    <ion-button (click)="goBack()" class="arrow-btn">
+      <ion-icon  class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
     </ion-button>
   </ion-card>
 </div>
@@ -10,7 +10,7 @@
 <ion-content>
 
   <ion-button expand="block" (click)="openCamera()" class="profile-btn">
-    <ion-avatar class="animated rotateInUpRight avatar-border">
+    <ion-avatar class=" avatar-border">
       <img class="imgFit" src="assets/perri1.jpg">
     </ion-avatar>
   </ion-button>
@@ -35,11 +35,11 @@
   </ion-grid>
 
   <ion-card style="box-shadow: none; margin-left: 20px; margin-right: 20px;">
-    <ion-input type="text" class="animated fadeInRightBig name" placeholder="NAME"></ion-input>
-    <ion-input type="text" class="animated fadeInLeftBig age" placeholder="AGE"></ion-input>
-    <ion-input type="text" class="animated fadeInRightBig size" placeholder="SIZE"></ion-input>
-    <ion-input type="text" class="animated fadeInLeftBig breed" placeholder="BREED"></ion-input>
-    <ion-button class="animated fadeInUpBig saveBtn" expand="block">
+    <ion-input [(ngModel)]=name clearInput type="text" class=" name" placeholder="{{name}}"></ion-input>
+    <ion-input [(ngModel)]=age clearInput type="text" class=" age" placeholder="{{age}}"></ion-input>
+    <ion-input [(ngModel)]=size clearInput type="text" class=" size" placeholder="{{size}}"></ion-input>
+    <ion-input [(ngModel)]=breed clearInput type="text" class=" breed" placeholder="{{breed}}"></ion-input>
+    <ion-button (click)="openPage()" class=" saveBtn" expand="block">
       <ion-ripple-effect></ion-ripple-effect>
       SAVE
     </ion-button>

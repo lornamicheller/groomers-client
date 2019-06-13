@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
 .arrow-btn {
   position: absolute;
   top: 17px;
@@ -15,6 +17,7 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
 }
 
 .arrow-icon {
@@ -56,16 +59,6 @@
   background-color: #E6E7E8;
 }
 
-.avatar-border {
-  z-index: 100;
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  top: 35px;
-  left: 20px;
-  border: 3px solid #37B34A;
-}
-
 .logo {
   position: absolute;
   top: 0;
@@ -80,6 +73,8 @@
   font-size: 20px;
   color: #37B34A;
   margin-bottom: 7px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .age,
@@ -88,7 +83,9 @@
   font-size: 13px;
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .name,
@@ -100,11 +97,13 @@
 
 .edit-btn {
   --border-radius: 25px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 50px;
   margin-right: 50px;
   --background: #37B34A;
   --background-activated: #37B34A;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
 }
 
 .edit {
@@ -120,4 +119,24 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
+}
+
+.profile-btn {
+  --border-radius: 50px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  z-index: 100;
+  --background: transparent;
+  --background-activated: transparent;
+  --box-shadow: none;
+}
+
+.avatar-border {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #37B34A;
 }

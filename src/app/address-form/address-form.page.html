@@ -1,0 +1,37 @@
+<ion-content class="bg">
+  <div class="borders">
+    <ion-card style="box-shadow: none; height: auto;">
+      <img class="logo" src="assets/logoverde.svg">
+
+    </ion-card>
+  </div>
+
+  <ion-button (click)="goBack()" class="arrow-btn">
+    <ion-ripple-effect></ion-ripple-effect>
+    <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+  </ion-button>
+
+  <ion-card style="box-shadow: none; border-radius: 0; padding: 25px;">
+    <ion-input [(ngModel)]=placeName class="place-name" type="text" placeholder="PLACE'S NAME"></ion-input>
+    <ion-input [(ngModel)]=address class="address" type="text" placeholder="ADDRESS"></ion-input>
+    <ion-input [(ngModel)]=apt class="suite" type="text" placeholder="SUIT, FLOOR, APT (OPTIONAL)"></ion-input>
+    <ion-input [(ngModel)]=city class="city" type="text" placeholder="CITY"></ion-input>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-input [(ngModel)]=state class="state" type="text" placeholder="STATE"></ion-input>
+        </ion-col>
+
+        <ion-col>
+          <ion-input [(ngModel)]=zip class="zipcode" type="text" placeholder="ZIPCODE"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-input [(ngModel)]=phone class="phone" type="phone" placeholder="PHONE"></ion-input>
+
+    <ion-button (click)="saveAddressForm()" class="address-btn" expand="block">Add Address</ion-button>
+  </ion-card>
+
+</ion-content>

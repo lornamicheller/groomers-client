@@ -1,30 +1,32 @@
-<div class="bg">
+<ion-content class="bg">
   <ion-card style="box-shadow: none;">
     <img class="logo" src="assets/logogrisverde.svg">
     <!-- <h3 style="text-align: center; font-size: 30px; font-weight: 300;">Forgot your password?</h3> -->
     <ion-button class="fb-btn" expand="block">
-      <ion-icon class="fb-icon" name="logo-facebook"></ion-icon>Connect with Facebook
+      <ion-icon class="fb-icon" name="logo-facebook"></ion-icon>
+      <ion-ripple-effect></ion-ripple-effect>
+      Connect with Facebook
     </ion-button>
-    <ion-button href="/login" class="arrow-btn">
+    <ion-button (click)="goBack()" class="arrow-btn">
       <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
     </ion-button>
 
   </ion-card>
 
   <ion-card class="input-card">
-    <ion-input type="text" placeholder="NAME" class="name" expand="block">
+    <ion-input [(ngModel)]="name" clearInput type="text" placeholder="NAME"  class="name " expand="block">
       <ion-icon class="icon" ios="ios-contact" md="md-contact"></ion-icon>
     </ion-input>
-    <ion-input type="text" placeholder="LAST NAME" class="last-name" expand="block">
+    <ion-input [(ngModel)]="lastName" clearInput type="text" placeholder="LAST NAME" class="last-name " expand="block">
       <ion-icon class="icon" ios="ios-contact" md="md-contact"></ion-icon>
     </ion-input>
-    <ion-input type="text" placeholder="EMAIL" class="email" expand="block">
+    <ion-input [(ngModel)]="email" clearInput type="text" placeholder="EMAIL" class="email " expand="block">
       <ion-icon class="icon" ios="ios-mail" md="md-mail"></ion-icon>
     </ion-input>
-    <ion-input type="text" placeholder="PASSWORD" class="password" expand="block">
+    <ion-input [(ngModel)]="password" clearInput type="password" placeholder="PASSWORD" class="password " expand="block">
       <ion-icon class="icon" ios="ios-lock" md="md-lock"></ion-icon>
     </ion-input>
-    <ion-input type="text" placeholder="ZIP CODE" class="zip" expand="block">
+    <ion-input [(ngModel)]="zipCode" clearInput type="text" placeholder="ZIP CODE"  class="zip " expand="block">
       <ion-icon class="icon" ios="ios-pin" md="md-pin"></ion-icon>
     </ion-input>
   </ion-card>
@@ -34,11 +36,13 @@
       <ion-row style="margin-left: 30px; margin-right: 30px;">
         <ion-col size="6">
           <ion-button style="margin-left: 20px;" class="terms" expand="full">
+            <ion-ripple-effect></ion-ripple-effect>
             Terms and Conditions
           </ion-button>
         </ion-col>
         <ion-col size="6">
           <ion-button class="terms" expand="full">
+            <ion-ripple-effect></ion-ripple-effect>
             Privacy Policy
           </ion-button>
         </ion-col>
@@ -46,5 +50,9 @@
     </ion-grid>
   </ion-card>
 
-  <ion-button class="login-btn" expand="block">REGISTER</ion-button>
-</div>
+  <ion-button class="login-btn" (click)="signUpUser()" expand="block">
+    <ion-ripple-effect></ion-ripple-effect>
+    REGISTER
+  </ion-button>
+
+</ion-content>

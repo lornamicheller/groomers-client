@@ -11,9 +11,9 @@
   </ion-card>
 
   <ion-card class="input-card">
-    <ion-input type="email" placeholder="EMAIL" class="email" expand="block">
+    <ion-input [(ngModel)]="email" type="email" placeholder="EMAIL" class="email" expand="block">
       <ion-icon class="icon" ios="ios-mail" md="md-mail"></ion-icon>
     </ion-input>
-    <ion-button class="login-btn" expand="block">LOGIN</ion-button>
+    <ion-button (click) = "resetPass()" class="login-btn" expand="block">RESET</ion-button>
   </ion-card>
 </div>

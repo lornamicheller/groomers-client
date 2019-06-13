@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
 .green-bg {
   --background: #37B34A;
 }
@@ -11,10 +13,11 @@
 
 .title-service {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 400;
   margin-top: 15px;
   color: rgb(255, 255, 255);
   padding-bottom: 120px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .circle-img {
@@ -62,7 +65,7 @@ ion-slides {
   --background: #414042;
   --background-activated: #414042;
   --border-radius: 25px;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 13px;
   letter-spacing: 1px;
   height: 50px;
@@ -70,4 +73,5 @@ ion-slides {
   margin-right: 20px;
   margin-bottom: 50px;
   --box-shadow: none;
+  font-family: 'Poppins', sans-serif;
 }

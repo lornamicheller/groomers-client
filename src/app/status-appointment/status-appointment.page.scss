@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.green-container {
+  height: 100px;
+  width: 100%;
+  background: #37b34a;
+}
+
+.logo {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 35px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.arrow-icon {
+  color: rgb(255, 255, 255);
+  width: 25px;
+  height: 25px;
+}
+
+
+.status-app {
+  text-align: right;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.color-label {
+  color: rgb(148, 148, 148);
+  font-family: 'Poppins', sans-serif;
+
+}

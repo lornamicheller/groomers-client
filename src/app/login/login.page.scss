@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
 .bg {
   height: 100vh;
   background-image: url('/assets/loginscreen.png');
@@ -32,7 +34,8 @@
   font-size: 13px;
   color: grey;
   border-bottom: 2px solid #37B34A;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .icon {
@@ -56,6 +59,7 @@
   margin-top: 20px;
   --box-shadow: none;
   font-size: 13px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .register-btn {
@@ -66,6 +70,7 @@
   margin-top: 10px;
   --box-shadow: none;
   font-size: 13px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .forgot {
@@ -77,6 +82,8 @@
   font-weight: 700;
   // margin-top: 5px;
   padding: 0;
+  --box-shadow: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 .fb-btn {
@@ -87,6 +94,7 @@
   font-weight: 300;
   --box-shadow: none;
   font-size: 12px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .fb-icon {

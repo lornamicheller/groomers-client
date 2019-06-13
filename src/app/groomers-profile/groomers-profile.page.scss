@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.add-btn {
+  position: absolute;
+  top: 17px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.arrow-icon {
+  color: rgb(255, 255, 255);
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  color: rgb(255, 255, 255);
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 120px;
+}
+
+.borders {
+  background-color: #37B34A;
+  height: 100px;
+}
+
+.tutorial-first-card {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.circle-image {
+  object-fit: cover;
+}
+
+.business-name {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: #37B34A;
+}
+
+.view-btn {
+  --background: transparent;
+  --background-activated: transparent;
+  --color-activated: black;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+}
+
+.star-ratings {
+  width: 175px;
+  margin: auto;
+}
+
+.proceed-btn {
+  font-family: 'Poppins', sans-serif;
+  --border-radius: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-weight: 300;
+  font-size: 15px;
+  height: 45px;
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  font-weight: 400;
+}
