@@ -39,6 +39,7 @@ export class ProfilePage implements OnInit {
 
   openCamera() {
       const options: CameraOptions = {
+         
           quality: 100,
           destinationType: this.camera.DestinationType.FILE_URI,
           encodingType: this.camera.EncodingType.JPEG,
