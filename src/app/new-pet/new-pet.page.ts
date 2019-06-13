@@ -14,15 +14,15 @@ let parse =require('parse');
 })
 export class NewPetPage implements OnInit {
 
-  name:any;
-  age:any;
-  size:any;
-  breed:any;
-  photo:any;
-  type:any;
+  name:any = "";
+  age:any = "";
+  size:any = "";
+  breed:any = "";
+  photo:any = "";
+  type:any = "";
 
 
-  constructor(private camera: Camera, public alert:AlertController, /*private photoLibrary: PhotoLibrary*/ private nativePageTransitions: NativePageTransitions, public nav: NavController,
+  constructor(private camera: Camera, public alertCtrl:AlertController, /*private photoLibrary: PhotoLibrary*/ private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController) 
   
   {
@@ -78,6 +78,16 @@ goBack() {
 }
 
 pet() {
+
+    alert("breed: " + this.breed);
+
+    //validate require fields-inputs
+    if( this.name == "" || this.breed == "" || this.age == "" || this.size == "" || this.type == "") {
+        //show alert
+        this.alertMessage("All fields are require.");
+        return;
+    }
+
     Parse.Cloud.run('createPet', {
         user: Parse.User.current().id, 
         name: this.name, 
@@ -86,17 +96,36 @@ pet() {
         size: this.size, 
         photo: this.photo, 
         type: this.type
-    }
-    ).then((result)=> {
+
+    }).then((result)=> {
+        //success creating pet
         this.openPage();
         console.log("PET INFO", this.name);
     }
     , (error)=> {
+        //an error occur
         console.log(error);
-        this.openPage();
-    }
-    );
+        //this.openPage();
+    });
 }
+
+
+async alertMessage(message){ //alerta simple con mensaje
+    const alert = await this.alertCtrl.create({
+      header: 'Error',
+      message: message,
+      buttons: [{
+        text: 'OK',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+          //do something if needed
+        }
+      }]
+    });
+  
+    await alert.present();
+  }
   
 
 

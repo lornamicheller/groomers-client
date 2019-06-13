@@ -24,28 +24,62 @@ export class CardsOrdersPage implements OnInit {
   
   constructor(public nav:NavController, public provider : GroomproviderService, private nativePageTransitions: NativePageTransitions) { 
 
-    parse.serverURL = 'https://parseapi.back4app.com/';
-    Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
-
     
-    alert("constructor pra...");
+    parse.serverURL = 'https://parseapi.back4app.com/';
+    parse.liveQueryServerURL = 'wss://groomers.back4app.io'
+    Parse.liveQueryServerURL = 'wss://groomers.back4app.io'
+    Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");
+    
   }
 
   ngOnInit() {
     this.Id = Parse.User.current().id;
     this.getPetObjects();
 
+    //setup live query
     this.liveQuery = new Parse.Query('Pets');
+    this.liveQuery.equalTo("user", Parse.User.current());
     this.petSubs = this.liveQuery.subscribe();
 
     this.petSubs.on('open', () => {
-      console.log('subscription opened');
-     });
+      console.log('pet subscription opened');
+    });
+
+    this.petSubs.on('create', (object) => {
+      console.log('pet created');
+      this.getPetObjects();
+    });
+
+    this.petSubs.on('update', (object) => {
+      console.log('pet updated');
+      this.getPetObjects();
+    });
+
+    this.petSubs.on('enter', (object) => {
+      console.log('pet enter');
+      this.getPetObjects();
+    });
+
+    this.petSubs.on('leave', (object) => {
+      console.log('pet leave');
+      this.getPetObjects();
+    });
+
+    this.petSubs.on('delete', (object) => {
+      console.log('pet delete');
+      this.getPetObjects();
+    });
+
+    this.petSubs.on('close', (object) => {
+      console.log('pet close');
+    });
 
   }
 
-  ngAfterViewInit() {
-    alert("wow view init...");
+  ngOnDestroy() {
+    
+    //stop sunscription of live-query
+    this.petSubs.unsubscribe();
   }
 
   
@@ -93,7 +127,6 @@ export class CardsOrdersPage implements OnInit {
 
   getPetObjects(){
     console.log("get pet info")
-    alert("Get Pets...");
     Parse.Cloud.run('getPetsByUserId', {
       user: Parse.User.current().Id
     }).then((result) => {

@@ -3,18 +3,19 @@
     <ion-card style="box-shadow: none; margin: 0;">
       <img class="logo" src="assets/logoblanco.svg" width="100px" height="80px;">
     </ion-card>
-    <ion-icon class="edit-btn" ion-button ios="ios-create" md="md-create">
+    <p ion-button (click)="saveChanges()" class="edit-btn" ion-button>
       <ion-ripple-effect></ion-ripple-effect>
-    </ion-icon>
+      Save
+    </p>
   </div>
 
-  <ion-input class="input-color" clearInput type="text" placeholder="Full Name"></ion-input>
-  <ion-input class="input-color" clearInput type="text" placeholder="Email"></ion-input>
-  <ion-input class="input-color" clearInput type="tel" placeholder="Phone"></ion-input>
+  <ion-input [(ngModel)]="fullName" class="input-color" clearInput type="text" placeholder="{{fullName}}"></ion-input>
+  <ion-input [(ngModel)]="email" class="input-color" clearInput type="text" placeholder="{{email}}"></ion-input>
+  <ion-input [(ngModel)]="phone" class="input-color" clearInput type="tel" placeholder="{{phone}}"></ion-input>
 
 
 <ion-card class="card-btn">
-  <p class="terms-btn" ion-button>Terms and Conditions</p>
+  <p class="terms-btn"  ion-button><a href="http://groomrs.com/terms-conditions-groomer.html">Terms and Conditions</a></p>
   <p class="privacy-btn" ion-button>Privacy Policy</p>
   <p class="facebook-btn" ion-button>Facebook</p>
 </ion-card>

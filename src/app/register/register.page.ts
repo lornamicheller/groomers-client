@@ -117,7 +117,8 @@ export class RegisterPage implements OnInit {
           this.notVerified();
        }else{
          this.provider.name = this.name;
-         this.provider.lastName = this.lastName
+         this.provider.lastName = this.lastName;
+         this.provider.fullName = this.name + " " + this.lastName;
          this.provider.email = this.email;
          this.provider.password = this.password;
         this.provider.zipCode = this.zipCode;

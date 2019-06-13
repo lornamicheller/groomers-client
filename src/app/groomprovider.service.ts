@@ -24,6 +24,7 @@ export class GroomproviderService {
   age:any;
   size:any;
   photo:any;
+  fullName:any;
  
   constructor( public nav: NavController, public provider : GroomproviderService,
     public alertCtrl : AlertController) {
@@ -51,6 +52,7 @@ export class GroomproviderService {
     user.set('password', this.password);
     user.set('zipcode', this.zipCode);
     user.set('username', this.userName);
+    user.set('fullName',this.fullName);
     console.log("User signed up as: " + this.name);
   
     user.signUp().then((user) => {
