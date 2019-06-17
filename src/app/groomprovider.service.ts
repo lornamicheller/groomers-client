@@ -25,6 +25,12 @@ export class GroomproviderService {
   size:any;
   photo:any;
   fullName:any;
+  chooseDate:any;
+
+  groomers:any;
+  
+
+  groomer: any;
  
   constructor( public nav: NavController, public provider : GroomproviderService,
     public alertCtrl : AlertController) {

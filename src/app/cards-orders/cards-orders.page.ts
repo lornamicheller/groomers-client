@@ -41,9 +41,16 @@ export class CardsOrdersPage implements OnInit {
   ngOnInit() {
     this.Id = Parse.User.current().id;
     this.getPetObjects();
+    
+    // let self = this;
+    // window.setInterval(function() {
+      
+    //   self.getPetObjects();
+    //  // this.getLocation();
+    //  }, 2000);
 
     //setup live query
-    this.liveQuery = new Parse.Query('Pets');
+    /*this.liveQuery = new Parse.Query('Pets');
     this.liveQuery.equalTo("user", Parse.User.current());
     this.petSubs = this.liveQuery.subscribe();
 
@@ -85,7 +92,7 @@ export class CardsOrdersPage implements OnInit {
     this.petSubs.on('close', (object) => {
       console.log(object);
       console.log('pet close');
-    });
+    });*/
 
   }
 
@@ -154,13 +161,8 @@ export class CardsOrdersPage implements OnInit {
       this.nav.navigateRoot('tabs/tabs/new-pet');
   }
 
-  // destroyCard(deletePet)
-  // {
-  //   console.log("ID: ",deletePet);
 
-  // }
-
-  openPage() {
+  openPage(petId) {
     let options: NativeTransitionOptions = {
       direction: 'left', 
       duration: 400, 
@@ -168,21 +170,25 @@ export class CardsOrdersPage implements OnInit {
       slidePixels: 20, 
       iosdelay: 100
   }
+
+  
+  this.provider.petid = petId;
+  console.log(this.provider.petid);
     console.log(options);
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot('/tabs/tabs/tab1');
 }
 
   getPetObjects(){
-    console.log("get pet info")
-    console.log(Parse.User.current().id);
+    //console.log("get pet info")
+    //console.log(Parse.User.current().id);
     Parse.Cloud.run('getPetsByUserId', {
       userId: Parse.User.current().id
     }).then((result) => {
-      console.log(result)
+      //console.log(result)
       this.pets = result;
     this.checkImage= result.petImage;
-    console.log(this.checkImage);
+    //console.log(this.checkImage);
       
     });
    

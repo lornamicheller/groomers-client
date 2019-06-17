@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ViewChild } from "@angular/core";
 import { NavParams, ModalController, IonContent } from '@ionic/angular';
+import {GroomproviderService} from "./../../app/groomprovider.service";
 import * as moment_ from 'moment';
+
 
 const moment = moment_;
 
@@ -17,6 +19,8 @@ const moment = moment_;
 
 
 export class CalendarComponent implements OnInit {
+
+
 
   @ViewChild(IonContent) content: IonContent;
   
@@ -59,7 +63,7 @@ export class CalendarComponent implements OnInit {
   isMonthSelect;
   scrollingMonthOrYearArray: any = [];
 
-  constructor(
+  constructor(public provider:GroomproviderService,
     private navParams: NavParams,
     private modalCtrl: ModalController
   ) {
@@ -208,10 +212,19 @@ export class CalendarComponent implements OnInit {
   // Date selected
   dateSelected(selectedDate) {
     // console.log('dateSelected =>', selectedDate);
+
+    console.log("Selected Date: ",selectedDate);
+   
+    
     if (selectedDate && !selectedDate.disabled) {
       if (!selectedDate || Object.keys(selectedDate).length === 0) { return; }
       this.selctedDateEpoch = selectedDate.epoch;
+      console.log("Select date: ",this.selctedDateEpoch);
       this.selectedDateString = this.formatDate();
+      console.log("Select date 2: ",this.selctedDateEpoch);
+      console.log(new Date(this.selectedDateString));
+      this.provider.chooseDate = this.selctedDateEpoch;
+      console.log("Provider", this.provider.chooseDate);
       if (this.mainObj.closeOnSelect) {
         this.closeModal(this.selctedDateEpoch);
       }

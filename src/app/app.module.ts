@@ -14,13 +14,25 @@ import { CalendarComponent } from "./calendar/calendar.component";
 import { Calendar } from '@ionic-native/calendar/ngx';
 import { NavController } from '@ionic/angular';
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 @NgModule({
   declarations: [AppComponent, CalendarComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
+  ],
   providers: [
     StatusBar,
     SplashScreen,
+    
     Camera,
     NativePageTransitions,
     Calendar,

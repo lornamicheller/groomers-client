@@ -25,7 +25,7 @@ export class OrderSummaryPage implements OnInit {
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot("/tabs/tabs/cards-orders");
+    this.nav.navigateRoot("/tabs/tabs/order-success");
   }
 
   goBack() {
@@ -38,7 +38,7 @@ export class OrderSummaryPage implements OnInit {
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot("/orders-success");
+    this.nav.navigateRoot("/make-payment");
   }
 
 }

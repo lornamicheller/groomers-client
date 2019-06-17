@@ -1,7 +1,7 @@
 <ion-content class="bg">
   <div class="borders">
     <ion-card style="box-shadow: none; height: 80px;">
-      <img class="logo" src="assets/logoverde.svg">
+      <img class="logo" src="assets/logoblanco.svg">
       <ion-button (click)="goBack()" class="arrow-btn">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
@@ -13,14 +13,18 @@
     </ion-card>
   </div>
 
-  <ion-button expand="block" class="input" readonly [(ngModel)]="mydate" (click)="openDatePicker()">
+  <ion-button expand="block" class="input" readonly   (click)="openDatePicker()">
     <span>CHOOSE DATE</span>
   </ion-button>
 
+
+  <!-- <li-ionic4-datepicker [(ngModel)]="mydate"
+[inputDateConfig]="datePickerObj">CHOOSE DATE</li-ionic4-datepicker> -->
+
   <ion-item class="date">
     <ion-label>CHOOSE TIME</ion-label>
-    <ion-datetime displayFormat="h:mm, A " [(ngModel)]="myDate"></ion-datetime>
+    <ion-datetime displayFormat="h:mm, A " [(ngModel)]="mydate"></ion-datetime>
   </ion-item>
 
-  <ion-button class="book-btn" (click)="presentAlert()" expand="block">BOOK NOW</ion-button>
+  <ion-button class="book-btn" (click)="searchDay()" expand="block">BOOK NOW</ion-button>
 </ion-content>

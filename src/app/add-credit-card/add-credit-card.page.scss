@@ -20,7 +20,7 @@
 }
 
 .arrow-icon {
-  color: #37B34A;
+  color: rgb(255, 255, 255);
   width: 25px;
   height: 25px;
 }
@@ -40,7 +40,7 @@
 
 .borders {
   // border-bottom: 1px solid rgb(199, 199, 199);
-  background-color: rgba(255, 255, 255, 0.596);
+  background-color: #37B34A;
   height: 100px;
   position: absolute;
   top: 0;
@@ -69,4 +69,5 @@
   color: rgb(255, 255, 255);
   --color-activated: rgb(255, 255, 255);
   font-family: 'Poppins', sans-serif;
+  margin-top:30px;
 }

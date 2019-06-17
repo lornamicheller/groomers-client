@@ -12,24 +12,28 @@
 
 <ion-content class="bg">
   <ion-card style="box-shadow: none;">
-    <ion-input class="search" type="text" clearInput placeholder="SEARCH">
+    <ion-input [(ngModel)]="search" class="search" type="text" clearInput placeholder="SEARCH" (ionInput)="searchChange($event)">
       <ion-icon class="search-icon" ios="ios-search" md="md-search"></ion-icon>
     </ion-input>
   </ion-card>
 
-  <ion-button (click)="openPage()" class="btnCard" expand="block">
+
+
+  <!-- groomer card begin -->
+  <ion-button *ngFor = "let groomer of groomers" (click)="openPage(groomer)" class="btnCard" expand="block">
     <ion-card class="order-card">
       <ion-grid style="margin: 0; padding: 0;">
         <ion-row>
 
           <ion-col size="3" class="green-bg">
             <ion-avatar class="avatar-border">
-              <img class="imgFit" src="assets/logo1.png">
+              <!-- <img class="imgFit" src="assets/logo1.png"> -->
+              <img *ngIf="groomer.get('profilePic') != null" class="imgFit" src="{{groomer.get('profilePic').url()}}">
             </ion-avatar>
           </ion-col>
 
           <ion-col size="9" class="grey-bg">
-            <p class="name">Nono's Grooming</p>
+            <p class="name">{{groomer.get("businessName")}}</p>
             <!-- rating star -->
             <div class="ratings">
               <ion-buttons>
@@ -41,9 +45,9 @@
                 </ion-button>
               </ion-buttons>
             </div>
-            <ion-button class="delete-btn">
+            <!--<ion-button class="delete-btn">
               <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
-            </ion-button>
+            </ion-button>-->
             <!-- /rating star -->
           </ion-col>
 
@@ -51,41 +55,6 @@
       </ion-grid>
     </ion-card>
   </ion-button>
+  <!-- groomer card end -->
 
-  <!-- second card -->
-  <ion-button (click)="openPage()" class="btnCard" expand="block">
-    <ion-card class="order-card">
-      <ion-grid style="margin: 0; padding: 0;">
-        <ion-row>
-
-          <ion-col size="3" class="green-bg">
-            <ion-avatar class="avatar-border">
-              <img class="imgFit" src="assets/logo2.jpg">
-            </ion-avatar>
-          </ion-col>
-
-          <ion-col size="9" class="grey-bg">
-            <p class="name">Dog's Grooming</p>
-            <!-- rating star -->
-            <div class="ratings">
-              <ion-buttons>
-                <ion-button [disabled]="readonly" fill="clear" [size]="size"
-                  *ngFor="let current of [1, 2, 3, 4, 5]; let i = index" (mouseover)="hoverRate = i + 1"
-                  (mouseleave)="hoverRate = 0">
-                  <ion-icon slot="icon-only" name="star"
-                    [class.filled]="(i + 1 <= hoverRate || (!hoverRate && i + 1 <= rate))"></ion-icon>
-                </ion-button>
-              </ion-buttons>
-            </div>
-            <ion-button class="delete-btn">
-              <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
-            </ion-button>
-            <!-- /rating star -->
-          </ion-col>
-
-        </ion-row>
-      </ion-grid>
-    </ion-card>
-  </ion-button>
-  <!-- /second card -->
 </ion-content>

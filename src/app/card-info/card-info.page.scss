@@ -10,24 +10,23 @@
 }
 
 .add-btn {
-  position: absolute;
-  top: 17px;
-  right: 0;
-  --background: transparent;
-  --background-activated: transparent;
-  color: #37B34A;
-  --color-activated: #37B34A;
+  --background:#37B34A;
+  --background-activated: #37B34A;
+  color: rgb(255, 255, 255);
+  --color-activated: rgb(255, 255, 255);
   font-family: 'Poppins', sans-serif;
+  --border-radius: 25px;
+  margin-top: 20px;
 }
 
 .arrow-icon {
-  color: #37B34A;
+  color: rgb(255, 255, 255);
   width: 25px;
   height: 25px;
 }
 
 .add-icon {
-  color: #37B34A;
+  color: rgb(255, 255, 255);
   width: 30px;
   height: 30px;
 }
@@ -41,7 +40,7 @@
 
 .borders {
   // border-bottom: 1px solid rgb(199, 199, 199);
-  background-color: rgba(255, 255, 255, 0.596);
+  background-color: #37B34A;
   height: 100px;
   width: 100%;
 }

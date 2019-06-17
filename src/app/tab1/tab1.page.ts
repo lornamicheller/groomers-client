@@ -21,7 +21,8 @@ export class Tab1Page {
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.navigate.navigateRoot("/tabs/tabs/tab2");
+    //this.navigate.navigateRoot("/tabs/tabs/tab2");
+    this.navigate.navigateRoot("/tabs/tabs/address-receiver");
   }
 
 

@@ -36,7 +36,7 @@ export class AddressReceiverPage implements OnInit {
    this.getAddressObjects();
   }
 
-  openPage() {
+  openPage(zipCode) {
     let options: NativeTransitionOptions = {
       direction: 'left',
       duration: 400,
@@ -44,10 +44,15 @@ export class AddressReceiverPage implements OnInit {
       slidePixels: 20,
       iosdelay: 100
   }
+
+    this.provider.zipCode = zipCode;
+    console.log(this.provider.zipCode);
     console.log(options);
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot('/tabs/tabs/appointment');
   }
+
+
 
 
   deleteAddress(adId)
@@ -55,17 +60,19 @@ export class AddressReceiverPage implements OnInit {
       console.log(adId);
 
       adId.destroy().then((result)=>
-      { 
-        console.log("Delete Address");
-        this.getAddressObjects();
+      {
+          console.log("Destroyed!!!");
 
+          this.getAddressObjects();
+         
+  
       });
 
   }
 
   goBack() {
     let options: NativeTransitionOptions = {
-      direction: 'left',
+      direction: 'right',
       duration: 400,
       slowdownfactor: -1,
       slidePixels: 20,
@@ -73,7 +80,7 @@ export class AddressReceiverPage implements OnInit {
   }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot('/tabs/tabs/address-receiver');
+    this.nav.navigateRoot('/tabs/tabs/tab1');
   }
  
   // saveAddressForm() {

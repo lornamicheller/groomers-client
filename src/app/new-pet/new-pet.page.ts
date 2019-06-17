@@ -34,6 +34,8 @@ picture:any;
 savedPhoto:any;
 
   ngOnInit() {
+
+    console.log(Parse.User.current().id);
     
   }
   
@@ -112,18 +114,19 @@ pet() {
     if( this.name == "" || this.breed == "" || this.age == "" || this.size == "" || this.type == "") {
         //show alert
         this.alertMessage("All fields are require.");
-        return;
+        // return;
     }
+
+    console.log(Parse.User.current().id);
+
 
     Parse.Cloud.run('createPet', {
         user: Parse.User.current().id, 
         name: this.name, 
         breed: this.breed, 
         age: this.age, 
-        size: this.size, 
-        photo: this.photo, 
+        size: this.size,
         type: this.type
-
     }).then((result)=> {
         //success creating pet
         this.openPage();

@@ -1,11 +1,8 @@
 <div class="borders">
   <ion-card style="box-shadow: none; height: 80px;">
-    <img class="logo" src="assets/logoverde.svg">
+    <img class="logo" src="assets/logoblanco.svg">
     <ion-button href="/tabs/tabs/add-credit-card" class="arrow-btn">
       <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
-    </ion-button>
-    <ion-button href="/tabs/tabs/card-receiver" class="add-btn">
-      Save
     </ion-button>
   </ion-card>
 </div>
@@ -18,7 +15,7 @@
     </ion-input>
 
     <!-- <h5 class="label-input">Card Number</h5> -->
-    <ion-input type=“number” class="name" clearInput placeholder="Card Number">
+    <ion-input type=“number” class="name" clearInput placeholder="Card Number" maxlength="16">
       <ion-icon class="input-icon" ios="ios-card" md="md-card"></ion-icon>
     </ion-input>
 
@@ -36,6 +33,10 @@
     <ion-input type=“number” class="name" clearInput placeholder="CVV">
       <ion-icon class="input-icon" ios="ios-lock" md="md-lock"></ion-icon>
     </ion-input>
+
+    <ion-button expand="block" (click)="openPage()" class="add-btn">
+      Add
+    </ion-button>
 
     <div class="card-logos"></div>
 

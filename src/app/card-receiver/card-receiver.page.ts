@@ -12,4 +12,19 @@ export class CardReceiverPage implements OnInit {
   ngOnInit() {
   }
 
+
+
+
+  getCards(){
+    Parse.Cloud.run('getStripeUserCards').then((result) =>  
+    {
+      console.log(result);
+     this.cards=result;
+    
+  },(error) =>{
+    this.errorAlert(error);
+    console.log(error);
+  });
+  }
+
 }

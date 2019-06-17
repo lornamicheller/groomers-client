@@ -25,7 +25,7 @@
 }
 
 .arrow-icon {
-  color: rgb(255, 255, 255);
+  color: #37B34A;
   width: 25px;
   height: 25px;
 }
@@ -44,7 +44,7 @@
 }
 
 .borders {
-  background-color: #37B34A;
+  background-color: rgb(255, 255, 255);
   height: 100px;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .green-bg {
-  background-color: #37B34A;
+  background-color: #E6E7E8;
   height: 200px;
 }
 
@@ -143,4 +143,6 @@
   width: 100px;
   height: 100px;
   border: 2px solid #37B34A;
+  margin-left: auto;
+  margin-right: auto;
 }

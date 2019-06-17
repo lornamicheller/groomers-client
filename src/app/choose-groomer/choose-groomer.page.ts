@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { NavController } from '@ionic/angular';
+import {GroomproviderService} from "./../../app/groomprovider.service";
+import * as Parse from 'parse';
+
+let parse = require('parse');
 
 @Component({
   selector: 'app-choose-groomer',
@@ -9,9 +13,34 @@ import { NavController } from '@ionic/angular';
 })
 export class ChooseGroomerPage implements OnInit {
 
-  constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController,) { }
+  constructor(public provider:GroomproviderService , private nativePageTransitions: NativePageTransitions, public nav: NavController,) { }
+
+    petName:any;
 
   ngOnInit() {
+
+   this.getPet();
+   console.log(this.provider.groomers);
+  }
+
+  getPet()
+  {
+      let pet = "BKMOYQdVGW";
+    Parse.Cloud.run('getPetsInfo', {
+      petId: this.provider.petId
+    }).then((result) => {
+      
+      console.log(result);
+      console.log(result.get('name'));
+
+      this.petName = result.get('name');
+      
+    });
+   
+    (error)=>{
+      console.log(error);
+    }
+
   }
 
   openPage() {
