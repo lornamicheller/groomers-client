@@ -49,6 +49,20 @@ export class AddressReceiverPage implements OnInit {
     this.nav.navigateRoot('/tabs/tabs/appointment');
   }
 
+
+  deleteAddress(adId)
+  {
+      console.log(adId);
+
+      adId.destroy().then((result)=>
+      { 
+        console.log("Delete Address");
+        this.getAddressObjects();
+
+      });
+
+  }
+
   goBack() {
     let options: NativeTransitionOptions = {
       direction: 'left',

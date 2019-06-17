@@ -4,6 +4,7 @@ import * as Parse from 'parse';
 import { GroomproviderService } from "./../../app/groomprovider.service";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
+import { AlertController } from "@ionic/angular";
 
 let parse = require('parse');
 
@@ -23,7 +24,9 @@ export class ProfilePage implements OnInit {
   pets: any;
   pet: any;
 
-  constructor(private camera: Camera, public provider: GroomproviderService, private nativePageTransitions: NativePageTransitions, public nav: NavController,
+  changeInfomation:any;
+
+  constructor(public alert:AlertController,private camera: Camera, public provider: GroomproviderService, private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController) {
 
       parse.serverURL = 'https://parseapi.back4app.com/';
@@ -40,12 +43,12 @@ export class ProfilePage implements OnInit {
   openCamera() {
       const options: CameraOptions = {
        
-        destinationType: this.camera.DestinationType.FILE_URI,      
+        destinationType: this.camera.DestinationType.FILE_URI,
         quality: 100,
         targetWidth: 1000,
         targetHeight: 1000,
         encodingType: this.camera.EncodingType.JPEG, 
-        sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,     
+        sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
         correctOrientation: true
       }
 
@@ -95,6 +98,8 @@ export class ProfilePage implements OnInit {
           console.log(result.get("breed"));
           console.log(result.get("size"));
 
+          this.changeInfomation = result;
+
           this.name = result.get("name");
           this.age = result.get("age");
           this.breed = result.get("breed");
@@ -107,29 +112,77 @@ export class ProfilePage implements OnInit {
           console.log(error);
       }
   }
-
-
-  // getPetObjects(){
-  //   console.log("get pet info");
-  //   Parse.Cloud.run('getPetsByUserId', {
-  //     user: Parse.User.current().Id
-  //   }).then((result) => {
-  //     console.log(result)
-
-  //     this.pets = result;
-
-  //      console.log(this.name);
-  //   });
-
-  //   (error)=>{
-  //     console.log(error);
-  //   }
-  // } 
-
-
- 
   
 
- 
+
+  saveInformation()
+  {
+
+    if(this.name == "" || this.age == "" || this.breed == "" || this.size =="")
+    {
+          this.errorInfo();
+    }
+    else
+    {
+
+    
+    this.changeInfomation.set("name", this.name);
+    this.changeInfomation.set("age", this.age);
+    this.changeInfomation.set("breed", this.breed);
+    this.changeInfomation.set("size", this.size);
+
+    this.changeInfomation.save().then((result)=>
+    {
+      console.log("SAVED!!");
+      console.log(result);
+      this.savedInfo();
+     
+    });
+
+   
+  }
+
+  }
+
+  async savedInfo(){
   
+    const alert = await this.alert.create({
+      header: 'ALERT!',
+      message: 'Your information has been saved!',
+      buttons: [{
+        text: 'OK',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+          this.openPage();
+        }
+      }]
+      });
+  
+      await alert.present();
+      
+
 }
+
+async errorInfo(){
+  
+  const alert = await this.alert.create({
+    header: 'ALERT!',
+    message: 'All fields must be full!',
+    buttons: [
+        {
+          text: 'OK',
+          cssClass: 'greenBtn',
+        }
+      ]
+    });
+
+    await alert.present();
+
+    }
+}
+  
+
+ 
+  
+

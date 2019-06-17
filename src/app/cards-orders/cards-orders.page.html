@@ -15,10 +15,13 @@
     <ion-grid style="margin: 0; padding: 0;">
       <ion-row>
         <ion-col size="3" class="green-bg">
-          <ion-button (click)="openPage()" expand="block" class="profile-btn">
+
+
+          <ion-button class="profile-btn" (click)="openPage()">
             <ion-ripple-effect></ion-ripple-effect>
             <ion-avatar class="avatar-border">
-              <img class="imgFit" src="assets/perri1.jpg">
+              <img *ngIf="pet.get('petImage') == null "class="imgFit" src="assets/perri1.jpg">
+              <img *ngIf="pet.get('petImage') != null" class="imgFit" src="{{pet.get('petImage')}}">
             </ion-avatar>
           </ion-button>
         </ion-col>
@@ -31,7 +34,7 @@
             <ion-ripple-effect></ion-ripple-effect>
             EDIT
           </ion-button>
-          <ion-button class="delete-btn">
+          <ion-button (click)="deleteDog(pet)" class="delete-btn">
             <ion-ripple-effect></ion-ripple-effect>
             <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
           </ion-button>

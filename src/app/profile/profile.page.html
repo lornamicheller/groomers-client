@@ -37,12 +37,31 @@
   <ion-card style="box-shadow: none; margin-left: 20px; margin-right: 20px;">
     <ion-input [(ngModel)]=name clearInput type="text" class=" name" placeholder="{{name}}"></ion-input>
     <ion-input [(ngModel)]=age clearInput type="text" class=" age" placeholder="{{age}}"></ion-input>
-    <ion-input [(ngModel)]=size clearInput type="text" class=" size" placeholder="{{size}}"></ion-input>
-    <ion-input [(ngModel)]=breed clearInput type="text" class=" breed" placeholder="{{breed}}"></ion-input>
-    <ion-button (click)="openPage()" class=" saveBtn" expand="block">
+
+    <ion-item lines="none" class="size">
+        <ion-label>SIZE</ion-label>
+        <ion-select [(ngModel)]="size" value="" placeholder="" okText="Okay" cancelText="Cancel">
+          <ion-select-option value="Small">Small</ion-select-option>
+          <ion-select-option value="Medium">Medium</ion-select-option>
+          <ion-select-option value="Large">Large</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item lines="none" class="breed">
+        <ion-label>BREED</ion-label>
+        <ion-select [(ngModel)]="breed" value="" placeholder="" okText="Okay" cancelText="Cancel">
+          <ion-select-option value="Breed1">Breed1</ion-select-option>
+          <ion-select-option value="Breed2">Breed2</ion-select-option>
+          <ion-select-option value="Breed3">Breed3</ion-select-option>
+        </ion-select>
+      </ion-item>
+ 
+    <ion-button (click)="saveInformation()" class=" saveBtn" expand="block">
       <ion-ripple-effect></ion-ripple-effect>
       SAVE
     </ion-button>
   </ion-card>
 
 </ion-content>
+
+<!-- <ion-input [(ngModel)]=size clearInput type="text" class=" size" placeholder="{{size}}"></ion-input> -->
+<!-- <ion-input [(ngModel)]=breed clearInput type="text" class=" breed" placeholder="{{breed}}"></ion-input> -->

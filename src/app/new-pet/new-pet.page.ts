@@ -14,12 +14,12 @@ let parse =require('parse');
 })
 export class NewPetPage implements OnInit {
 
-  name:any = "";
-  age:any = "";
-  size:any = "";
-  breed:any = "";
-  photo:any = "";
-  type:any = "";
+  name:any ;
+  age:any ;
+  size:any ;
+  breed:any;
+  photo:any ;
+  type:any ;
 
 
   constructor(private camera: Camera, public alertCtrl:AlertController, /*private photoLibrary: PhotoLibrary*/ private nativePageTransitions: NativePageTransitions, public nav: NavController,
@@ -30,26 +30,46 @@ export class NewPetPage implements OnInit {
   Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
 }
 
+picture:any;
+savedPhoto:any;
+
   ngOnInit() {
+    
   }
   
   openCamera() {
-    const options: CameraOptions= {
-        quality: 100, 
-        destinationType: this.camera.DestinationType.FILE_URI, 
-        encodingType: this.camera.EncodingType.JPEG, 
-        mediaType: this.camera.MediaType.PICTURE
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
     }
-    this.camera.getPicture(options).then((imageData)=> {
-        // imageData is either a base64 encoded string or a file URI
-        // If it's base64 (DATA_URL):
-        let base64Image='data:image/jpeg;base64,' + imageData;
-    }
-    , (err)=> {
-        // Handle error
-    }
-    );
-}
+
+    this.camera.getPicture(options).then((imageData) => {
+
+      this.picture = 'data:image/jpeg;base64,' + imageData;
+
+      let base64Image = this.picture;
+      let name = "photo.jpeg";
+      
+
+      let parseFile = new Parse.File(name, {
+        base64: base64Image
+      }); //convierte la foto a base64
+      parseFile.save().then((savedFile) => {
+        console.log('file saved:' + savedFile);
+        this.savedPhoto= this.picture;
+     
+       this.photo = savedFile;
+
+      }, (err) => {
+        console.log('error grabando file: ' + err)
+      });
+
+    }, (err) => {
+      console.log('error de camara' + err);
+    });
+  }
 
 openPage() {
     let options: NativeTransitionOptions= {
@@ -79,9 +99,16 @@ goBack() {
 
 pet() {
 
-    alert("breed: " + this.breed);
+    // alert("breed: " + this.breed);
 
     //validate require fields-inputs
+
+    console.log(this.age);
+    console.log(this.name);
+    console.log(this.type);
+    console.log(this.size);
+    console.log(this.breed);
+
     if( this.name == "" || this.breed == "" || this.age == "" || this.size == "" || this.type == "") {
         //show alert
         this.alertMessage("All fields are require.");
@@ -107,6 +134,19 @@ pet() {
         console.log(error);
         //this.openPage();
     });
+}
+
+cat()
+{
+  
+  this.type = "CAT";
+  console.log("CAT: ",this.type);
+}
+
+dog()
+{
+  this.type = "DOG";
+  console.log("DOG: ",this.type);
 }
 
 

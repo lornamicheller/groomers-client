@@ -3,6 +3,7 @@
 
 .bg {
   --padding-bottom: 150px;
+  --background: url('/assets/huesitos.jpg');
 }
 
 .arrow-btn {
@@ -48,7 +49,7 @@
   --placeholder-color: rgb(167, 167, 167);
   font-size: 12px;
   font-family: 'Poppins', sans-serif;
-
+background: white;
 }
 
 .search-icon {
@@ -59,7 +60,7 @@
 }
 
 .borders {
-  background-color: rgb(255, 255, 255);
+  background-color: #37B34A;
   height: 100px;
 }
 

@@ -12,6 +12,8 @@ let parse =require('parse');
 })
 export class ClientProfilePage implements OnInit {
 
+service:any;
+
   constructor(public alert:AlertController,private nativePageTransitions: NativePageTransitions, public nav: NavController)
   { 
     parse.serverURL = 'https://parseapi.back4app.com/';
@@ -89,5 +91,19 @@ export class ClientProfilePage implements OnInit {
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot("/login");
   }
+
+  logOut() {
+    Parse.User.logOut().then((resp) => {
+      console.log('Logged out successfully', resp);
+
+      this.nav.navigateRoot('/login');
+
+    }, err => {
+      //console.log('Error logging out', err);
+
+    })
+  }
+  
+   
 
 }

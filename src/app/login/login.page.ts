@@ -4,6 +4,7 @@ import { ToastController, NavController } from '@ionic/angular';
 import * as Parse from 'parse';
 import { AlertController } from "@ionic/angular";
 import {GroomproviderService } from "./../../app/groomprovider.service";
+// import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 var parse = require ("parse");
 @Component({
@@ -27,6 +28,7 @@ export class LoginPage implements OnInit {
   }
 
   openLogin() {
+    console.log("Open Login");
     let options: NativeTransitionOptions = {
         direction: 'left', 
         duration: 400, 
@@ -70,6 +72,8 @@ export class LoginPage implements OnInit {
   
     await alert.present();
   }
+
+
 
   singIn(){
     

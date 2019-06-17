@@ -13,7 +13,7 @@
         </ion-card>
     </div>
 
-    <ion-card *ngFor="let ad of addrs" ion-button (click)="openPage()" class="card">
+    <ion-card *ngFor="let ad of addrs"  class="card">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-grid>
             <ion-row>
@@ -30,13 +30,17 @@
                     <p [(ngModel)]=phone
                         style="text-align: left; font-weight: 700; font-size: 13px; color: rgb(168, 168, 168);">
                         {{ad.get("phone")}}</p>
-
+                        <ion-button class="address-btn">
+                            Use this address
+                        </ion-button>
 
                 </ion-col>
                 <ion-col size="1">
-                    <ion-button class="delete-btn">
+                    <ion-button (click) = "deleteAddress(ad.id)" class="delete-btn">
                         <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
                     </ion-button>
+
+                   
                 </ion-col>
             </ion-row>
         </ion-grid>

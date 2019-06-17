@@ -28,7 +28,7 @@ export class SplashPage implements OnInit {
     Parse.User.currentAsync().then(user => {
       console.log('Logged user', user);
   
-      user != null ? this.NavCtrl.navigateRoot('/tabs/tabs/cards-orders') : this.NavCtrl.navigateRoot('/home');
+      user != null ? this.NavCtrl.navigateRoot('/tabs/tabs/cards-orders') : this.NavCtrl.navigateRoot('/login');
     }, err => {
       console.log('Error getting logged user',err);
       let options: NativeTransitionOptions = {
@@ -40,7 +40,7 @@ export class SplashPage implements OnInit {
         androiddelay: 100,
        }
       this.nativePageTransitions.slide(options);
-      this.NavCtrl.navigateRoot('/locationon');
+      this.NavCtrl.navigateRoot('/login');
       
     });
   }
