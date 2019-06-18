@@ -31,7 +31,8 @@ const routes: Routes = [
   { path: 'client-profile', loadChildren: './client-profile/client-profile.module#ClientProfilePageModule' },
   { path: 'history-order', loadChildren: './history-order/history-order.module#HistoryOrderPageModule' },
   { path: 'status-appointment', loadChildren: './status-appointment/status-appointment.module#StatusAppointmentPageModule' },
-  { path: 'groomers-availability', loadChildren: './groomers-availability/groomers-availability.module#GroomersAvailabilityPageModule' }
+  { path: 'groomers-availability', loadChildren: './groomers-availability/groomers-availability.module#GroomersAvailabilityPageModule' },
+  { path: 'add-new-card', loadChildren: './add-new-card/add-new-card.module#AddNewCardPageModule' }
 ];
 @NgModule({
   imports: [

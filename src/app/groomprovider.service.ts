@@ -17,6 +17,7 @@ export class GroomproviderService {
   zipCode:string;
   role: any;
   user:any;
+  card:any;
   currentUser:any;
   userName:string;
   petid: any;

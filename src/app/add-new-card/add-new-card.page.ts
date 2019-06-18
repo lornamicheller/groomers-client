@@ -4,22 +4,23 @@ import * as Parse from 'parse';
 import { AlertController } from "@ionic/angular";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
-import {Stripe} from '@ionic-native/stripe/';
+import {Stripe} from '@ionic-native/stripe/index.js';
 
 
 
 
 let parse = require('parse');
-@Component({
-  selector: 'app-new-card',
-  templateUrl: './new-card.page.html',
-  styleUrls: ['./new-card.page.scss'],
-})
-export class NewCardPage implements OnInit {
 
-  number:any
-  card:any
-  expDate:any
+@Component({
+  selector: 'app-add-new-card',
+  templateUrl: './add-new-card.page.html',
+  styleUrls: ['./add-new-card.page.scss'],
+})
+export class AddNewCardPage implements OnInit {
+
+  number:any;
+  card:any;
+  expDate:any;
   cvv:any;
   name:any;
 
@@ -29,10 +30,8 @@ export class NewCardPage implements OnInit {
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
 
   }
-
   ngOnInit() {
   }
-
   navigate(){
     let options: NativeTransitionOptions = {
       direction: 'left',
@@ -148,7 +147,4 @@ async errorAlert(error : any){
 }
 
 
-
 }
-
-

@@ -17,6 +17,7 @@ import { NavController } from '@ionic/angular';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
+import { Stripe } from '@ionic-native/stripe/index.js';
 @NgModule({
   declarations: [AppComponent, CalendarComponent],
   entryComponents: [],
@@ -32,6 +33,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
   providers: [
     StatusBar,
     SplashScreen,
+    Stripe,
     
     Camera,
     NativePageTransitions,

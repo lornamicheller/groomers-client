@@ -6,6 +6,7 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 import { ToastController, NavController } from '@ionic/angular';
 import { Stripe } from '@ionic-native/stripe';
 import * as Parse from 'parse';
+import {GroomproviderService } from "./../../app/groomprovider.service";
 
 let parse = require('parse');
 
@@ -16,7 +17,7 @@ let parse = require('parse');
 })
 export class CardReceiverPage implements OnInit {
 
-  constructor(private camera: Camera, public alertCtrl:AlertController, /*private photoLibrary: PhotoLibrary*/ private nativePageTransitions: NativePageTransitions, public nav: NavController,
+  constructor(private camera: Camera, public alertCtrl:AlertController, public provider : GroomproviderService, private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController, private stripe: Stripe) { 
     
     parse.serverURL = 'https://parseapi.back4app.com/';
@@ -27,6 +28,21 @@ export class CardReceiverPage implements OnInit {
   ngOnInit() {
   
   
+  }
+  async errorAlert(error: any) {
+    const alert = await this.alertCtrl.create({
+      header: 'Error',
+      message: error,
+      buttons: [{
+        text: 'OK',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+          console.log('Confirm Cancel');
+        }
+      }]
+    });
+    await alert.present();
   }
 
 
@@ -45,5 +61,14 @@ export class CardReceiverPage implements OnInit {
     console.log(error);
   });
   }
+
+  getCard(selectedCard) {
+    console.log("Entrando getCard");
+    this.provider.card = selectedCard;
+    console.log(selectedCard);
+    console.log('selected succesfully')
+
+  }
+
 
 }

@@ -170,11 +170,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'new-card',
+        path: 'add-new-card',
         children: [
           {
             path: '',
-            loadChildren: '../new-card/new-card.module#NewCardPageModule'
+            loadChildren: '../add-new-card/add-new-card.module#AddNewCardPageModule'
           }
         ]
       },

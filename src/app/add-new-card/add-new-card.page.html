@@ -1,0 +1,44 @@
+<div class="borders">
+  <ion-card style="box-shadow: none; height: 80px;">
+    <img class="logo" src="assets/logoblanco.svg">
+    <ion-button href="/tabs/tabs/card-receiver"  class="arrow-btn">
+      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button (onclick) = "createUser()"  class="add-btn">
+      Save
+    </ion-button>
+  </ion-card>
+</div>
+
+<ion-content>
+  <ion-card class="payment-card">
+    <!-- <h5 class="label-input">Cards Name</h5> -->
+    <ion-input [(ngModel)]="name" type=“text” class="name" clearInput placeholder="Cards Name">
+      <ion-icon class="input-icon" ios="ios-contact" md="md-contact"></ion-icon>
+    </ion-input>
+
+    <!-- <h5 class="label-input">Card Number</h5> -->
+    <ion-input [(ngModel)]="number" type=“number” class="name" clearInput placeholder="Card Number">
+      <ion-icon class="input-icon" ios="ios-card" md="md-card"></ion-icon>
+    </ion-input>
+
+    <!-- <h5 class="label-input">Expiration Month</h5> -->
+    <ion-input [(ngModel)]="card" type=“number” class="name" clearInput placeholder="Expiration Date MM / YYYY" maxlength="7">
+      <ion-icon class="input-icon" ios="ios-calendar" md="md-calendar"></ion-icon>
+    </ion-input>
+
+    <!-- <h5 class="label-input">Expiration Year</h5> -->
+    <!-- <ion-input type=“number” class="name" clearInput placeholder="Expiration Year / YYYY" maxlength="4">
+      <ion-icon class="input-icon" ios="ios-calendar" md="md-calendar"></ion-icon>
+    </ion-input> -->
+
+    <!-- <h5 class="label-input">Security Number</h5> -->
+    <ion-input [(ngModel)]="cvv" type=“number” class="name" clearInput placeholder="CVV">
+      <ion-icon class="input-icon" ios="ios-lock" md="md-lock"></ion-icon>
+    </ion-input>
+
+    <div class="card-logos"></div>
+
+  </ion-card>
+
+</ion-content>
