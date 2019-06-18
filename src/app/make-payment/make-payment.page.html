@@ -18,10 +18,10 @@
   <p class="payment-info"> If you choose to Pay Later - Fees Only, the remaining amount of the service must be paid to the groomer at time of
     service. Optional TIPS to be paid directly to the groomer.</p>
 
-  <ion-button href="tabs/tabs/order-summary" class="payment-btn" expand="block">Pay Later - Fees Only</ion-button>
+  <ion-button (click)="payLater()" class="payment-btn" expand="block">Pay Later - Fees Only</ion-button>
 
   <p class="payment-info">If you choose to Pay Full Service Now you will be charged in FULL; No further payment will be required at time of
     service, except optional TIPS to be paid directly to the groomer.</p>
 
-  <ion-button href="tabs/tabs/order-summary" class="payment-btn" expand="block">Pay Full Service Now</ion-button>
+  <ion-button (click)="fullPay()"  class="payment-btn" expand="block">Pay Full Service Now</ion-button>
 </div>

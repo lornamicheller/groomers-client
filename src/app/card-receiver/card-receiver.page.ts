@@ -4,9 +4,10 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AlertController } from "@ionic/angular";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
-import { Stripe } from '@ionic-native/stripe';
+import { Stripe } from '@ionic-native/stripe/ngx';
 import * as Parse from 'parse';
 import {GroomproviderService } from "./../../app/groomprovider.service";
+
 
 let parse = require('parse');
 
@@ -26,6 +27,8 @@ export class CardReceiverPage implements OnInit {
 
     cards:any;
   ngOnInit() {
+
+    this.getCards();
   
   
   }
@@ -50,11 +53,17 @@ export class CardReceiverPage implements OnInit {
 
   getCards(){
     this.stripe.setPublishableKey('pk_live_kQAGHMdtFWYTLEOBycxC011T');
+
+    console.log(Parse.User.current().id);
     
-    Parse.Cloud.run('getStripeUserCards').then((result) =>  
+    Parse.Cloud.run('getStripeUserCards',{userId: Parse.User.current().id}).then((result) =>  
     {
       console.log(result);
      this.cards=result;
+
+     this.provider.cardId = this.cards[0].id;
+     console.log(this.provider.cardId);
+ 
     
   },(error) =>{
     // this.errorAlert(error);
@@ -67,8 +76,20 @@ export class CardReceiverPage implements OnInit {
     this.provider.card = selectedCard;
     console.log(selectedCard);
     console.log('selected succesfully')
-
   }
+
+  openPage() {
+    let options: NativeTransitionOptions= {
+        direction: 'left', 
+        duration: 400, 
+        slowdownfactor: -1, 
+        slidePixels: 20, 
+        iosdelay: 100
+    }
+    console.log(options);
+    this.nativePageTransitions.slide(options);
+    this.nav.navigateRoot("tabs/tabs/add-new-card");
+}
 
 
 }

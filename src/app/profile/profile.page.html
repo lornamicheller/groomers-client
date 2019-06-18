@@ -2,7 +2,7 @@
   <ion-card style="box-shadow: none; height: 80px;">
     <img class="logo" src="assets/logoverde.svg">
     <ion-button (click)="goBack()" class="arrow-btn">
-      <ion-icon  class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
     </ion-button>
   </ion-card>
 </div>
@@ -39,22 +39,209 @@
     <ion-input [(ngModel)]=age clearInput type="text" class=" age" placeholder="{{age}}"></ion-input>
 
     <ion-item lines="none" class="size">
-        <ion-label>SIZE</ion-label>
-        <ion-select [(ngModel)]="size" value="" placeholder="" okText="Okay" cancelText="Cancel">
-          <ion-select-option value="Small">Small</ion-select-option>
-          <ion-select-option value="Medium">Medium</ion-select-option>
-          <ion-select-option value="Large">Large</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item lines="none" class="breed">
-        <ion-label>BREED</ion-label>
-        <ion-select [(ngModel)]="breed" value="" placeholder="" okText="Okay" cancelText="Cancel">
-          <ion-select-option value="Breed1">Breed1</ion-select-option>
-          <ion-select-option value="Breed2">Breed2</ion-select-option>
-          <ion-select-option value="Breed3">Breed3</ion-select-option>
-        </ion-select>
-      </ion-item>
- 
+      <ion-label>SIZE</ion-label>
+      <ion-select [(ngModel)]="size" value="" placeholder="" okText="Okay" cancelText="Cancel">
+        <ion-select-option value="Small">Small</ion-select-option>
+        <ion-select-option value="Medium">Medium</ion-select-option>
+        <ion-select-option value="Large">Large</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none" class="breed">
+      <ion-label>BREED</ion-label>
+      <ion-select [(ngModel)]="breed" value="" placeholder="" okText="Okay" cancelText="Cancel">
+        <ion-select-option value="Affenpinscher Brussels Griffon">Affenpinscher Brussels Griffon</ion-select-option>
+        <ion-select-option value="Afghan Hound">Afghan Hound</ion-select-option>
+        <ion-select-option value="Airedale terrier">Airedale terrier</ion-select-option>
+        <ion-select-option value="Akita">Akita</ion-select-option>
+        <ion-select-option value="Alaskan Malmute">Alaskan Malmute</ion-select-option>
+        <ion-select-option value="American English Coonhound">American English Coonhound</ion-select-option>
+        <ion-select-option value="American Eskimo Dog">American Eskimo Dog</ion-select-option>
+        <ion-select-option value="American Foxhound">American Foxhound</ion-select-option>
+        <ion-select-option value="American Hairless Terrier">American Hairless Terrier</ion-select-option>
+        <ion-select-option value="American Staffordshire Terrier">American Staffordshire Terrier</ion-select-option>
+        <ion-select-option value="American Water Spaniel">American Water Spaniel</ion-select-option>
+        <ion-select-option value="Anatolian Shepherd Dog">Anatolian Shepherd Dog</ion-select-option>
+        <ion-select-option value="Australian Cattle Dog">Australian Cattle Dog</ion-select-option>
+        <ion-select-option value="Australian Shepherd">Australian Shepherd</ion-select-option>
+        <ion-select-option value="Australian terrier">Australian terrier</ion-select-option>
+        <ion-select-option value="Basenji">Basenji</ion-select-option>
+        <ion-select-option value="English Cocker Spaniel">Basset Hound</ion-select-option>
+        <ion-select-option value="Beagle">Beagle</ion-select-option>
+        <ion-select-option value="Bearded Collie">Bearded Collie</ion-select-option>
+        <ion-select-option value="Beauceron">Beauceron</ion-select-option>
+        <ion-select-option value="Bedlington Terrier">Bedlington Terrier</ion-select-option>
+        <ion-select-option value="Belgian Malinois">Belgian Malinois</ion-select-option>
+        <ion-select-option value="Belgian Sheepdog">Belgian Sheepdog</ion-select-option>
+        <ion-select-option value="Belgian Tervuren">Belgian Tervuren</ion-select-option>
+        <ion-select-option value="Bergamasco Sheepdog">Bergamasco Sheepdog</ion-select-option>
+        <ion-select-option value="Berger Picard">Berger Picard</ion-select-option>
+        <ion-select-option value="Bernese Mountain Dog">Bernese Mountain Dog</ion-select-option>
+        <ion-select-option value="Bichon Frise">Bichon Frise</ion-select-option>
+        <ion-select-option value="Black and Tan Coonhound">Black and Tan Coonhound</ion-select-option>
+        <ion-select-option value="Bloodhound">Bloodhound</ion-select-option>
+        <ion-select-option value="Bluetick Coonhound">Bluetick Coonhound</ion-select-option>
+        <ion-select-option value="Boerboel">Boerboel</ion-select-option>
+        <ion-select-option value="Border collie">Border collie</ion-select-option>
+        <ion-select-option value="Border terrier">Border terrier</ion-select-option>
+        <ion-select-option value="Borzoi">Borzoi</ion-select-option>
+        <ion-select-option value="Boston Terrier">Boston Terrier</ion-select-option>
+        <ion-select-option value="Bouvier des Flandres">Bouvier des Flandres</ion-select-option>
+        <ion-select-option value="Boxer">Boxer</ion-select-option>
+        <ion-select-option value="Briard">Briard</ion-select-option>
+        <ion-select-option value="Brittany">Brittany</ion-select-option>
+        <ion-select-option value="Bull Terrier">Bull Terrier</ion-select-option>
+        <ion-select-option value="Bulldog">Bulldog</ion-select-option>
+        <ion-select-option value="Bullmastiff">Bullmastiff</ion-select-option>
+        <ion-select-option value="Cairn Terrier">Cairn Terrier</ion-select-option>
+        <ion-select-option value="Cane Corso">Cane Corso</ion-select-option>
+        <ion-select-option value="Cesky terrier">Cesky terrier</ion-select-option>
+        <ion-select-option value="Chesapeake Bay Retriever">Chesapeake Bay Retriever</ion-select-option>
+        <ion-select-option value="Chihuahua, Long Coat">Chihuahua, Long Coat</ion-select-option>
+        <ion-select-option value="Chihuahua, Smooth Coat">Chihuahua, Smooth Coat</ion-select-option>
+        <ion-select-option value="Chinese Crested">Chinese Crested</ion-select-option>
+        <ion-select-option value="Chinese Shar-Pei">Chinese Shar-Pei</ion-select-option>
+        <ion-select-option value="Chinook">Chinook</ion-select-option>
+        <ion-select-option value="Chow Chow">Chow Chow</ion-select-option>
+        <ion-select-option value="Cirneco dell’Etna">Cirneco dell’Etna</ion-select-option>
+        <ion-select-option value="Clumber Spaniel">Clumber Spaniel</ion-select-option>
+        <ion-select-option value="Cocker Spaniel">Cocker Spaniel</ion-select-option>
+        <ion-select-option value="Collie (rough)">Collie (rough)</ion-select-option>
+        <ion-select-option value="Collie (smooth)">Collie (smooth)</ion-select-option>
+        <ion-select-option value="Coton De Tulear">Coton De Tulear</ion-select-option>
+        <ion-select-option value="Curly-Coated Retriever">Curly-Coated Retriever</ion-select-option>
+        <ion-select-option value="Dachshund, Longhaired">Dachshund, Longhaired</ion-select-option>
+        <ion-select-option value="Dachshund, Smooth">Dachshund, Smooth</ion-select-option>
+        <ion-select-option value="Dachshund, Wirehaired">Dachshund, Wirehaired</ion-select-option>
+        <ion-select-option value="Dalmatian">Dalmatian</ion-select-option>
+        <ion-select-option value="Dandie Dinmont Terrier">Dandie Dinmont Terrier</ion-select-option>
+        <ion-select-option value="Doberman Pinscher">Doberman Pinscher</ion-select-option>
+        <ion-select-option value="Dogue de Bordeaux">Dogue de Bordeaux</ion-select-option>
+        <ion-select-option value="English Cocker Spaniel">English Cocker Spaniel</ion-select-option>
+        <ion-select-option value="English Foxhound">English Foxhound</ion-select-option>
+        <ion-select-option value="English Setter">English Setter</ion-select-option>
+        <ion-select-option value="English Toy Spaniel">English Toy Spaniel</ion-select-option>
+        <ion-select-option value="Entlebucher mountain Dog">Entlebucher mountain Dog</ion-select-option>
+        <ion-select-option value="Field Spaniel">Field Spaniel</ion-select-option>
+        <ion-select-option value="Finnish Lapphund">Finnish Lapphund</ion-select-option>
+        <ion-select-option value="Finnish Spitz">Finnish Spitz</ion-select-option>
+        <ion-select-option value="Flat-Coated Retriever">Flat-Coated Retriever</ion-select-option>
+        <ion-select-option value="Fox Terrier (smooth)">Fox Terrier (smooth)</ion-select-option>
+        <ion-select-option value="Foz Terrier (wire)">Foz Terrier (wire)</ion-select-option>
+        <ion-select-option value="French Bulldog">French Bulldog</ion-select-option>
+        <ion-select-option value="German Pinscher">German Pinscher</ion-select-option>
+        <ion-select-option value="German Shepherd Dog">German Shepherd Dog</ion-select-option>
+        <ion-select-option value="German Shorthaired Pointer">German Shorthaired Pointer</ion-select-option>
+        <ion-select-option value="German Wirehaired pointer">German Wirehaired pointer</ion-select-option>
+        <ion-select-option value="Giant Schnauzer">Giant Schnauzer</ion-select-option>
+        <ion-select-option value="Glen of Imaal Terrier">Glen of Imaal Terrier</ion-select-option>
+        <ion-select-option value="Golden Retriever">Golden Retriever</ion-select-option>
+        <ion-select-option value="Gordon Setter">Gordon Setter</ion-select-option>
+        <ion-select-option value="Great Dane">Great Dane</ion-select-option>
+        <ion-select-option value="Great Pyrenees">Great Pyrenees</ion-select-option>
+        <ion-select-option value="Greater Swiss mountain Dog">Greater Swiss mountain Dog</ion-select-option>
+        <ion-select-option value="Greyhound">Greyhound</ion-select-option>
+        <ion-select-option value="Harrier">Harrier</ion-select-option>
+        <ion-select-option value="Havanese">Havanese</ion-select-option>
+        <ion-select-option value="Ibizan Hound">Ibizan Hound</ion-select-option>
+        <ion-select-option value="Iceland Sheepdog">Iceland Sheepdog</ion-select-option>
+        <ion-select-option value="Irish Red and White Setter">Irish Red and White Setter</ion-select-option>
+        <ion-select-option value="Irish Setter">Irish Setter</ion-select-option>
+        <ion-select-option value="Irish terrier">Irish terrier</ion-select-option>
+        <ion-select-option value="Irish Water Spaniel">Irish Water Spaniel</ion-select-option>
+        <ion-select-option value="Irish Wolfhound">Irish Wolfhound</ion-select-option>
+        <ion-select-option value="Italian Greyhound">Italian Greyhound</ion-select-option>
+        <ion-select-option value="Japanese Chin">Japanese Chin</ion-select-option>
+        <ion-select-option value="Keeshond">Keeshond</ion-select-option>
+        <ion-select-option value="Kerry Blue Terrier">Kerry Blue Terrier</ion-select-option>
+        <ion-select-option value="Komondor">Komondor</ion-select-option>
+        <ion-select-option value="Kuvasz">Kuvasz</ion-select-option>
+        <ion-select-option value="Labrador Retriever">Labrador Retriever</ion-select-option>
+        <ion-select-option value="Lagotto Romagnolo">Lagotto Romagnolo</ion-select-option>
+        <ion-select-option value="Lakeland Terrier">Lakeland Terrier</ion-select-option>
+        <ion-select-option value="Leonberger">Leonberger</ion-select-option>
+        <ion-select-option value="Lhasa Apso">Lhasa Apso</ion-select-option>
+        <ion-select-option value="Lowchen">Lowchen</ion-select-option>
+        <ion-select-option value="Maltese">Maltese</ion-select-option>
+        <ion-select-option value="Manchester Terrier">Manchester Terrier</ion-select-option>
+        <ion-select-option value="Manchester Terrier, Toy">Manchester Terrier, Toy</ion-select-option>
+        <ion-select-option value="Mastiff">Mastiff</ion-select-option>
+        <ion-select-option value="Miniature American Shepherd">Miniature American Shepherd</ion-select-option>
+        <ion-select-option value="Miniature Bull Terrier">Miniature Bull Terrier</ion-select-option>
+        <ion-select-option value="Miniature Pinscher">Miniature Pinscher</ion-select-option>
+        <ion-select-option value="Miniature Schnauzer">Miniature Schnauzer</ion-select-option>
+        <ion-select-option value="Neapolitan Mastiff">Neapolitan Mastiff</ion-select-option>
+        <ion-select-option value="Newfoundland">Newfoundland</ion-select-option>
+        <ion-select-option value="Norfolk Terrier">Norfolk Terrier</ion-select-option>
+        <ion-select-option value="Norwegian Buhund">Norwegian Buhund</ion-select-option>
+        <ion-select-option value="Norwegian Elkhound">Norwegian Elkhound</ion-select-option>
+        <ion-select-option value="Norwegian Lundehund">Norwegian Lundehund</ion-select-option>
+        <ion-select-option value="Norwich Terrier">Norwich Terrier</ion-select-option>
+        <ion-select-option value="Nova Scotia Duck Tolling Retriever">Nova Scotia Duck Tolling Retriever
+        </ion-select-option>
+        <ion-select-option value="Old English Sheepdog">Old English Sheepdog</ion-select-option>
+        <ion-select-option value="Otterhound">Otterhound</ion-select-option>
+        <ion-select-option value="Papillon">Papillon</ion-select-option>
+        <ion-select-option value="Parson Russel Terrier">Parson Russel Terrier</ion-select-option>
+        <ion-select-option value="Pekingese">Pekingese</ion-select-option>
+        <ion-select-option value="Pembroke Welsh Corgi">Pembroke Welsh Corgi</ion-select-option>
+        <ion-select-option value="Petit Basset Griffon Vendeen">Petit Basset Griffon Vendeen</ion-select-option>
+        <ion-select-option value="Pharaoh Hound">Pharaoh Hound</ion-select-option>
+        <ion-select-option value="Plott">Plott</ion-select-option>
+        <ion-select-option value="Pointer">Pointer</ion-select-option>
+        <ion-select-option value="Polish Lowland Sheepdog">Polish Lowland Sheepdog</ion-select-option>
+        <ion-select-option value="Pomeranian">Pomeranian</ion-select-option>
+        <ion-select-option value="Poodle, Miniature">Poodle, Miniature</ion-select-option>
+        <ion-select-option value="Poodle, Standard">Poodle, Standard</ion-select-option>
+        <ion-select-option value="PPoodle, Toy">Poodle, Toy</ion-select-option>
+        <ion-select-option value="Portuguese Podengo Pequeno">Portuguese Podengo Pequeno</ion-select-option>
+        <ion-select-option value="Portuguese Water Dog">Portuguese Water Dog</ion-select-option>
+        <ion-select-option value="Pug">Pug</ion-select-option>
+        <ion-select-option value="Puli">Puli</ion-select-option>
+        <ion-select-option value="Pyrenean Shepherd (rough face)">Pyrenean Shepherd (rough face)</ion-select-option>
+        <ion-select-option value="Pyrenean Shepherd (smooth face)">Pyrenean Shepherd (smooth face)</ion-select-option>
+        <ion-select-option value="Rat Terrier">Rat Terrier</ion-select-option>
+        <ion-select-option value="Redbone Coonhound">Redbone Coonhound</ion-select-option>
+        <ion-select-option value="Rhodesian Ridgeback">Rhodesian Ridgeback</ion-select-option>
+        <ion-select-option value="Rottweiler">Rottweiler</ion-select-option>
+        <ion-select-option value="Russel Terrier">Russel Terrier</ion-select-option>
+        <ion-select-option value="Saint Bernard">Saint Bernard</ion-select-option>
+        <ion-select-option value="Saluki">Saluki</ion-select-option>
+        <ion-select-option value="Samoyed">Samoyed</ion-select-option>
+        <ion-select-option value="Schipperke">Schipperke</ion-select-option>
+        <ion-select-option value="Scottish Deerhound">Scottish Deerhound</ion-select-option>
+        <ion-select-option value="Scottish Terrier">Scottish Terrier</ion-select-option>
+        <ion-select-option value="Sealyham Terrier">Sealyham Terrier</ion-select-option>
+        <ion-select-option value="Shetland Sheepdog">Shetland Sheepdog</ion-select-option>
+        <ion-select-option value="Shiba Inu">Shiba Inu</ion-select-option>
+        <ion-select-option value="Shih Tzu">Shih Tzu</ion-select-option>
+        <ion-select-option value="Siberian Husky">Siberian Husky</ion-select-option>
+        <ion-select-option value="Silky Terrier">Silky Terrier</ion-select-option>
+        <ion-select-option value="Skye Terrier">Skye Terrier</ion-select-option>
+        <ion-select-option value="Soft Coated Wheaten Terrier">Soft Coated Wheaten Terrier</ion-select-option>
+        <ion-select-option value="Spanish Water Dog">Spanish Water Dog</ion-select-option>
+        <ion-select-option value="Spinone Italiano">Spinone Italiano</ion-select-option>
+        <ion-select-option value="Staffordshire Bull Terrier">Staffordshire Bull Terrier</ion-select-option>
+        <ion-select-option value="Standard Schnauzer">Standard Schnauzer</ion-select-option>
+        <ion-select-option value="Sussex Spaniel">Sussex Spaniel</ion-select-option>
+        <ion-select-option value="Swedish Vallhund">Swedish Vallhund</ion-select-option>
+        <ion-select-option value="Terrier">Terrier</ion-select-option>
+        <ion-select-option value="Tibetan Mastiff">Tibetan Mastiff</ion-select-option>
+        <ion-select-option value="Tibetan Spaniel">Tibetan Spaniel</ion-select-option>
+        <ion-select-option value="Tibetan Terrier">Tibetan Terrier</ion-select-option>
+        <ion-select-option value="Toy fox">Toy fox</ion-select-option>
+        <ion-select-option value="Treeing Walker Coonhound">Treeing Walker Coonhound</ion-select-option>
+        <ion-select-option value="Vizsla">Vizsla</ion-select-option>
+        <ion-select-option value="Weimaraner">Weimaraner</ion-select-option>
+        <ion-select-option value="Welsh Springer Spaniel">Welsh Springer Spaniel</ion-select-option>
+        <ion-select-option value="Welsh Terrier">Welsh Terrier</ion-select-option>
+        <ion-select-option value="West Highland White Terrier">West Highland White Terrier</ion-select-option>
+        <ion-select-option value="Whippet">Whippet</ion-select-option>
+        <ion-select-option value="Wirehaired Pointing Griffon">Wirehaired Pointing Griffon</ion-select-option>
+        <ion-select-option value="Xoloitzcuintli">Xoloitzcuintli</ion-select-option>
+        <ion-select-option value="Yorkshire terrier">Yorkshire terrier</ion-select-option>
+      </ion-select>
+    </ion-item>
+
     <ion-button (click)="saveInformation()" class=" saveBtn" expand="block">
       <ion-ripple-effect></ion-ripple-effect>
       SAVE

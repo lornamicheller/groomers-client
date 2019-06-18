@@ -48,6 +48,7 @@ chooseDate:any;
 
     console.log(this.mydate);
     console.log(this.provider.zipCode);
+    //console.log(this.provider.)
     console.log(this.provider.petid);
 
   
@@ -152,6 +153,7 @@ searchDay()
     pets: petsID,
     preferred: false,
     zipcode: currentUser.get("zipcode")
+
   }).then((result)=> {
 
     this.provider.groomers = result;
@@ -163,7 +165,9 @@ searchDay()
       }
       else {
 
-        this.presentAlert();
+        //this.presentAlert();
+        this.openPage();
+        this.navigate.navigateRoot('/tabs/tabs/choose-groomer');
       }
       
   }

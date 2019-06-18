@@ -4,7 +4,7 @@ import * as Parse from 'parse';
 import { AlertController } from "@ionic/angular";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
-import {Stripe} from '@ionic-native/stripe/';
+import { Stripe } from '@ionic-native/stripe/ngx';
 
 
 
@@ -24,7 +24,7 @@ export class NewCardPage implements OnInit {
   name:any;
 
   constructor(private camera: Camera, public alertCtrl:AlertController,private nativePageTransitions: NativePageTransitions, public nav: NavController,
-    public toastCtrl : ToastController, private stripe: Stripe) { 
+    public toastCtrl : ToastController,public stripe:Stripe) { 
     parse.serverURL = 'https://parseapi.back4app.com/';
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
 

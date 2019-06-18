@@ -27,11 +27,19 @@ export class GroomproviderService {
   photo:any;
   fullName:any;
   chooseDate:any;
+  services:any;
+  paymentMethod:any;
 
   groomers:any;
+
+  cardId:any;
   
 
   groomer: any;
+
+  appointmentDate: Date;
+  startDay: Date;
+  endDay: Date;
  
   constructor( public nav: NavController, public provider : GroomproviderService,
     public alertCtrl : AlertController) {

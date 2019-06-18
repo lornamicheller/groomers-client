@@ -126,10 +126,11 @@ pet() {
         breed: this.breed, 
         age: this.age, 
         size: this.size,
+        photo: this.photo,
         type: this.type
     }).then((result)=> {
         //success creating pet
-        this.openPage();
+        this.SuccessPet();
         console.log("PET INFO", this.name);
     }
     , (error)=> {
@@ -169,6 +170,24 @@ async alertMessage(message){ //alerta simple con mensaje
   
     await alert.present();
   }
+
+
+async SuccessPet(){ //alerta simple con mensaje
+  const alert = await this.alertCtrl.create({
+    header: 'Alert!',
+    message: "Pets added",
+    buttons: [{
+      text: 'OK',
+      role: 'cancel',
+      cssClass: 'secondary',
+      handler: () => {
+        this.openPage();
+      }
+    }]
+  });
+
+  await alert.present();
+}
   
 
 

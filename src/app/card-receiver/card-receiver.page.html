@@ -6,7 +6,7 @@
           <ion-ripple-effect></ion-ripple-effect>
           <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
         </ion-button> -->
-      <ion-button href="tabs/tabs/new-card" class="add-btn">
+      <ion-button (click)="openPage()" class="add-btn">
         <ion-ripple-effect></ion-ripple-effect>
         <ion-icon class="add-icon" ios="ios-add" md="md-add"></ion-icon>
       </ion-button>
@@ -14,15 +14,20 @@
   </div>
 
 
-  <ion-card href="tabs/tabs/make-payment" ion-button class="card">
+  <ion-card *ngFor="let card of cards" href="tabs/tabs/make-payment" ion-button class="card">
     <ion-ripple-effect></ion-ripple-effect>
     <ion-grid style="padding: 0;">
       <ion-row>
         <ion-col size="3">
-          <img src="assets/visa.png" width="80px" height="50px">
+          <img  *ngIf="card.brand == 'Visa' " src="assets/visa.png" width="80px" height="50px">
+          <img *ngIf = "card.brand == 'American Express'" src="assets/americanexpress.png" width="80px" height="50px">
+          <img *ngIf="card.brand == 'Diners Club' " src="assets/dinersclub.png" width="80px" height="50px">
+          <img *ngIf="card.brand == 'Master Card' " src="assets/mastercard.png" width="80px" height="50px">
+          <img *ngIf="card.brand == 'Stripe' " src="assets/stripepay.png" width="80px" height="50px">
+          <img *ngIf="card.brand == 'JCB' " src="assets/jcb.png" width="80px" height="50px">
         </ion-col>
         <ion-col size="7">
-          <p class="card-number">**** **** **** 4242</p>
+          <p class="card-number">**** **** **** {{card.last4}}</p>
         </ion-col>
         <ion-col size="2">
           <ion-button href="" class="delete-btn">
@@ -33,7 +38,7 @@
     </ion-grid>
   </ion-card>
 
-  <ion-card href="tabs/tabs/make-payment" ion-button class="card2">
+  <!-- <ion-card href="tabs/tabs/make-payment" ion-button class="card2">
     <ion-ripple-effect></ion-ripple-effect>
     <ion-grid style="padding: 0;">
       <ion-row>
@@ -126,7 +131,7 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-card>
+  </ion-card> -->
 
 
 </ion-content>

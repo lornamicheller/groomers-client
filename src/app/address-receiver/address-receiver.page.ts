@@ -52,9 +52,6 @@ export class AddressReceiverPage implements OnInit {
     this.nav.navigateRoot('/tabs/tabs/appointment');
   }
 
-
-
-
   deleteAddress(adId)
   {
       console.log(adId);

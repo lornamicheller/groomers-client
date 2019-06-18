@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
-
+import {GroomproviderService } from "./../../app/groomprovider.service";
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -9,7 +9,14 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 })
 export class Tab1Page {
 
-  constructor(public navigate : NavController, public nativePageTransitions: NativePageTransitions) { }
+fullService:any;
+bathService:any;
+
+
+
+  constructor(public navigate : NavController, public nativePageTransitions: NativePageTransitions, public provider: GroomproviderService) { 
+}
+
 
   openPage() {
     let options: NativeTransitionOptions = {
@@ -38,5 +45,26 @@ export class Tab1Page {
     this.nativePageTransitions.slide(options);
     this.navigate.navigateRoot("/tabs/tabs/cards-orders");
   }
+
+  chooseFullGrooming(){
+      // if(this.fullService == 'Full Grooming')
+      //  // this.provider.services = 'Full Grooming';
+      //   console.log(this.fullService);
+      this.provider.services= "Full Grooming";
+      console.log(this.provider.services);
+         this.openPage();
+      
+    }
+
+    chooseBath(){
+    //   if(this.bathService == 'Bath')
+    //  // this.provider.services = 'Bath';
+    //   console.log(this.bathService);
+    this.provider.services= "Bath";
+    console.log(this.provider.services);
+      this.openPage();
+  }
+  
+
 }
 

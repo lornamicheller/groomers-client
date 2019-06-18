@@ -70,7 +70,7 @@
 // }
 
 .place-name {
-  --placeholder-font-weight: 700;
+  font-weight: 700;
   --placeholder-opacity: 10;
   font-size: 12px;
   margin-top: 120px;
@@ -82,7 +82,7 @@
 }
 
 .address, .suite, .city, .phone {
-  --placeholder-font-weight: 700;
+  font-weight: 700;
   --placeholder-opacity: 10;
   font-size: 12px;
   margin-top: 10px;
@@ -94,7 +94,7 @@
 }
 
 .zipcode, .state {
-  --placeholder-font-weight: 700;
+  font-weight: 700;
   --placeholder-opacity: 10;
   font-size: 12px;
   margin-top: 10px;

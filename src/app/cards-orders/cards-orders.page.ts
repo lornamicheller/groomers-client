@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import * as Parse from 'parse';
 import { NavController } from '@ionic/angular';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
@@ -30,8 +30,8 @@ export class CardsOrdersPage implements OnInit {
 
     
     parse.serverURL = 'https://parseapi.back4app.com/';
-    parse.liveQueryServerURL = 'wss://groomers.back4app.io'
-    Parse.liveQueryServerURL = 'wss://groomers.back4app.io'
+    parse.liveQueryServerURL = 'wss://groomers.back4app.io';
+    Parse.liveQueryServerURL = 'wss://groomers.back4app.io';
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");
     
   }
@@ -39,8 +39,11 @@ export class CardsOrdersPage implements OnInit {
 
 
   ngOnInit() {
-    this.Id = Parse.User.current().id;
+
+    console.log("entrando al ngOnIniti");
     this.getPetObjects();
+   
+   
     
     // let self = this;
     // window.setInterval(function() {
@@ -50,49 +53,49 @@ export class CardsOrdersPage implements OnInit {
     //  }, 2000);
 
     //setup live query
-    /*this.liveQuery = new Parse.Query('Pets');
-    this.liveQuery.equalTo("user", Parse.User.current());
-    this.petSubs = this.liveQuery.subscribe();
+    // this.liveQuery = new Parse.Query('Pets');
+    // this.liveQuery.equalTo("user", Parse.User.current());
+    // this.petSubs = this.liveQuery.subscribe();
 
-    this.petSubs.on('open', () => {
-      console.log('pet subscription opened');
-    });
+    // this.petSubs.on('open', (object) => {
+    //   console.log('pet subscription opened');
+    // });
 
-    this.petSubs.on('create', (object) => {
-      console.log(object);
-      console.log('pet created');
-      this.getPetObjects();
-    });
+    // this.petSubs.on('create', (object) => {
+    //   console.log(object);
+    //   console.log('pet created');
+    //   this.getPetObjects();
+    // });
 
-    this.petSubs.on('update', (object) => {
-      console.log(object);
-      console.log('pet updated');
+    // this.petSubs.on('update', (object) => {
+    //   console.log(object);
+    //   console.log('pet updated');
       
-      this.getPetObjects();
-    });
+    //   this.getPetObjects();
+    // });
 
-    this.petSubs.on('enter', (object) => {
-      console.log(object);
-      console.log('pet enter');
-      this.getPetObjects();
-    });
+    // this.petSubs.on('enter', (object) => {
+    //   console.log(object);
+    //   console.log('pet enter');
+    //   this.getPetObjects();
+    // });
 
-    this.petSubs.on('leave', (object) => {
-      console.log(object);
-      console.log('pet leave');
-      this.getPetObjects();
-    });
+    // this.petSubs.on('leave', (object) => {
+    //   console.log(object);
+    //   console.log('pet leave');
+    //   this.getPetObjects();
+    // });
 
-    this.petSubs.on('delete', (object) => {
-      console.log(object);
-      console.log('pet delete');
-      this.getPetObjects();
-    });
+    // this.petSubs.on('delete', (object) => {
+    //   console.log(object);
+    //   console.log('pet delete');
+    //   this.getPetObjects();
+    // });
 
-    this.petSubs.on('close', (object) => {
-      console.log(object);
-      console.log('pet close');
-    });*/
+    // this.petSubs.on('close', (object) => {
+    //   console.log(object);
+    //   console.log('pet close');
+    // });
 
   }
 
@@ -181,15 +184,13 @@ export class CardsOrdersPage implements OnInit {
 
   getPetObjects(){
     //console.log("get pet info")
-    //console.log(Parse.User.current().id);
+    console.log(Parse.User.current().id);
     Parse.Cloud.run('getPetsByUserId', {
       userId: Parse.User.current().id
     }).then((result) => {
-      //console.log(result)
+      console.log(result.name);
       this.pets = result;
     this.checkImage= result.petImage;
-    //console.log(this.checkImage);
-      
     });
    
     (error)=>{
