@@ -13,17 +13,17 @@
   <ion-content>
     <ion-card class="payment-card">
       <!-- <h5 class="label-input">Cards Name</h5> -->
-      <ion-input type=“text” class="name" clearInput placeholder="Cards Name">
+      <ion-input [(ngModel)]="name" type=“text” class="name" clearInput placeholder="Cards Name">
         <ion-icon class="input-icon" ios="ios-contact" md="md-contact"></ion-icon>
       </ion-input>
   
       <!-- <h5 class="label-input">Card Number</h5> -->
-      <ion-input type=“number” class="name" clearInput placeholder="Card Number">
+      <ion-input [(ngModel)]="number" type=“number” class="name" clearInput placeholder="Card Number">
         <ion-icon class="input-icon" ios="ios-card" md="md-card"></ion-icon>
       </ion-input>
   
       <!-- <h5 class="label-input">Expiration Month</h5> -->
-      <ion-input type=“number” class="name" clearInput placeholder="Expiration Date MM / YYYY" maxlength="7">
+      <ion-input [(ngModel)]="card" type=“number” class="name" clearInput placeholder="Expiration Date MM / YYYY" maxlength="7">
         <ion-icon class="input-icon" ios="ios-calendar" md="md-calendar"></ion-icon>
       </ion-input>
   

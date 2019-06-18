@@ -5,8 +5,7 @@ import { AlertController } from "@ionic/angular";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
 import { Stripe } from '@ionic-native/stripe';
-// import { Observable } from 'rxjs';
-// import { map } from 'rxjs/operators';
+
 
 
 let parse = require('parse');
@@ -21,6 +20,7 @@ export class NewCardPage implements OnInit {
   card:any
   expDate:any
   cvv:any;
+  name:any;
 
   constructor(private camera: Camera, public alertCtrl:AlertController, /*private photoLibrary: PhotoLibrary*/ private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController, private stripe: Stripe) { 
