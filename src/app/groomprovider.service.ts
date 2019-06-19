@@ -29,6 +29,7 @@ export class GroomproviderService {
   chooseDate:any;
   services:any;
   paymentMethod:any;
+  search:any;
 
   groomers:any;
 

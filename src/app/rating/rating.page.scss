@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+ion-content {
+  --background: url('/assets/huesitos.jpg');
+
+}
+
+.logo-container {
+  background: rgb(255, 255, 255);
+}
+
+.logo {
+  width: 120px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 40px;
+}
+
+.logo-card {
+  box-shadow: none;
+  margin: 0;
+}
+
+.card {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+  background: whitesmoke;
+  margin: 20px;
+  margin-top: 100px;
+}
+
+.profilepic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: contain;
+
+}
+
+.avatar-pic {
+  top: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1000;
+  width: 100px;
+  height: 100px;
+}
+
+.btnBack {
+
+
+  margin-top: 20px !important;
+
+}
+
+.center {
+  //position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+
+
+
+.text-input {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgb(235, 235, 235);
+  border-radius: 5px;
+  border: solid lightgray 1px;
+  height: 120px;
+}
+
+.boton-someter {
+  color: white;
+  --background-activated: #37B34A;
+  --background: #37B34A;
+  margin: 30px;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  --border-radius: 25px;
+}
+
+ion-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+[ion-button][disabled] {
+  opacity: 1;
+}
+
+ion-icon {
+  color: gray;
+}
+
+ion-icon.filled {
+  color: orange;
+}
+
+.input-text {
+  --padding-start: 5px;
+}

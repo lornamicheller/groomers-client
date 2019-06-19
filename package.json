@@ -43,6 +43,7 @@
     "cordova-plugin-stripe": "1.5.3",
     "core-js": "^2.5.4",
     "date-fns": "^1.30.1",
+    "ion2-calendar": "^2.2.0",
     "moment": "^2.24.0",
     "parse": "^2.4.0",
     "rxjs": "^6.0.0",
@@ -95,9 +96,7 @@
       "cordova-plugin-calendar": {},
       "cordova-plugin-facebook4": {
         "APP_ID": "259057581380152",
-        "APP_NAME": "Groomrs",
-        "FACEBOOK_HYBRID_APP_EVENTS": "false",
-        "FACEBOOK_ANDROID_SDK_VERSION": "4.40.0"
+        "APP_NAME": "Groomrs"
       },
       "cordova-plugin-stripe": {}
     },

@@ -4,7 +4,7 @@ import { ToastController, NavController } from '@ionic/angular';
 import * as Parse from 'parse';
 import { AlertController } from "@ionic/angular";
 import {GroomproviderService } from "./../../app/groomprovider.service";
-// import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 var parse = require ("parse");
 @Component({
@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
   user: any;
   
 
-  constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController,
+  constructor(public facebook:Facebook,private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController, public alertCtrl : AlertController, public provider : GroomproviderService) { }
 
   ngOnInit() {
@@ -40,6 +40,45 @@ export class LoginPage implements OnInit {
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot("/tabs/tabs/cards-orders");
   }
+
+
+  async facebookLogin() {
+
+    console.log("entrando al Facebook Login");
+
+    try {
+      // Log in to Facebook and request user data
+      let facebookResponse = await this.facebook.login(['public_profile', 'email']);
+      let facebookAuthData = {
+        id: facebookResponse.authResponse.userID,
+        access_token: facebookResponse.authResponse.accessToken,
+      };
+
+      // Request the user from parse
+      let toLinkUser = new Parse.User();
+      let user = await toLinkUser._linkWith('facebook', {authData: facebookAuthData});
+
+      // If user did not exist, updates its data
+      if (!user.existed()) {
+        let userData = await this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture)', []);
+        user.set('username', userData.name);
+        user.set('name', userData.name);
+        user.set('email', userData.email);
+        await user.save();
+      }
+
+      // this.nav.navigateRoot('HomePage');
+      
+    } catch (err) {
+      console.log('Error logging in', err);
+
+      this.toastCtrl.create({
+        message: err.message,
+        duration: 2000
+      })
+    }
+  }
+
 
   openRegister() {
     let options: NativeTransitionOptions = {

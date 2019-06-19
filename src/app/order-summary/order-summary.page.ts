@@ -19,6 +19,8 @@ export class OrderSummaryPage implements OnInit {
       Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
      }
 
+     pets:any;
+
     name:any;
     phone:any;
     service:any;

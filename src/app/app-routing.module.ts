@@ -32,7 +32,8 @@ const routes: Routes = [
   { path: 'history-order', loadChildren: './history-order/history-order.module#HistoryOrderPageModule' },
   { path: 'status-appointment', loadChildren: './status-appointment/status-appointment.module#StatusAppointmentPageModule' },
   { path: 'groomers-availability', loadChildren: './groomers-availability/groomers-availability.module#GroomersAvailabilityPageModule' },
-  { path: 'add-new-card', loadChildren: './add-new-card/add-new-card.module#AddNewCardPageModule' }
+  { path: 'add-new-card', loadChildren: './add-new-card/add-new-card.module#AddNewCardPageModule' },
+  { path: 'rating', loadChildren: './rating/rating.module#RatingPageModule' }
 ];
 @NgModule({
   imports: [

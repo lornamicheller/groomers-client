@@ -18,7 +18,7 @@
 }
 
 .arrow-icon {
-  color: #37B34A;
+  color: rgb(255, 255, 255);
   width: 25px;
   height: 25px;
 }
@@ -38,7 +38,7 @@
 
 .borders {
   // border-bottom: 1px solid rgb(199, 199, 199);
-  background-color: rgba(255, 255, 255, 0.596);
+  background-color:#37B34A;
   height: 100px;
   position: absolute;
   top: 0;
@@ -52,7 +52,7 @@
 }
 
 .input {
-  margin-top: 250px;
+  margin-top: 150px;
   margin-bottom: 20px;
   width: 250px;
   margin-left: auto;
@@ -86,7 +86,7 @@ span {
 }
 
 .book-btn {
-  margin-top: 100px;
+  margin-top: 30px;
   margin-bottom: 20px;
   margin-left: 30px;
   margin-right: 30px;

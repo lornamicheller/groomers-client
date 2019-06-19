@@ -17,6 +17,7 @@ import { NavController } from '@ionic/angular';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { Stripe } from '@ionic-native/stripe/ngx';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 
 @NgModule({
@@ -26,16 +27,13 @@ import { Stripe } from '@ionic-native/stripe/ngx';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory
-    })
+    CalendarModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Stripe,
-    
+    Facebook,
     Camera,
     NativePageTransitions,
     Calendar,

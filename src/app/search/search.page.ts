@@ -41,6 +41,7 @@ export class SearchPage implements OnInit {
 
     //hold reference to selected groomer before continuing with the proccess
     this.provider.groomer = groomer;
+    this.provider.search = "Search";
 
     console.log(options);
     this.nativePageTransitions.slide(options);

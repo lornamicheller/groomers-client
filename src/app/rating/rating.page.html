@@ -1,0 +1,42 @@
+<div class="logo-container">
+  <ion-card class="logo-card">
+    <img src="assets/logogrisverde.svg" class="logo">
+  </ion-card>
+</div>
+<ion-content>
+  <ion-avatar class="avatar-pic">
+    <img class=profilepic src="assets/avatar.png">
+  </ion-avatar>
+  <ion-card class=card>
+    <ion-card-content>
+
+      <h1 class=center
+        style="font-weight:300; color: black; font-size: 17px; margin: 10px; margin-top: 40px; font-family: 'Poppins', sans-serif;">
+        {{name}} </h1>
+      <h1 class=center
+        style="font-weight:300; font-size: 20px; color: black; margin: 10px; margin-top: 30px; font-family: 'Poppins', sans-serif;">
+        How was your experience? </h1>
+      <p style="text-align: center; font-weight:200; color: gray; font-size: 15px; font-family: 'Poppins', sans-serif;">
+        Your feedback will help us improve our services.</p>
+
+      <div class="center" style="width: 230px; margin-top: 30px; margin-bottom: 30px;">
+        <ion-buttons>
+          <ion-button [disabled]="readonly" fill="clear" [size]="size"
+            *ngFor="let current of [1, 2, 3, 4, 5]; let i = index" (mouseover)="hoverRate = i + 1">
+            <ion-icon slot="icon-only" name="star"
+              [class.filled]="(i + 1 <= hoverRate || (!hoverRate && i + 1 <= rate))"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+
+      <div class=text-input>
+        <ion-textarea [(ngModel)]='comentarios' class=input-text placeholder="Comments"></ion-textarea>
+      </div>
+
+
+
+    </ion-card-content>
+    <ion-button expand="block" (click)='saveRating()' class="boton-someter">Send</ion-button>
+  </ion-card>
+
+</ion-content>

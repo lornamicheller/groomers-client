@@ -15,6 +15,7 @@ export class GroomersAvailabilityPage implements OnInit {
   constructor(public navigate: NavController, public nativePageTransitions: NativePageTransitions, public modalCtrl: ModalController, public alertController: AlertController) { }
 
   ngOnInit() {
+    this.openDatePicker();
   }
 
   openPage() {

@@ -49,7 +49,15 @@ export class AddressReceiverPage implements OnInit {
     console.log(this.provider.zipCode);
     console.log(options);
     this.nativePageTransitions.slide(options);
+
+    if(this.provider.search == "Search")
+    {
+      this.nav.navigateRoot('/tabs/tabs/groomers-availability');
+    }
+    else
+    {
     this.nav.navigateRoot('/tabs/tabs/appointment');
+    } 
   }
 
   deleteAddress(adId)
