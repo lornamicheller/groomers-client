@@ -10,7 +10,7 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 })
 export class StatusAppointmentPage implements OnInit {
 
-  constructor( private nativePageTransitions: NativePageTransitions, public nav: NavController,) { }
+  constructor( private nativePageTransitions: NativePageTransitions, public nav: NavController) { }
 
   ngOnInit() {
   }

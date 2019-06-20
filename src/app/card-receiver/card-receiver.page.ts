@@ -48,6 +48,34 @@ export class CardReceiverPage implements OnInit {
     await alert.present();
   }
 
+  async deleteAlert(error: any) {
+    const alert = await this.alertCtrl.create({
+      header: 'Alert!',
+      message: "Your card has been delete!",
+      buttons: [{
+        text: 'OK',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+          console.log('delete!');
+          this.getCards();
+        }
+      }]
+    });
+    await alert.present();
+  }
+
+  deleteCard(cardDelete)
+  {
+
+    console.log(cardDelete);
+      // cardDelete.destroy().then((result)=>
+      // {
+      //   console.log("Card delete!!");
+
+      // });
+  }
+
 
 
 

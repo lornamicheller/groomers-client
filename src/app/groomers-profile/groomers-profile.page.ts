@@ -38,7 +38,17 @@ export class GroomersProfilePage implements OnInit {
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
+
+    if(Parse.User.current().get('stripeCustomer') !=null)
+    {
+      this.nav.navigateRoot("/tabs/tabs/card-receiver");
+    }
+    else
+    {
+
+    
     this.nav.navigateRoot("/tabs/tabs/add-credit-card");
+    }
   }
 
 }

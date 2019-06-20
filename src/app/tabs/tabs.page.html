@@ -1,22 +1,22 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom" style="padding-top: 5px; padding-bottom: 20px;">
-    <ion-tab-button href="/home-pets">
+    <ion-tab-button (click)="openService()">
       <img src="assets/suv-icon.png" width="30px" height="30px">
       <ion-label style="color: #37B34A;">Services</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="history-order">
+    <ion-tab-button (click)="openOrder()">
       <img src="assets/calendar-icon.png" width="30px" height="30px">
       <ion-label style="color: #37B34A;">Orders</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="search">
+    <ion-tab-button (click)="openSearch()">
       <img src="assets/search-icon.png" width="30px" height="30px">
       <ion-label style="color: #37B34A;">Search</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="client-profile">
+    <ion-tab-button (click)="openProfile()">
       <img src="assets/profile-icon.png" width="30px" height="30px">
       <ion-label style="color: #37B34A;">Profile</ion-label>
     </ion-tab-button>

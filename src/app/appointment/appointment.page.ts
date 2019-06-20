@@ -12,6 +12,7 @@ import {GroomproviderService} from "./../../app/groomprovider.service";
 import * as Parse from 'parse';
 
 let parse = require('parse');
+var moment = require('moment');
 
 @Component({
   selector: 'app-appointment',
@@ -95,6 +96,7 @@ async openDatePicker() {
       // this.selectedDate = data.data.date;
       console.log("Start Day:", new Date(this.provider.chooseDate));
       self.startDay = new Date(this.provider.chooseDate);
+      this.provider.momentDay = moment()
       console.log("End Day:", new Date(this.provider.chooseDate + (86400*1000)));
       self.endDay = new Date(this.provider.chooseDate + (86400*1000));
     

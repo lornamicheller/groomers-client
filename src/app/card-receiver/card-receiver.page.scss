@@ -40,20 +40,23 @@
 }
 
 .borders {
-  // border-bottom: 1px solid rgb(199, 199, 199);
   background-color: #37B34A;
   height: 100px;
   position: absolute;
   top: 0;
   width: 100%;
-  margin-bottom: 100px;
+  padding-bottom: 130px;
 }
 
 .bg {
   --background: url('/assets/address-form.jpg');
+  position: absolute;
+  top: 0;
   background-size: cover;
   height: 100vh;
+  width: 100%;
   position: bottom;
+  z-index: -100;
 }
 
 .card2 {
@@ -94,4 +97,9 @@
   text-align: left;
   padding-top: 5px;
   font-weight: 400;
+}
+
+.use-btn {
+  --border-radius: 25px;
+  margin-left: 10px;
 }

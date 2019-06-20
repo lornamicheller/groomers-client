@@ -18,25 +18,25 @@ export class AddCreditCardPage implements OnInit {
 
   ngOnInit() {
 
-    this.verifyCard();
+    // this.verifyCard();
   }
 
 
-  verifyCard()
-  {
-    console.log(Parse.User.current().get('stripeCustomer'));
+  // verifyCard()
+  // {
+  //   console.log(Parse.User.current().get('stripeCustomer'));
 
-    if(Parse.User.current().get('stripeCustomer') != null)
-    {
-        this.redirectPage();
-    }
-    else
-    {
-      this.openPage();
-    }
+  //   if(Parse.User.current().get('stripeCustomer') != null)
+  //   {
+  //       this.redirectPage();
+  //   }
+  //   else
+  //   {
+  //     this.openPage();
+  //   }
 
     
-  }
+  // }
 
   goBack() {
     let options: NativeTransitionOptions = {

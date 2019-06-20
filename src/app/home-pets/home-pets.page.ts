@@ -21,7 +21,7 @@ export class HomePetsPage implements OnInit {
   Id:any;
   pets:any;
   petId:any;
-type:any;
+  type:any;
   liveQuery:any;
   petSubs:any;
   deletePet:any;
@@ -262,7 +262,7 @@ openProfile() {
 }
   console.log(options);
   this.nativePageTransitions.fade(options);
-  this.nav.navigateRoot('/tabs/tabs/client-prof');
+  this.nav.navigateRoot('/tabs/tabs/client-profile');
 }
 
 }

@@ -33,6 +33,7 @@ export class GroomproviderService {
   groomerId:any;
   petSize:any;
   groomerObject:any;
+  momentDay:any;
 
   groomers:any;
 
