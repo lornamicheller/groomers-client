@@ -8,6 +8,8 @@ import { Ionic4DatepickerModule } from
 import { CalendarComponent } from "./../calendar/calendar.component";
 import { AlertController } from '@ionic/angular';
 import {GroomproviderService} from "./../../app/groomprovider.service";
+import * as moment_ from 'moment';
+
 
 import * as Parse from 'parse';
 
@@ -96,7 +98,10 @@ async openDatePicker() {
       // this.selectedDate = data.data.date;
       console.log("Start Day:", new Date(this.provider.chooseDate));
       self.startDay = new Date(this.provider.chooseDate);
-      this.provider.momentDay = moment()
+      moment().format("MMM-DD-YYY");
+      // this.provider.momentDay = moment(self.startDay,"MM-DD-YY");
+      this.provider.momentDay = moment(self.startDay,'DD/MM/YYYY HH:mm').format('MM/DD/YYYY');
+      console.log("Moment: ", this.provider.momentDay);
       console.log("End Day:", new Date(this.provider.chooseDate + (86400*1000)));
       self.endDay = new Date(this.provider.chooseDate + (86400*1000));
     
@@ -135,12 +140,14 @@ searchDay()
     appointmentDate.setHours(hours, minutes);
 
     let currentUser = Parse.User.current();
-
+  let self = this;
     console.log("params: ");
     console.log(appointmentDate);
     console.log(this.startDay);
     console.log(this.endDay);
     console.log(this.mydate);
+    this.provider.momentTime =moment(self.mydate,'DD/MM/YYYY HH:mm').format('h:mm A');
+    console.log(this.provider.momentTime);
     console.log(petsID);
     console.log(currentUser.get("zipcode"));
     console.log("end...");

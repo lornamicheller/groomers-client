@@ -34,6 +34,7 @@ export class GroomproviderService {
   petSize:any;
   groomerObject:any;
   momentDay:any;
+  momentTime:any;
 
   groomers:any;
 

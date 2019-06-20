@@ -23,6 +23,8 @@ export class ChooseGroomerPage implements OnInit {
     pet:any;
     option:string;
 
+    day:any;
+
   ngOnInit() {
 
     this.option = "groomer-available";
@@ -31,6 +33,7 @@ export class ChooseGroomerPage implements OnInit {
    console.log(this.provider.groomers);
 
    this.groomers = this.provider.groomers;
+   this.day =   this.provider.momentDay ;
   }
 
   getPet()

@@ -44,6 +44,7 @@ export class OrderSummaryPage implements OnInit {
     swipeFeedLabel:any;
     transactionLabel:any;
     totalLabel:any;
+  
 
 
   ngOnInit() {
@@ -59,6 +60,9 @@ export class OrderSummaryPage implements OnInit {
     this.groomerId = this.provider.groomerId;
     // type of service
     this.serviceType = this.provider.services;
+ 
+    //default value of convenienceFee
+    this.convenienceFee = 2.99;
 
     this.getPet();
     this.decision();

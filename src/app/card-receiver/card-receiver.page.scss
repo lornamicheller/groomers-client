@@ -42,10 +42,7 @@
 .borders {
   background-color: #37B34A;
   height: 100px;
-  position: absolute;
-  top: 0;
   width: 100%;
-  padding-bottom: 130px;
 }
 
 .bg {
@@ -95,11 +92,13 @@
 .card-number {
   font-family: 'Poppins', sans-serif;
   text-align: left;
-  padding-top: 5px;
+  padding-top: 30px;
   font-weight: 400;
 }
 
 .use-btn {
   --border-radius: 25px;
-  margin-left: 10px;
+  margin-right: 20px;
+  margin-top: 50px;
+  --background-activated: #37B34A;
 }

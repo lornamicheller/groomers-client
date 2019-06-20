@@ -69,11 +69,13 @@ export class CardReceiverPage implements OnInit {
   {
 
     console.log(cardDelete);
-      // cardDelete.destroy().then((result)=>
-      // {
-      //   console.log("Card delete!!");
+    cardDelete.destroy().then((result)=>
+    {
+        console.log("Destroyed!!!");
+        // this.savedInfo();
+        this.getCards();
 
-      // });
+    });
   }
 
 
@@ -117,6 +119,19 @@ export class CardReceiverPage implements OnInit {
     console.log(options);
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot("tabs/tabs/add-new-card");
+}
+
+useCard() {
+  let options: NativeTransitionOptions= {
+      direction: 'left', 
+      duration: 400, 
+      slowdownfactor: -1, 
+      slidePixels: 20, 
+      iosdelay: 100
+  }
+  console.log(options);
+  this.nativePageTransitions.slide(options);
+  this.nav.navigateRoot("tabs/tabs/make-payment");
 }
 
 

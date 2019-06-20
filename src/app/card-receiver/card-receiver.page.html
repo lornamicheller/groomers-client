@@ -1,6 +1,6 @@
 <ion-content class="bg">
   <div class="borders">
-    <ion-card style="box-shadow: none; height: 80px;">
+    <ion-card style="box-shadow: none; height: 80px; margin: 0;">
       <img class="logo" src="assets/logoblanco.svg">
       <!-- <ion-button href="/login" class="arrow-btn">
           <ion-ripple-effect></ion-ripple-effect>
@@ -14,28 +14,34 @@
   </div>
 
 
-  <ion-card *ngFor="let card of cards" href="tabs/tabs/make-payment" ion-button class="card">
-    <ion-ripple-effect></ion-ripple-effect>
+  <ion-card *ngFor="let card of cards" class="card">
     <ion-grid style="padding: 0;">
       <ion-row>
-        <ion-col size="3">
-          <img  *ngIf="card.brand == 'Visa' " src="assets/visa.png" width="80px" height="50px">
-          <img *ngIf = "card.brand == 'American Express'" src="assets/americanexpress.png" width="80px" height="50px">
-          <img *ngIf="card.brand == 'Diners Club' " src="assets/dinersclub.png" width="80px" height="50px">
-          <img *ngIf="card.brand == 'Master Card' " src="assets/mastercard.png" width="80px" height="50px">
-          <img *ngIf="card.brand == 'Stripe' " src="assets/stripepay.png" width="80px" height="50px">
-          <img *ngIf="card.brand == 'JCB' " src="assets/jcb.png" width="80px" height="50px">
+        <ion-col size="2">
+          <img *ngIf="card.brand == 'Visa' " src="assets/visa.png" width="80px" height="50px"
+            style="object-fit: contain; margin-top: 25px;">
+          <img *ngIf="card.brand == 'American Express'" src="assets/americanexpress.png" width="80px" height="50px"
+            style="object-fit: contain; margin-top: 30px;">
+          <img *ngIf="card.brand == 'Diners Club' " src="assets/dinersclub.png" width="80px" height="50px"
+            style="object-fit: contain; margin-top: 30px;">
+          <img *ngIf="card.brand == 'Master Card' " src="assets/mastercard.png" width="80px" height="50px"
+            style="object-fit: contain; margin-top: 30px;">
+          <img *ngIf="card.brand == 'Stripe' " src="assets/stripepay.png" width="80px" height="50px"
+            style="object-fit: contain; margin-top: 30px;">
+          <img *ngIf="card.brand == 'JCB' " src="assets/jcb.png" width="80px" height="50px"
+            style="object-fit: contain; margin-top: 30px;">
         </ion-col>
         <ion-col size="6">
           <p class="card-number">**** **** **** {{card.last4}}</p>
         </ion-col>
-        <ion-col size="3">
+        <ion-col size="4">
           <ion-button (click)="deleteCard(card)" class="delete-btn">
             <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
           </ion-button>
-          <ion-button class="use-btn">
+          <ion-button (click)="useCard()" class="use-btn">
+            <ion-ripple-effect></ion-ripple-effect>
             Use card
-        </ion-button>
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

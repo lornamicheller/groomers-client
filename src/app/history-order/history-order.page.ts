@@ -14,7 +14,10 @@ let parse = require('parse');
 })
 export class HistoryOrderPage implements OnInit {
 
-  
+  groomers:any;
+  address:any;
+  client:any;
+  pets:any;
 
   constructor(public nav:NavController, private nativePageTransitions: NativePageTransitions) {
 
@@ -44,10 +47,16 @@ export class HistoryOrderPage implements OnInit {
     console.log(Parse.User.current().id);
 
     Parse.Cloud.run('getHistory', { 
-      type: 'user'
-
+      type:"user"
+    }). then((results) => {
+      //success
     });
+   
+    (error)=>{
+      console.log(error);
+    }
   }
 
+ 
 
 }
