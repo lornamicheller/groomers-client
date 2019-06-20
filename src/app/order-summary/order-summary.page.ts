@@ -29,6 +29,8 @@ export class OrderSummaryPage implements OnInit {
     priceOfService:any;
     serviceType:any;
 
+    day:any;
+
 
     // variables!!!!
 
@@ -63,6 +65,7 @@ export class OrderSummaryPage implements OnInit {
  
     //default value of convenienceFee
     this.convenienceFee = 2.99;
+    this.day = this.provider.momentDay;
 
     this.getPet();
     this.decision();

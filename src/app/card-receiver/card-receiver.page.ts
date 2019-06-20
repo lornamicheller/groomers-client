@@ -21,8 +21,10 @@ export class CardReceiverPage implements OnInit {
   constructor(private camera: Camera, public alertCtrl:AlertController, public provider : GroomproviderService, private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController, private stripe: Stripe) { 
     
-    parse.serverURL = 'https://parseapi.back4app.com/';
-    Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");  }
+      parse.serverURL = 'https://parseapi.back4app.com/';
+      Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");
+  
+  }
 
 
     cards:any;
@@ -65,17 +67,19 @@ export class CardReceiverPage implements OnInit {
     await alert.present();
   }
 
-  deleteCard(cardDelete)
+  deleteItem(card)
   {
 
-    console.log(cardDelete);
-    cardDelete.destroy().then((result)=>
-    {
-        console.log("Destroyed!!!");
-        // this.savedInfo();
-        this.getCards();
+    console.log(card);
 
-    });
+    card.destroy().then((result) => {
+      console.log("Destroyed!!!");
+      this.getCards();
+    }, (error) => {
+      console.log(error);
+    })
+
+
   }
 
 

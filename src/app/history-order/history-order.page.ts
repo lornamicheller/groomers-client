@@ -18,6 +18,7 @@ export class HistoryOrderPage implements OnInit {
   address:any;
   client:any;
   pets:any;
+  res:any;
 
   constructor(public nav:NavController, private nativePageTransitions: NativePageTransitions) {
 
@@ -49,6 +50,8 @@ export class HistoryOrderPage implements OnInit {
     Parse.Cloud.run('getHistory', { 
       type:"user"
     }). then((results) => {
+      this.res=results;
+      console.log(this.res);
       //success
     });
    
