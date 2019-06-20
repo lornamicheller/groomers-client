@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
+import {GroomproviderService} from "./../../app/groomprovider.service";
+import * as Parse from 'parse';
+
+let parse = require('parse'); 
 
 @Component({
   selector: 'app-groomers-profile',
@@ -9,10 +13,19 @@ import { ToastController, NavController } from '@ionic/angular';
 })
 export class GroomersProfilePage implements OnInit {
 
-  constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController,
+  constructor(public provider: GroomproviderService,private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController) { }
 
+
+    groomerId:any;
+    name: any;
+
+
   ngOnInit() {
+
+      this.groomerId = this.provider.groomerId;
+      console.log("Groomer Id: ", this.groomerId);   
+      // this.name = this.groomerId.get('name'); 
   }
 
   openPage() {

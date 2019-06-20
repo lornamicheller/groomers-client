@@ -33,7 +33,8 @@ const routes: Routes = [
   { path: 'status-appointment', loadChildren: './status-appointment/status-appointment.module#StatusAppointmentPageModule' },
   { path: 'groomers-availability', loadChildren: './groomers-availability/groomers-availability.module#GroomersAvailabilityPageModule' },
   { path: 'add-new-card', loadChildren: './add-new-card/add-new-card.module#AddNewCardPageModule' },
-  { path: 'rating', loadChildren: './rating/rating.module#RatingPageModule' }
+  { path: 'rating', loadChildren: './rating/rating.module#RatingPageModule' },
+  { path: 'home-pets', loadChildren: './home-pets/home-pets.module#HomePetsPageModule' }
 ];
 @NgModule({
   imports: [

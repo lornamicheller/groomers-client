@@ -30,6 +30,7 @@ export class GroomproviderService {
   services:any;
   paymentMethod:any;
   search:any;
+  groomerId:any;
 
   groomers:any;
 

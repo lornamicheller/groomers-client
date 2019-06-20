@@ -5,12 +5,13 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 import {GroomproviderService } from "./../../app/groomprovider.service";
 let parse = require('parse');
 import { AlertController } from "@ionic/angular";
+
 @Component({
-  selector: 'app-cards-orders',
-  templateUrl: './cards-orders.page.html',
-  styleUrls: ['./cards-orders.page.scss'],
+  selector: 'app-home-pets',
+  templateUrl: './home-pets.page.html',
+  styleUrls: ['./home-pets.page.scss'],
 })
-export class CardsOrdersPage implements OnInit {
+export class HomePetsPage implements OnInit {
 
   breed:any;
   age:any;
@@ -148,7 +149,7 @@ export class CardsOrdersPage implements OnInit {
         cssClass: 'secondary',
         handler: () => {
           this.getPetObjects();
-          this.nav.navigateRoot('tabs/tabs/cards-orders');
+          this.nav.navigateRoot('/home-pets');
         }
       }]
       });
@@ -206,7 +207,5 @@ export class CardsOrdersPage implements OnInit {
     }
   }
 
-
- 
 
 }

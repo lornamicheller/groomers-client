@@ -51,6 +51,8 @@ chooseDate:any;
     //console.log(this.provider.)
     console.log(this.provider.petid);
 
+
+    console.log(Parse.User.current().id);
   
   }
 

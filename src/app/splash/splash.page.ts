@@ -28,7 +28,7 @@ export class SplashPage implements OnInit {
     Parse.User.currentAsync().then(user => {
       console.log('Logged user', user);
   
-      user != null ? this.NavCtrl.navigateRoot('/tabs/tabs/cards-orders') : this.NavCtrl.navigateRoot('/login');
+      user != null ? this.NavCtrl.navigateRoot('/home-pets') : this.NavCtrl.navigateRoot('/login');
     }, err => {
       console.log('Error getting logged user',err);
       let options: NativeTransitionOptions = {

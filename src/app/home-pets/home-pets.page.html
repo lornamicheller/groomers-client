@@ -1,0 +1,67 @@
+<div class="borders">
+  <ion-card style="box-shadow: none; height: 80px;">
+    <img class="logo" src="assets/logoverde.svg">
+    <!-- <ion-button href="/login" class="arrow-btn">
+      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </ion-button> -->
+
+    <ion-icon ion-button (click)="addNewPetTransition()" class="add-icon" ios="ios-add" md="md-add"></ion-icon>
+
+  </ion-card>
+</div>
+
+<ion-content class="bg">
+  <ion-card *ngFor="let pet of pets" class="order-card">
+    <ion-grid style="margin: 0; padding: 0;">
+      <ion-row>
+        <ion-col size="4" class="green-bg">
+          <ion-button class="profile-btn" (click)="openPage(pet.id)">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-avatar class="avatar-border">
+              <img *ngIf="pet.get('petImage') == null " class="imgFit" src="assets/perri1.jpg">
+              <img *ngIf="pet.get('petImage') != null" class="imgFit" src="{{pet.get('petImage').url()}}">
+            </ion-avatar>
+          </ion-button>
+        </ion-col>
+        <ion-col size="8" class="grey-bg">
+          <p [(ngModel)]=name class="name">{{pet.get("name")}}</p>
+          <p [(ngModel)]=age class="age">Age: <span>{{pet.get("age")}}</span></p>
+          <p [(ngModel)]=size class="size">Size: <span>{{pet.get("size")}}</span></p>
+          <p [(ngModel)]=breed class="breed">Breed: <span>{{pet.get("breed")}}</span></p>
+          <ion-button (click)="goToEdit(pet.id)" class="edit-btn" expand="block">
+            <ion-ripple-effect></ion-ripple-effect>
+            EDIT
+          </ion-button>
+          <ion-button (click)="deleteDog(pet)" class="delete-btn">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon class="delete-icon" ios="ios-close" md="md-close"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>
+
+<ion-tab-bar slot="bottom" style="padding-top: 5px; padding-bottom: 20px;">
+  <ion-tab-button tab="cards-orders">
+    <img href=""src="assets/suv-icon.png" width="30px" height="30px">
+    <ion-label style="color: #37B34A;">Services</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button href="/tabs/tabs/history-order">
+    <img  src="assets/calendar-icon.png" width="30px" height="30px">
+    <ion-label style="color: #37B34A;">Orders</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button tab="search">
+    <img href="" src="assets/search-icon.png" width="30px" height="30px">
+    <ion-label style="color: #37B34A;">Search</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button tab="client-profile">
+    <img href="" src="assets/profile-icon.png" width="30px" height="30px">
+    <ion-label style="color: #37B34A;">Profile</ion-label>
+  </ion-tab-button>
+
+</ion-tab-bar>

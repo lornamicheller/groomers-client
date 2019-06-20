@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+.arrow-btn {
+  position: absolute;
+  top: 17px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.bg {
+  --background: url('/assets/huesitos.jpg');
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  position: absolute;
+  top: 27px;
+  right: 10px;
+  color: #37B34A;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 120px;
+}
+
+.borders {
+  background-color: rgb(255, 255, 255);
+  height: 100px;
+}
+
+.order-card {
+  box-shadow: 0 8px 6px -6px black;
+  height: auto;
+  border-radius: 25px;
+}
+
+.green-bg {
+  background-color: #E6E7E8;
+  height: 200px;
+}
+
+.grey-bg {
+  background-color: #E6E7E8;
+  height: 200px;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 17px;
+  color: #37B34A;
+  margin-bottom: 7px;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.age,
+.size,
+.breed {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.name,
+.age,
+.size,
+.breed {
+  text-align: center;
+}
+
+.edit-btn {
+  --border-radius: 25px;
+  margin-top: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+}
+
+.edit {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+  --box-shadow: none;
+}
+
+.profile-btn {
+  --border-radius: 50px;
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  z-index: 100;
+  --background: transparent;
+  --background-activated: transparent;
+  --box-shadow: none;
+}
+
+.avatar-border {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #37B34A;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}

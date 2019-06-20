@@ -15,16 +15,30 @@ export class TutorialPage implements OnInit {
   ngOnInit() {
   }
 
+  // openPage() {
+  //   let options: NativeTransitionOptions = {
+  //       direction: 'left', 
+  //       duration: 400, 
+  //       slowdownfactor: -1, 
+  //       slidePixels: 20, 
+  //       iosdelay: 100
+  //   }
+  //   console.log(options);
+  //   this.nativePageTransitions.slide(options);
+  //   this.nav.navigateRoot("/login");
+  // }
+
   openPage() {
     let options: NativeTransitionOptions = {
         direction: 'left', 
-        duration: 400, 
+        duration: 500, 
         slowdownfactor: -1, 
         slidePixels: 20, 
+        androiddelay: 0,
         iosdelay: 100
     }
     console.log(options);
-    this.nativePageTransitions.slide(options);
+    this.nativePageTransitions.fade(options);
     this.nav.navigateRoot("/login");
   }
 

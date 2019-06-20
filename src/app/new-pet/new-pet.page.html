@@ -9,11 +9,14 @@
 
 <ion-content>
 
-  <ion-button expand="block" (click)="openCamera()" class="profile-btn">
-    <img class="imgFit" src="assets/icon-cam.png">
-  </ion-button>
+  <!-- <ion-button expand="block" (click)="openCamera()" class="profile-btn"></ion-button> -->
+  <img ion-button expand="block" (click)="openCamera()" *ngIf="picture == null" class="imgFit"
+    src="assets/icon-cam.png">
+  <img ion-button expand="block" (click)="openCamera()" *ngIf="picture != null" class="imgFit2" src="{{picture}}">
 
-  <p style="font-size: 10px; text-align: center; color: #37B34A; font-weight: 700; font-family: 'Poppins', sans-serif;">
+
+  <p
+    style="font-size: 10px; text-align: center; color: #37B34A; font-weight: 700; font-family: 'Poppins', sans-serif; margin-top: 100px;">
     Edit Photo</p>
 
   <ion-grid>
@@ -29,10 +32,18 @@
           <ion-ripple-effect></ion-ripple-effect>
           CAT
         </ion-button>
-
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="friends">
+      <ion-label>Friends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Enemies</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 
   <ion-card style="box-shadow: none; margin-left: 20px; margin-right: 20px; margin-bottom : none;">
     <ion-input [(ngModel)]="name" clearInput type="text" class=" name" placeholder="NAME"></ion-input>
@@ -177,7 +188,8 @@
         <ion-select-option value="Norwegian Elkhound">Norwegian Elkhound</ion-select-option>
         <ion-select-option value="Norwegian Lundehund">Norwegian Lundehund</ion-select-option>
         <ion-select-option value="Norwich Terrier">Norwich Terrier</ion-select-option>
-        <ion-select-option value="Nova Scotia Duck Tolling Retriever">Nova Scotia Duck Tolling Retriever</ion-select-option>
+        <ion-select-option value="Nova Scotia Duck Tolling Retriever">Nova Scotia Duck Tolling Retriever
+        </ion-select-option>
         <ion-select-option value="Old English Sheepdog">Old English Sheepdog</ion-select-option>
         <ion-select-option value="Otterhound">Otterhound</ion-select-option>
         <ion-select-option value="Papillon">Papillon</ion-select-option>

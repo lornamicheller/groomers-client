@@ -30,13 +30,13 @@
       </div>
 
       <div class=text-input>
-        <ion-textarea [(ngModel)]='comentarios' class=input-text placeholder="Comments"></ion-textarea>
+        <ion-textarea [(ngModel)]='comments' class=input-text placeholder="Comments"></ion-textarea>
       </div>
 
 
 
     </ion-card-content>
-    <ion-button expand="block" (click)='saveRating()' class="boton-someter">Send</ion-button>
+    <ion-button expand="block" (click)="rating()" class="boton-someter">Send</ion-button>
   </ion-card>
 
 </ion-content>

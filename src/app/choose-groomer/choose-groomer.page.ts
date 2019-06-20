@@ -36,8 +36,9 @@ export class ChooseGroomerPage implements OnInit {
   getPet()
   {
       let pet = "BKMOYQdVGW";
+      this.provider.petid;
     Parse.Cloud.run('getPetsInfo', {
-      petId: this.provider.petid
+      petId: pet
     }).then((result) => {
       
       console.log(result);
@@ -53,7 +54,7 @@ export class ChooseGroomerPage implements OnInit {
 
   }
 
-  openPage() {
+  openPage(groomerId) {
     let options: NativeTransitionOptions = {
       direction: 'left',
       duration: 400,
@@ -63,6 +64,8 @@ export class ChooseGroomerPage implements OnInit {
   }
     console.log(options);
     this.nativePageTransitions.slide(options);
+    this.provider.groomerId = groomerId;
+    console.log(this.provider.groomerId);
     this.nav.navigateRoot('/tabs/tabs/groomers-profile');
   }
 

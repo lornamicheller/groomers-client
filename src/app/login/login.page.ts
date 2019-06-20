@@ -38,7 +38,8 @@ export class LoginPage implements OnInit {
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot("/tabs/tabs/cards-orders");
+    // this.nav.navigateRoot("/tabs/tabs/cards-orders");
+    this.nav.navigateRoot("/home-pets");
   }
 
 
