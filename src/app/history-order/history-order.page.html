@@ -5,7 +5,7 @@
     </ion-card>
   </div>
 
-  <ion-card *ngFor = "let res of ServiceRequest"class="card-order">
+  <ion-card *ngFor = "let res of ServiceRequest" class="card-order">
     <ion-grid style="margin: 0; padding: 0;">
       <ion-row>
         <ion-col size="6" style="padding: 0;">
@@ -15,14 +15,14 @@
         </ion-col>
         <ion-col size="6" style="padding: 0;">
           <p class="appointment-date">{{res.get("appointment-date")}}</p>
-          <p class="status-app">Canceled</p>
+          <p class="status-app">{{res.get("status")}}</p>
           <ion-button (click)="openPage()" expand="block" class="view-btn">View</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>
 
-  <ion-card class="card-order">
+  <ion-card class="card-order" >
     <ion-grid style="margin: 0; padding: 0;">
       <ion-row>
         <ion-col size="6" style="padding: 0;">

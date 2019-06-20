@@ -72,12 +72,17 @@ export class CardReceiverPage implements OnInit {
 
     console.log(card);
 
-    card.destroy().then((result) => {
-      console.log("Destroyed!!!");
-      this.getCards();
-    }, (error) => {
+    Parse.Cloud.run("stripeDeleteCard", {
+      customerId: Parse.User.current().id,
+      cardId: card
+    }).then((result) => {
+     console.log(result);
+     console.log("Delete!!!");
+    },
+   
+    (error)=>{
       console.log(error);
-    })
+    });
 
 
   }

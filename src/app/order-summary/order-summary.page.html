@@ -13,22 +13,22 @@
 <ion-content>
   <h1 class="review">Review Transaction</h1>
   <p class="text">Name: <span style="color: black; font-weight: 400;">{{name}}</span></p>
-  <p class="text">Date: <span style="color: black; font-weight: 400;"> 05-22-19</span></p>
+  <p class="text">Date: <span style="color: black; font-weight: 400;">{{day}}</span></p>
   <p class="text">Pet Name: <span style="color: black; font-weight: 400;"> Camila</span></p>
   <p class="text">Phone: <span style="color: black; font-weight: 400;">{{phone}}</span></p>
-  <p class="text">Service: <span style="color: black; font-weight: 400;"> Full Grooming</span></p>
-  <p class="text">Dog Size: <span style="color: black; font-weight: 400;"> Medium</span></p>
-  <p class="text">Groomer: <span style="color: black; font-weight: 400;"> Francheska's Grooming</span></p>
-  <p class="text">Appointment Date: <span style="color: black; font-weight: 400;"> 05-23-2019</span></p>
+  <p class="text">Service: <span style="color: black; font-weight: 400;">{{serviceType}}</span></p>
+  <p class="text">Dog Size: <span style="color: black; font-weight: 400;">{{petSize}}</span></p>
+  <p class="text">Groomer: <span style="color: black; font-weight: 400;">{{nameGroomer}}</span></p>
+  <p class="text">Appointment Date: <span style="color: black; font-weight: 400;">{{day}}</span></p>
   <p class="text">Time: <span style="color: black; font-weight: 400;"> 9:00AM</span></p>
   <p class="text">Payment Option: <span style="color: black; font-weight: 400;"> {{service}}</span></p>
 
   <div class="divider"></div>
 
-  <p class="text2">Subtotal: <span style="color: black; font-weight: 400;"> $60.00</span></p>
-  <p class="text2">Swipe Fee: <span style="color: black; font-weight: 400;"> $2.23</span></p>
-  <p class="text2">Convinience Fee: <span style="color: black; font-weight: 400;"> $2.99</span></p>
-  <p class="text2">Total: <span style="color: black; font-weight: 400;"> $65.22</span></p>
+  <p class="text2">Subtotal: <span style="color: black; font-weight: 400;">{{subtotalLabel}}</span></p>
+  <p class="text2">Swipe Fee: <span style="color: black; font-weight: 400;">{{swipeFeedLabel}}</span></p>
+  <p class="text2">Convinience Fee: <span style="color: black; font-weight: 400;">transactionLabel</span></p>
+  <p class="text2">Total: <span style="color: black; font-weight: 400;">{{totalLabel}}</span></p>
 
   <ion-button (click)="openPage()" class="done-btn" expand="block">Complete Booking</ion-button>
 </ion-content>

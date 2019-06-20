@@ -46,6 +46,7 @@ export class OrderSummaryPage implements OnInit {
     swipeFeedLabel:any;
     transactionLabel:any;
     totalLabel:any;
+    nameGroomer:any;
   
 
 
@@ -62,6 +63,8 @@ export class OrderSummaryPage implements OnInit {
     this.groomerId = this.provider.groomerId;
     // type of service
     this.serviceType = this.provider.services;
+    //name of groomer
+    this.nameGroomer = this.provider.groomerId.get('fullName');
  
     //default value of convenienceFee
     this.convenienceFee = 2.99;
@@ -133,14 +136,14 @@ export class OrderSummaryPage implements OnInit {
         this.appFeeByGroomer = this.subtotal + this.convenienceFee;
         this.appFeeByClient = this.subtotal * 0.90;
 
-        this.subtotalLabel = "Pending Balance: $%.2f" +  String(this.subtotal);
+        this.subtotalLabel = "$" + this.subtotal.toFixed(2);
         console.log(this.subtotalLabel);
 
-        this.swipeFeedLabel = "Swipe Fee: $%.2f" +  String(this.swipeFee);
+        this.swipeFeedLabel = "$" + this.swipeFee.toFixed();
         console.log(this.swipeFeedLabel);
-        this.transactionLabel =  "Convenience Fee: $%.2f" + String(this.convenienceFee);
+        this.transactionLabel =  "$" + this.convenienceFee.toFixed(2);
         console.log(this.transactionLabel);
-        this.totalLabel = "Total: $%.2f" + String(this.total);
+        this.totalLabel = "$" +this.total.toFixed(2);
         console.log(this.totalLabel);
         
       }
@@ -154,14 +157,14 @@ export class OrderSummaryPage implements OnInit {
          this.total = this.subtotal + this.swipeFee + this.convenienceFee;
          this.appFeeByGroomer = this.subtotal + this.convenienceFee;
          this.appFeeByClient =this.subtotal * 0.90;
-         this.subtotalLabel =  "Subtotal: $%.2f" +  String( this.subtotal);
+         this.subtotalLabel =  "$" + this.subtotal.toFixed(2);
          console.log(this.subtotalLabel);
 
-         this.swipeFeedLabel = "Swipe Fee: $%.2f" + String(this.swipeFee);
+         this.swipeFeedLabel = "$" + this.swipeFee.toFixed(2);
          console.log(this.swipeFeedLabel);
-         this.transactionLabel =  "Convenience Fee: $%.2f" + String(this.convenienceFee);
+         this.transactionLabel =  "$" + this.convenienceFee.toFixed(2);
          console.log(this.transactionLabel);
-         this.totalLabel = "Total: $%.2f" +  String(this.total);
+         this.totalLabel = " $" + this.total.toFixed(2);
          console.log(this.totalLabel);
 
 
