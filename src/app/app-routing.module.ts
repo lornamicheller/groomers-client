@@ -34,7 +34,8 @@ const routes: Routes = [
   { path: 'groomers-availability', loadChildren: './groomers-availability/groomers-availability.module#GroomersAvailabilityPageModule' },
   { path: 'add-new-card', loadChildren: './add-new-card/add-new-card.module#AddNewCardPageModule' },
   { path: 'rating', loadChildren: './rating/rating.module#RatingPageModule' },
-  { path: 'home-pets', loadChildren: './home-pets/home-pets.module#HomePetsPageModule' }
+  { path: 'home-pets', loadChildren: './home-pets/home-pets.module#HomePetsPageModule' },
+  { path: 'facebook-form', loadChildren: './facebook-form/facebook-form.module#FacebookFormPageModule' }
 ];
 @NgModule({
   imports: [

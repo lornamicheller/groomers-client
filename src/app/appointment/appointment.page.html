@@ -13,7 +13,7 @@
     </ion-card>
   </div>
 
-  <ion-button expand="block" class="input" readonly   (click)="openDatePicker()">
+  <ion-button expand="block" class="input" readonly (click)="openDatePicker()">
     <span>CHOOSE DATE</span>
   </ion-button>
 
@@ -21,7 +21,7 @@
   <!-- <li-ionic4-datepicker [(ngModel)]="mydate"
 [inputDateConfig]="datePickerObj">CHOOSE DATE</li-ionic4-datepicker> -->
 
-  <ion-item class="date">
+  <ion-item class="date" lines="none">
     <ion-label>CHOOSE TIME</ion-label>
     <ion-datetime displayFormat="h:mm, A " [(ngModel)]="mydate"></ion-datetime>
   </ion-item>

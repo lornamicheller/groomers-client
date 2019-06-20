@@ -46,7 +46,7 @@ openPage() {
   payLater()
   {
     
-      this.provider.paymentMethod = "Payment Later";
+      this.provider.paymentMethod = "Later";
       console.log(this.provider.paymentMethod);
       this.openPage();
       
@@ -56,7 +56,7 @@ openPage() {
   {
 
 
-    this.provider.paymentMethod = "Full Payment";
+    this.provider.paymentMethod = "Full";
     console.log(this.provider.paymentMethod);
     this.openPage();
 

@@ -19,31 +19,18 @@
     style="font-size: 10px; text-align: center; color: #37B34A; font-weight: 700; font-family: 'Poppins', sans-serif; margin-top: 100px;">
     Edit Photo</p>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button (click)="dog()" class="dogBtn" expand="block">
-          <ion-ripple-effect></ion-ripple-effect>
-          DOG
-        </ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button (click)="cat()" class="catBtn" expand="block">
-          <ion-ripple-effect></ion-ripple-effect>
-          CAT
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-card style="box-shadow: none;">
 
-  <ion-segment (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="friends">
-      <ion-label>Friends</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="enemies">
-      <ion-label>Enemies</ion-label>
-    </ion-segment-button>
-  </ion-segment>
+    <ion-segment >
+      <ion-segment-button (click)="dog()" class="dogBtn" href="#dogs" value="dogs">
+        <ion-label>Dogs</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="cat()" class="catBtn" href="#cats" value="cats">
+        <ion-label>Cats</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-card>
 
   <ion-card style="box-shadow: none; margin-left: 20px; margin-right: 20px; margin-bottom : none;">
     <ion-input [(ngModel)]="name" clearInput type="text" class=" name" placeholder="NAME"></ion-input>

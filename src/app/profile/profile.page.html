@@ -9,30 +9,33 @@
 
 <ion-content>
 
-  <ion-button expand="block" (click)="openCamera()" class="profile-btn">
+  <!-- <ion-button expand="block" (click)="openCamera()" class="profile-btn">
     <ion-avatar class=" avatar-border">
       <img class="imgFit" src="assets/perri1.jpg">
     </ion-avatar>
   </ion-button>
-  <p style="font-size: 10px; text-align: center; color: #37B34A; font-weight: 700;">Edit Photo</p>
+  <p style="font-size: 10px; text-align: center; color: #37B34A; font-weight: 700;">Edit Photo</p> -->
 
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button class="dogBtn" expand="block">
-          <ion-ripple-effect></ion-ripple-effect>
-          DOG
-        </ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button class="catBtn" expand="block">
-          <ion-ripple-effect></ion-ripple-effect>
-          CAT
-        </ion-button>
 
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <!-- <ion-button expand="block" (click)="openCamera()" class="profile-btn"></ion-button> -->
+  <img ion-button expand="block" (click)="presentAlertConfirm()" *ngIf="picture == null" class="imgFit"
+    src="assets/icon-cam.png">
+  <img ion-button expand="block" (click)="presentAlertConfirm()" *ngIf="picture != null" class="imgFit2" src="{{picture}}">
+
+  <p
+    style="font-size: 10px; text-align: center; color: #37B34A; font-weight: 700; font-family: 'Poppins', sans-serif; margin-top: 100px;">
+    Edit Photo</p>
+
+  <ion-card style="box-shadow: none;">
+    <ion-segment>
+      <ion-segment-button (click)="dog()" class="dogBtn" href="#dogs" value="dogs">
+        <ion-label>Dogs</ion-label>
+      </ion-segment-button>
+      <ion-segment-button (click)="cat()" class="catBtn" href="#cats" value="cats">
+        <ion-label>Cats</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-card>
 
   <ion-card style="box-shadow: none; margin-left: 20px; margin-right: 20px;">
     <ion-input [(ngModel)]=name clearInput type="text" class=" name" placeholder="{{name}}"></ion-input>
@@ -249,6 +252,3 @@
   </ion-card>
 
 </ion-content>
-
-<!-- <ion-input [(ngModel)]=size clearInput type="text" class=" size" placeholder="{{size}}"></ion-input> -->
-<!-- <ion-input [(ngModel)]=breed clearInput type="text" class=" breed" placeholder="{{breed}}"></ion-input> -->

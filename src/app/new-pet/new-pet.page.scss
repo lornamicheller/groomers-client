@@ -61,24 +61,22 @@
 
 .dogBtn {
   border: 2px solid #37B34A;
-  --background: #37B34A;
-  --background-activated: #37B34A;
   border-radius: 25px;
   font-weight: 700;
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
+  height: 50px;
+  margin: 5px;
 }
 
 .catBtn {
   border: 2px solid #37B34A;
-  --background: transparent;
-  --background-activated: transparent;
   border-radius: 25px;
-  --color: #37B34A;
-  --color-activated: #37B34A;
   font-weight: 700;
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
+  height: 50px;
+  margin: 5px;
 }
 
 .selectedBtn {

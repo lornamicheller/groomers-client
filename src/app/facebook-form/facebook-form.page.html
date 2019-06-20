@@ -1,0 +1,52 @@
+<ion-content class="bg">
+  <ion-card style="box-shadow: none;">
+    <img class="logo" src="assets/logogrisverde.svg">
+    <!-- <h3 style="text-align: center; font-size: 30px; font-weight: 300;">Forgot your password?</h3> -->
+  
+    <ion-button (click)="goBack()" class="arrow-btn">
+      <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </ion-button>
+
+  </ion-card>
+
+  <ion-card class="input-card">
+    <ion-input [(ngModel)]="name" clearInput type="text" placeholder="NAME"  class="name " expand="block">
+      <ion-icon class="icon" ios="ios-contact" md="md-contact"></ion-icon>
+    </ion-input>
+    <ion-input [(ngModel)]="lastName" clearInput type="text" placeholder="LAST NAME" class="last-name " expand="block">
+      <ion-icon class="icon" ios="ios-contact" md="md-contact"></ion-icon>
+    </ion-input>
+    <ion-input [(ngModel)]="email" clearInput type="text" placeholder="EMAIL" class="email " expand="block">
+      <ion-icon class="icon" ios="ios-mail" md="md-mail"></ion-icon>
+    </ion-input>
+   
+    <ion-input [(ngModel)]="zipCode" clearInput type="text" placeholder="ZIP CODE"  class="zip " expand="block">
+      <ion-icon class="icon" ios="ios-pin" md="md-pin"></ion-icon>
+    </ion-input>
+  </ion-card>
+
+  <ion-card class="terms-card">
+    <ion-grid>
+      <ion-row style="margin-left: 30px; margin-right: 30px;">
+        <ion-col size="6">
+          <ion-button style="margin-left: 20px;" class="terms" expand="full">
+            <ion-ripple-effect></ion-ripple-effect>
+            Terms and Conditions
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button class="terms" expand="full">
+            <ion-ripple-effect></ion-ripple-effect>
+            Privacy Policy
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-button class="login-btn" (click)="signUpUser()" expand="block">
+    <ion-ripple-effect></ion-ripple-effect>
+    REGISTER
+  </ion-button>
+
+</ion-content>

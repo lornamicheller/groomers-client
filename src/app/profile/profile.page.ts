@@ -23,6 +23,9 @@ export class ProfilePage implements OnInit {
   Id: any;
   pets: any;
   pet: any;
+  type: any;
+  picture:any;
+  savedPhoto:any;
 
   changeInfomation:any;
 
@@ -42,24 +45,103 @@ export class ProfilePage implements OnInit {
 
   openCamera() {
       const options: CameraOptions = {
-       
-        destinationType: this.camera.DestinationType.FILE_URI,
-        quality: 100,
-        targetWidth: 1000,
-        targetHeight: 1000,
+        quality: 100, targetWidth: 900, 
+        targetHeight: 600, 
+        destinationType: this.camera.DestinationType.DATA_URL, 
         encodingType: this.camera.EncodingType.JPEG, 
-        sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-        correctOrientation: true
+        mediaType: this.camera.MediaType.PICTURE,
+         saveToPhotoAlbum: false, 
+         allowEdit: true, 
+         sourceType: 1
       }
 
-      this.camera.getPicture(options).then((imageData) => {
-          // imageData is either a base64 encoded string or a file URI
-          // If it's base64 (DATA_URL):
-          let base64Image = 'data:image/jpeg;base64,' + imageData;
-      }, (err) => {
-          // Handle error
-      });
+      
+    this.camera.getPicture(options).then((imageData)=> {
+      this.picture='data:image/jpeg;base64,' + imageData;
+      let base64Image=this.picture;
+      let name="photo.jpeg";
+      let parseFile=new Parse.File(name, {
+          base64: base64Image
+      }
+      ); //convierte la foto a base64
+      parseFile.save().then((savedFile)=> {
+          console.log('file saved:' + savedFile);
+          this.savedPhoto=this.picture;
+          this.photo=savedFile;
+      }
+      , (err)=> {
+          console.log('error grabando file: ' + err)
+      }
+      );
   }
+  , (err)=> {
+      console.log('error de camara' + err);
+  }
+  );
+  }
+
+  openLibrary() {
+    const options: CameraOptions = {
+      destinationType: this.camera.DestinationType.FILE_URI,
+      quality: 100,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      encodingType: this.camera.EncodingType.JPEG, 
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      correctOrientation: true
+    }
+
+    this.camera.getPicture(options).then((imageData)=> {
+      this.picture='data:image/jpeg;base64,' + imageData;
+      let base64Image=this.picture;
+      let name="photo.jpeg";
+      let parseFile=new Parse.File(name, {
+          base64: base64Image
+      }
+      ); //convierte la foto a base64
+      parseFile.save().then((savedFile)=> {
+          console.log('file saved:' + savedFile);
+          this.savedPhoto=this.picture;
+          this.photo=savedFile;
+      }
+      , (err)=> {
+          console.log('error grabando file: ' + err)
+      }
+      );
+  }
+  , (err)=> {
+      console.log('error de camara' + err);
+  }
+  );
+}
+
+
+  async presentAlertConfirm() {
+    const alert = await this.alert.create({
+      header: 'Camera',
+      buttons: [
+        {
+          text: 'Camera',
+          role: 'camera',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.openCamera();
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Gallery',
+          handler: () => {
+            this.openLibrary();
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
 
       openPage() {
       let options: NativeTransitionOptions = {
@@ -118,18 +200,24 @@ export class ProfilePage implements OnInit {
   saveInformation()
   {
 
-    if(this.name == "" || this.age == "" || this.breed == "" || this.size =="")
+    if(this.name == null || this.age == null || this.breed == null || this.size ==null)
     {
           this.errorInfo();
     }
     else
     {
-
-    
     this.changeInfomation.set("name", this.name);
     this.changeInfomation.set("age", this.age);
     this.changeInfomation.set("breed", this.breed);
     this.changeInfomation.set("size", this.size);
+    this.changeInfomation.set("type", this.type);
+
+    if(this.picture !=null)
+    {
+      this.changeInfomation.set("petImage", this.picture);
+    }
+    
+ 
 
     this.changeInfomation.save().then((result)=>
     {
@@ -180,9 +268,22 @@ async errorInfo(){
     await alert.present();
 
     }
-}
-  
 
- 
+    
+cat()
+{
   
+  this.type = "CAT";
+  console.log("CAT: ",this.type);
+}
+
+dog()
+{
+  this.type = "DOG";
+  console.log("DOG: ",this.type);
+}
+
+
+
+}
 

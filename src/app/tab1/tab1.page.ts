@@ -43,7 +43,7 @@ bathService:any;
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.navigate.navigateRoot("/tabs/tabs/cards-orders");
+    this.navigate.navigateRoot("/home-pets");
   }
 
   chooseFullGrooming(){

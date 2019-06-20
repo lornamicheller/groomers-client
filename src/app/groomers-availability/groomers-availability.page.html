@@ -21,10 +21,26 @@
     <!-- <li-ionic4-datepicker [(ngModel)]="mydate"
   [inputDateConfig]="datePickerObj">CHOOSE DATE</li-ionic4-datepicker> -->
   
-    <ion-item class="date">
+    <!-- <ion-item class="date">
       <ion-label>CHOOSE TIME</ion-label>
       <ion-datetime displayFormat="h:mm, A " [(ngModel)]="mydate"></ion-datetime>
-    </ion-item>
+    </ion-item> -->
+
+    <ion-item class="date" lines="none">
+        <ion-label class="style-text">CHOOSE TIME</ion-label>
+        <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+          <ion-select-option value="groomer time">Groomer Time</ion-select-option>
+        </ion-select>
+      </ion-item>
   
     <ion-button class="book-btn" (click)="searchDay()" expand="block">BOOK NOW</ion-button>
   </ion-content>

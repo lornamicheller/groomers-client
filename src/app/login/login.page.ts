@@ -68,7 +68,7 @@ export class LoginPage implements OnInit {
         await user.save();
       }
 
-      // this.nav.navigateRoot('HomePage');
+      this.nav.navigateRoot('HomePage');
       
     } catch (err) {
       console.log('Error logging in', err);

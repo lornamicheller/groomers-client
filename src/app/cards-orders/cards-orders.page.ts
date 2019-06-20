@@ -20,7 +20,7 @@ export class CardsOrdersPage implements OnInit {
   Id:any;
   pets:any;
   petId:any;
-
+  type:any;
   liveQuery:any;
   petSubs:any;
   deletePet:any;
@@ -118,7 +118,8 @@ export class CardsOrdersPage implements OnInit {
 
   }
  
-  
+
+
 
   goToEdit(petid)
   {
@@ -182,7 +183,7 @@ export class CardsOrdersPage implements OnInit {
       iosdelay: 100
   }
 
-  
+
   this.provider.petid = petId;
   console.log(this.provider.petid);
     console.log(options);

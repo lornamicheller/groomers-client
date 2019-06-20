@@ -31,6 +31,8 @@ export class GroomproviderService {
   paymentMethod:any;
   search:any;
   groomerId:any;
+  petSize:any;
+  groomerObject:any;
 
   groomers:any;
 

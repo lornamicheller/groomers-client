@@ -83,7 +83,7 @@ createUser(){
       return;
   }
 
-  this.stripe.setPublishableKey('pk_live_kQAGHMdtFWYTLEOBycxC011T');
+  this.stripe.setPublishableKey('pk_test_3mheOb7dnYrWsE2aARwoEEax'); /// key test, please change when the app is finished
 
 let cardInfo = {
   number: this.number,

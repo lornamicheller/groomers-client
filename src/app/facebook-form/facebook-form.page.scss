@@ -1,0 +1,105 @@
+.bg {
+    height: 100vh;
+    --background: url('/assets/registerperro.png');
+    background-size: cover;
+  }
+  
+  .arrow-btn {
+    position: absolute;
+    top: 17px;
+    --background: transparent;
+    --background-activated: transparent;
+    color: #414042;
+    --color-activated: #414042;
+  }
+  
+  .arrow-icon {
+    color: #37B34A;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+    height: 90px;
+    width: 100px;
+  }
+  
+  .input-card {
+    box-shadow: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 0;
+  }
+  
+  .name, 
+  .last-name,
+  .email,
+  .password,
+  .zip {
+    font-weight: 700;
+    font-size: 13px;
+    color: grey;
+    border-bottom: 2px solid #37B34A;
+    margin-bottom: 10px
+  }
+  
+  .icon {
+    width: 25px;
+    height: 25px;
+    color: #37B34A;
+    margin-right: 10px;
+  }
+  
+  .login-btn {
+    --background: #37B34A;
+    --background-activated: #414042;
+    --border-radius: 25px;
+    height: 50px;
+    margin-top: 30px;
+    --box-shadow: none;
+    margin-right: 25px;
+    margin-left: 25px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  
+  .terms {
+    --background: transparent;
+    --background-activated: transparent;
+    color: grey;
+    --color-activated: grey;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  .fb-btn {
+    --background: transparent;
+    --background-activated: transparent;
+    color: rgb(122, 122, 122);
+    --color-activated: rgb(122, 122, 122);
+    font-weight: 300;
+    --box-shadow: none;
+  }
+  
+  .fb-icon {
+    margin: 0;
+    padding: 0;
+    color: #4e76ce;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .terms-card {
+    box-shadow: none; 
+    margin: 0; 
+    position: absolute; 
+    top: 413px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }

@@ -21,7 +21,7 @@ export class HomePetsPage implements OnInit {
   Id:any;
   pets:any;
   petId:any;
-
+type:any;
   liveQuery:any;
   petSubs:any;
   deletePet:any;
@@ -119,7 +119,19 @@ export class HomePetsPage implements OnInit {
 
   }
  
-  
+  openPageForCat() {
+    let options: NativeTransitionOptions = {
+        direction: 'left', 
+        duration: 400, 
+        slowdownfactor: -1, 
+        slidePixels: 20, 
+        iosdelay: 100
+    }
+    console.log(options);
+    this.nativePageTransitions.slide(options);
+    //this.navigate.navigateRoot("/tabs/tabs/tab2");
+    this.nav.navigateRoot("/tabs/tabs/address-receiver");
+  }  
 
   goToEdit(petid)
   {
@@ -183,12 +195,25 @@ export class HomePetsPage implements OnInit {
       iosdelay: 100
   }
 
-  
+    console.log(petId.id);
+    console.log(petId.get('type'));
+    console.log(petId.get('size'));
+
+    this.provider.petid = petId.id;
+    this.provider.petSize = petId.get('size');
+
+    //condicion petId.get('type') == DOG si no == CAT 
+  if(petId.get('type') == 'DOG'){
   this.provider.petid = petId;
   console.log(this.provider.petid);
     console.log(options);
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot('/tabs/tabs/tab1');
+  }
+    else{
+      this.openPageForCat();
+    }
+    
 }
 
   getPetObjects(){
@@ -207,5 +232,37 @@ export class HomePetsPage implements OnInit {
     }
   }
 
+  openOrder() {
+    let options: NativeTransitionOptions = { 
+      duration: 500, 
+      iosdelay: 0,
+      androiddelay: 0
+  }
+    console.log(options);
+    this.nativePageTransitions.fade(options);
+    this.nav.navigateRoot('/tabs/tabs/history-order');
+}
+
+openSearch() {
+  let options: NativeTransitionOptions = { 
+    duration: 500, 
+    iosdelay: 0,
+    androiddelay: 0
+}
+  console.log(options);
+  this.nativePageTransitions.fade(options);
+  this.nav.navigateRoot('/tabs/tabs/search');
+}
+
+openProfile() {
+  let options: NativeTransitionOptions = { 
+    duration: 500, 
+    iosdelay: 0,
+    androiddelay: 0
+}
+  console.log(options);
+  this.nativePageTransitions.fade(options);
+  this.nav.navigateRoot('/tabs/tabs/client-prof');
+}
 
 }
