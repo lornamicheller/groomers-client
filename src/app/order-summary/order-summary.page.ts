@@ -230,7 +230,7 @@ export class OrderSummaryPage implements OnInit {
     /*
     Params:
       - provider (groomer)
-      - duration
+      - duration ()
       - startDate
       - pets (id)array
       - address (id)
