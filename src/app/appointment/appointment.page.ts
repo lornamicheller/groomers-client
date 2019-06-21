@@ -101,6 +101,8 @@ async openDatePicker() {
       moment().format("MMM-DD-YYY");
       // this.provider.momentDay = moment(self.startDay,"MM-DD-YY");
       this.provider.momentDay = moment(self.startDay,'DD/MM/YYYY HH:mm').format('MM/DD/YYYY');
+      this.provider.momentRequest = moment(self.startDay,'DD/MM/YYYY HH:mm').format('MM/DD/YYYY h:mm A');
+      console.log("Request:", this.provider.momentRequest);
       console.log("Moment: ", this.provider.momentDay);
       console.log("End Day:", new Date(this.provider.chooseDate + (86400*1000)));
       self.endDay = new Date(this.provider.chooseDate + (86400*1000));
@@ -126,8 +128,11 @@ searchDay()
 
 
     let petsID = [this.provider.petid.id];
+    this.provider.petsArray = petsID;
 
     let appointmentDate = new Date( this.startDay.getTime() );
+    this.provider.startDay = appointmentDate;
+    console.log(this.provider.startDay);
     let dateTime = new Date( this.mydate );
     let hours = dateTime.getHours();
     let minutes = dateTime.getMinutes();
@@ -146,7 +151,7 @@ searchDay()
     console.log(this.startDay);
     console.log(this.endDay);
     console.log(this.mydate);
-    this.provider.momentTime =moment(self.mydate,'DD/MM/YYYY HH:mm').format('h:mm A');
+    this.provider.momentTime =moment(self.mydate,'YYYY-MM-DD hh:mm').format('h:mm A');
     console.log(this.provider.momentTime);
     console.log(petsID);
     console.log(currentUser.get("zipcode"));

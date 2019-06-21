@@ -28,8 +28,11 @@ export class OrderSummaryPage implements OnInit {
     groomerId:any;
     priceOfService:any;
     serviceType:any;
-
+    duration:any;
     day:any;
+
+    serviceRequest:any;
+    
 
 
     // variables!!!!
@@ -42,6 +45,8 @@ export class OrderSummaryPage implements OnInit {
     appFeeByClient:any;
     subtotalLabel:any;
     convenienceFee:any;
+
+    payOptions:any;
 
     swipeFeedLabel:any;
     transactionLabel:any;
@@ -85,20 +90,24 @@ export class OrderSummaryPage implements OnInit {
     // full Grooming ------------------------
       if(this.serviceType == "Full")
       { 
+        this.serviceRequest = "Full Grooming";
         console.log("Entre FULLL!!!!");
           if(this.petSize == "Small")
           {
             this.priceOfService = this.groomerId.get('fullSmall');
+            this.duration = this.groomerId.get('dogSmallDuration');
             console.log(this.priceOfService);
           }
           else if( this.petSize == "Medium")
           {
             this.priceOfService = this.groomerId.get('fullMedium');
+            this.duration = this.groomerId.get('dogMediumDuration');
             console.log(this.priceOfService);
           }
           else if( this.petSize == "Large")
           {
             this.priceOfService = this.groomerId.get('fullLarge');
+            this.duration = this.groomerId.get('dogLargeDuration');
             console.log(this.priceOfService);
 
           }
@@ -107,20 +116,24 @@ export class OrderSummaryPage implements OnInit {
       // bath ----------------------------
       else if (this.serviceType == "Bath")
       {
+        this.serviceRequest = "Bath";
         console.log("Entre BATHHHHHH!!!!");
         if(this.petSize == "Small")
           {
             this.priceOfService = this.groomerId.get('bathSmall');
+            this.duration = this.groomerId.get('dogSmallDuration');
             console.log(this.priceOfService);
           }
           else if( this.petSize == "Medium")
           {
             this.priceOfService = this.groomerId.get('bathMedium');
+            this.duration = this.groomerId.get('dogMediumDuration');
             console.log(this.priceOfService);
           }
           else if( this.petSize == "Large")
           {
             this.priceOfService = this.groomerId.get('bathLarge');
+            this.duration = this.groomerId.get('dogLargeDuration');
             console.log(this.priceOfService);
 
           }
@@ -140,6 +153,8 @@ export class OrderSummaryPage implements OnInit {
     // later
       if(this.provider.paymentMethod == "Later")
       {
+
+        this.payOptions = "later";
         this.subtotal = this.priceOfService;
         console.log( this.subtotal);
         this.totalFee = this.subtotal + this.convenienceFee;
@@ -167,6 +182,8 @@ export class OrderSummaryPage implements OnInit {
       // full 
       else if(this.provider.paymentMethod == "Full")
       {
+
+        this.payOptions = "full";
 
          this.subtotal = this.priceOfService;
          console.log( this.subtotal);
@@ -225,21 +242,45 @@ export class OrderSummaryPage implements OnInit {
     this.nav.navigateRoot("/tabs/tabs/order-success");
   }
 
+  makeTransaction()
+  {
+
+    Parse.Cloud.run('charge', {
+      amount: this.totalLabel,
+      customerId: this.provider.customerId,
+      description:Parse.User.current().get('email'),
+      cardId:this.provider.customerCardId,
+      subtotal:this.subtotalLabel,
+      swipeFee:this.swipeFeedLabel,
+      convenienceFee:this.convenienceFee,
+      appFeeByClient:0.00,
+      appFeeByGroomer:0.00
+    }).then((result) => {
+      console.log("Pago Exitoso!!!!");
+      console.log(result);
+    });
+   
+    (error)=>{
+      console.log(error);
+    }
+
+
+  }
+
   createService()
   {
     /*
     Params:
-      - provider (groomer)
-      - duration ()
-      - startDate
+      - provider (groomerid)
+      - duration (dogsmallduration)
+      - startDate 
       - pets (id)array
       - address (id)
-      - isManual
+      - isManual false
       - subtotal
       - service (full or bath)
-      - hours ()
-      - phone 
-      - date 
+      - phone (telephone client)
+      - date  ( 06/13/2019 7:00 AM)
       - coordinates
       - name
       - email
@@ -247,36 +288,33 @@ export class OrderSummaryPage implements OnInit {
       - type
       - time 
       - appFee
-      - appFeeByGroomer
-      - appFeeByClient
+      - appFeeByGroomer (0.00)
+      - appFeeByClient (0.00)
       - appFee
       - charge
-      - payOption
+      - payOption (now or later)
       */
 
      Parse.Cloud.run('submitServiceRequest', {
-      provider: null,
-      duration: null ,
-      startDate: null,
-      pets: null,
-      address: null,
-      isManual: null,
-      subtotal: null,
-      service: null,
-      hours: null,
-      phone: null,
-      date : null,
-      coordinates: null,
-      name: null,
-      email: null,
-      size: null,
-      type: null,
-      time : null,
-      appFee: null,
-      appFeeByGroomer: null,
-      appFeeByClient: null,
+      provider: this.groomerId.get('objectId'),
+      duration: this.duration ,
+      startDate: this.provider.startDay,
+      pets: this.provider.petsArray,
+      address: this.provider.addressId ,
+      isManual: false,
+      subtotal: this.subtotalLabel,
+      service: this.serviceRequest,
+      phone: this.phone,
+      date : this.provider.momentRequest,
+      name: Parse.User.current().get('fullName'),
+      email: Parse.User.current().get('email'),
+      size: this.petSize,
+      type:  this.provider.petid,
+      time : this.provider.momentTime,
+      appFeeByGroomer: 0.00,
+      appFeeByClient: 0.00,
       charge: null,
-      payOption: null
+      payOption: this.payOptions
 
     }).then((result) => {
       console.log(result);
@@ -287,9 +325,6 @@ export class OrderSummaryPage implements OnInit {
       console.log(error);
     }
 
-
-
-    
   }
 
   goBack() {

@@ -37,6 +37,13 @@ export class GroomproviderService {
   momentTime:any;
 
   groomers:any;
+  petsArray:any;
+  addressId:any;
+  momentRequest:any;
+  typeOfPets:any;
+  customerId:any;
+  customerCardId:any;
+
 
 
   typeOfService:any;

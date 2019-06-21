@@ -73,6 +73,10 @@ export class CardReceiverPage implements OnInit {
     console.log(card);
     console.log(card.id);
     console.log(card.customer);
+    this.provider.customerId = card.customer;
+    this.provider.customerCardId = card.id;
+
+    
 
     Parse.Cloud.run("stripeDeleteCard", {
       customerId: card.customer,
@@ -133,7 +137,7 @@ export class CardReceiverPage implements OnInit {
     this.nav.navigateRoot("tabs/tabs/add-new-card");
 }
 
-useCard() {
+useCard(card) {
   let options: NativeTransitionOptions= {
       direction: 'left', 
       duration: 400, 
@@ -141,6 +145,13 @@ useCard() {
       slidePixels: 20, 
       iosdelay: 100
   }
+
+
+    this.provider.customerId = card.customer;
+    console.log("Customer ID: ",this.provider.customerId);
+    this.provider.customerCardId = card.id;
+    console.log("Customer Card ID: ",this.provider.customerCardId);
+
   console.log(options);
   this.nativePageTransitions.slide(options);
   this.nav.navigateRoot("tabs/tabs/make-payment");

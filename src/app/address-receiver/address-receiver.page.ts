@@ -36,7 +36,7 @@ export class AddressReceiverPage implements OnInit {
    this.getAddressObjects();
   }
 
-  openPage(zipCode) {
+  openPage(zipCode, addressId) {
     let options: NativeTransitionOptions = {
       direction: 'left',
       duration: 400,
@@ -46,6 +46,8 @@ export class AddressReceiverPage implements OnInit {
   }
 
     this.provider.zipCode = zipCode;
+    this.provider.addressId = addressId;
+    console.log(this.provider.addressId);
     console.log(this.provider.zipCode);
     console.log(options);
     this.nativePageTransitions.slide(options);
