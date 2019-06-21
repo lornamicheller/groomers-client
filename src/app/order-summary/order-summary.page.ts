@@ -364,7 +364,7 @@ export class OrderSummaryPage implements OnInit {
         role: 'cancel',
         cssClass: 'secondary',
         handler: () => {
-       
+          this.openPage();
         }
       }]
       });

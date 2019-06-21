@@ -1,7 +1,7 @@
 <div class="borders">
   <ion-card style="box-shadow: none; height: 80px;">
     <img class="logo" src="assets/logoblanco.svg">
-    <ion-button href="/tabs/tabs/appointment" class="arrow-btn">
+    <ion-button (click)="goBack()" class="arrow-btn">
       <ion-icon class="arrow-icon" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
     </ion-button>
   </ion-card>
@@ -9,13 +9,21 @@
 
 <ion-content>
   <ion-slides pager="false">
-    <ion-slide>
+    <ion-slide *ngFor="let photo of groomerId.get('album')">
+      <!-- <ion-button class="skip-btn" expand="full">Skip</ion-button> -->
+      <ion-card class="tutorial-first-card">
+        <ion-img  class="circle-img" src="{{photo.url()}}"></ion-img>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide *ngIf="groomerId.get('album') == null">
       <!-- <ion-button class="skip-btn" expand="full">Skip</ion-button> -->
       <ion-card class="tutorial-first-card">
         <ion-img class="circle-img" src="/assets/fotogroo1.jpg"></ion-img>
+        
       </ion-card>
     </ion-slide>
-    <ion-slide>
+    <!-- <ion-slide>
       <ion-card class="tutorial-first-card">
         <ion-img class="circle-img" src="/assets/fotogroo2.jpg"></ion-img>
       </ion-card>
@@ -29,8 +37,8 @@
       <ion-card class="tutorial-first-card">
         <ion-img class="circle-img" src="/assets/fotogroo4.jpg"></ion-img>
       </ion-card>
-    </ion-slide>
-  </ion-slides>
+    </ion-slide>-->
+  </ion-slides> 
   <h1 class="business-name">{{groomerId.get('fullName')}}</h1>
 
   <ion-card style="box-shadow: none;">

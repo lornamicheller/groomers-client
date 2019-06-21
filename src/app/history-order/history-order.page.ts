@@ -19,8 +19,9 @@ export class HistoryOrderPage implements OnInit {
   client:any;
   pets:any;
   res:any;
+  status:any;
 
-  constructor(public nav:NavController, private nativePageTransitions: NativePageTransitions) {
+  constructor(public nav:NavController, private nativePageTransitions: NativePageTransitions, public provider: GroomproviderService) {
 
     parse.serverURL = 'https://parseapi.back4app.com/';
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");  
@@ -31,7 +32,7 @@ export class HistoryOrderPage implements OnInit {
     this.getHistory();
   }
 
-  openPage() {
+  openPage(pet) {
     let options: NativeTransitionOptions = {
         direction: 'left', 
         duration: 400, 
@@ -40,6 +41,7 @@ export class HistoryOrderPage implements OnInit {
         iosdelay: 100
     }
     console.log(options);
+    this.provider.petServiceInfo = pet;
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot('/tabs/tabs/status-appointment');
   }
@@ -53,12 +55,41 @@ export class HistoryOrderPage implements OnInit {
     }). then((results) => {
       this.res=results;
       console.log(this.res);
+
+        
+
+
       //success
     });
    
     (error)=>{
       console.log(error);
     }
+  }
+
+  getStatus(service)
+  {
+    if(service.get("status") == 'r')
+    {
+      return "Request";
+    }
+
+    if(service.get("status") == 'c')
+    {
+      return "Cancel";
+    }
+
+
+    if(service.get("status") == 'a')
+    {
+      return "Acepted";
+    }
+
+    if(service.get("status") == 'f')
+    {
+     return "Finish";
+    }
+
   }
 
  

@@ -89,12 +89,12 @@
             </div>
             <!-- /rating star -->
             <!-- <p class="price">$60.00</p> -->
-            <p *ngIf="serviceType == 'Full' && petSize=='Small' " class="price">{{groomer.get("fullSmall")}}</p>
-            <p *ngIf="serviceType == 'Full' && petSize=='Medium' " class="price">{{groomer.get("fullMedium")}}</p>
-            <p *ngIf="serviceType == 'Full' && petSize=='Large' "  class="price">{{groomer.get("fullLarge")}}</p>
-            <p *ngIf="serviceType == 'Bath' && petSize=='Small' " class="price">{{groomer.get("bathSmall")}}</p>
-            <p *ngIf="serviceType == 'Bath' && petSize=='Medium' " class="price">{{groomer.get("bathMedium")}}</p>
-          <p *ngIf="serviceType == 'Bath' && petSize=='Large' " class="price">{{groomer.get("bathLarge")}}</p>
+            <p *ngIf="serviceType == 'Full' && petSize=='Small' " class="price"> ${{groomer.get("fullSmall")}}.00</p>
+            <p *ngIf="serviceType == 'Full' && petSize=='Medium' " class="price">${{groomer.get("fullMedium")}}.00</p>
+            <p *ngIf="serviceType == 'Full' && petSize=='Large' "  class="price">${{groomer.get("fullLarge")}}.00</p>
+            <p *ngIf="serviceType == 'Bath' && petSize=='Small' " class="price">${{groomer.get("bathSmall")}}.00</p>
+            <p *ngIf="serviceType == 'Bath' && petSize=='Medium' " class="price">${{groomer.get("bathMedium")}}.00</p>
+          <p *ngIf="serviceType == 'Bath' && petSize=='Large' " class="price">${{groomer.get("bathLarge")}}.00</p>
           
           </ion-col>
 

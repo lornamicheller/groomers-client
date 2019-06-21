@@ -11,6 +11,7 @@ var parse = require('parse')
 export class GroomproviderService {
 
   email: string;//sing in
+  petServiceInfo:any;
   password: string;// sing in 
   name:string;
   lastName:string;

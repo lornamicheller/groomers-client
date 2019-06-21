@@ -10,13 +10,14 @@
       <ion-row>
         <ion-col size="6" style="padding: 0;">
           <ion-avatar class="frame">
-            <img class="img-fit" src="assets/fotogroo3.jpg">
+            <img *ngIf="reslt.get('pets')[0].get('petImage') == null"  class="img-fit" src="assets/fotogroo3.jpg">
+            <img *ngIf="reslt.get('pets')[0].get('petImage') != null" class="img-fit" src="{{reslt.get('pets')[0].get('petImage').url()}}">
           </ion-avatar>
         </ion-col>
         <ion-col size="6" style="padding: 0;">
           <p class="appointment-date">{{reslt.get("date")}}</p>
-          <p class="status-app">{{reslt.get("status")}}</p>
-          <ion-button (click)="openPage()" expand="block" class="view-btn">View</ion-button>
+          <p class="status-app">{{getStatus(reslt)}}</p>
+          <ion-button (click)="openPage(reslt)" expand="block" class="view-btn">View</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

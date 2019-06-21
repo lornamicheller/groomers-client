@@ -10,25 +10,25 @@
 
   <ion-card style="box-shadow: none; margin: 0; border-radius: 0;">
     <img src="assets/fotogroo3.jpg" style="height: 300px; object-fit: cover;">
-    <p class="status-app">Status: <span style="color: red;">Canceled</span></p>
+    <p class="status-app">Status: <span style="color: red;">{{status}}</span></p>
   </ion-card>
 
   <ion-list>
     <ion-item>
       <img class="icon" src="assets/carita de perrito.png">
-      <p class="color-label">Pet: <span>Cami</span></p>
+      <p class="color-label">Pet: <span>{{name}}</span></p>
     </ion-item>
     <ion-item>
       <img class="icon" src="assets/calendario.png">
-      <p class="color-label">05-17-2019 6:00 PM</p>
+      <p class="color-label">{{date}}</p>
     </ion-item>
     <ion-item>
       <img class="icon" src="assets/calendario.png">
-      <p class="color-label">Service: <span>Full Grooming</span></p>
+      <p class="color-label">Service: <span>{{service}}</span></p>
     </ion-item>
     <ion-item>
         <img class="icon" src="assets/guaguita.png">
-      <p class="color-label">Address: <span>Calle Alicante 607 Caguas, 33066</span></p>
+      <p class="color-label">Address: <span>{{address}}</span></p>
     </ion-item>
   </ion-list>
 </ion-content>
