@@ -125,7 +125,7 @@ searchDay()
 {
 
 
-    let petsID = [this.provider.petid];
+    let petsID = [this.provider.petid.id];
 
     let appointmentDate = new Date( this.startDay.getTime() );
     let dateTime = new Date( this.mydate );

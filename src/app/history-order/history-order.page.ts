@@ -28,6 +28,7 @@ export class HistoryOrderPage implements OnInit {
    
 
   ngOnInit() {
+    this.getHistory();
   }
 
   openPage() {

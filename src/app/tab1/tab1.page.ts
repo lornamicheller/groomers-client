@@ -50,8 +50,8 @@ bathService:any;
       // if(this.fullService == 'Full Grooming')
       //  // this.provider.services = 'Full Grooming';
       //   console.log(this.fullService);
-      this.provider.services= "Full Grooming";
-      console.log(this.provider.services);
+      this.provider.typeOfService= "Full";
+      console.log(this.provider.typeOfService);
          this.openPage();
       
     }
@@ -60,8 +60,8 @@ bathService:any;
     //   if(this.bathService == 'Bath')
     //  // this.provider.services = 'Bath';
     //   console.log(this.bathService);
-    this.provider.services= "Bath";
-    console.log(this.provider.services);
+    this.provider.typeOfService= "Bath";
+    console.log(this.provider.typeOfService);
       this.openPage();
   }
   

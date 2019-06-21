@@ -57,14 +57,19 @@ export class OrderSummaryPage implements OnInit {
     this.phone = Parse.User.current().get('phone');
     //payment method ( full or later)
     this.service = this.provider.paymentMethod;
+    console.log(this.service);
     // pet size (small, medium or large)
     this.petSize = this.provider.petSize;
+    console.log(this.petSize);
     // groomer object 
     this.groomerId = this.provider.groomerId;
+    console.log(this.groomerId);
     // type of service
-    this.serviceType = this.provider.services;
+    this.serviceType = this.provider.typeOfService;
+    console.log(this.serviceType);
     //name of groomer
     this.nameGroomer = this.provider.groomerId.get('fullName');
+    console.log(this.nameGroomer);
  
     //default value of convenienceFee
     this.convenienceFee = 2.99;
@@ -78,8 +83,9 @@ export class OrderSummaryPage implements OnInit {
   decision()
   {
     // full Grooming ------------------------
-      if(this.serviceType == "Full Gromming")
-      {
+      if(this.serviceType == "Full")
+      { 
+        console.log("Entre FULLL!!!!");
           if(this.petSize == "Small")
           {
             this.priceOfService = this.groomerId.get('fullSmall');
@@ -101,7 +107,7 @@ export class OrderSummaryPage implements OnInit {
       // bath ----------------------------
       else if (this.serviceType == "Bath")
       {
-
+        console.log("Entre BATHHHHHH!!!!");
         if(this.petSize == "Small")
           {
             this.priceOfService = this.groomerId.get('bathSmall');
@@ -120,6 +126,11 @@ export class OrderSummaryPage implements OnInit {
           }
 
       }
+
+      else
+      {
+        // console.log("ACHOOOOO PUNNNEEETAAAAA!!!!!");
+      }
   }
 
 
@@ -130,11 +141,17 @@ export class OrderSummaryPage implements OnInit {
       if(this.provider.paymentMethod == "Later")
       {
         this.subtotal = this.priceOfService;
+        console.log( this.subtotal);
         this.totalFee = this.subtotal + this.convenienceFee;
+        console.log( this.totalFee);
         this.swipeFee = this.totalFee * 0.029 + 0.40;
+        console.log( this.swipeFee);
         this.total = this.swipeFee + this.convenienceFee;
+        console.log( this.total);
         this.appFeeByGroomer = this.subtotal + this.convenienceFee;
+        console.log( this.appFeeByGroomer);
         this.appFeeByClient = this.subtotal * 0.90;
+        console.log( this.appFeeByClient);
 
         this.subtotalLabel = "$" + this.subtotal.toFixed(2);
         console.log(this.subtotalLabel);
@@ -152,12 +169,19 @@ export class OrderSummaryPage implements OnInit {
       {
 
          this.subtotal = this.priceOfService;
+         console.log( this.subtotal);
          this.totalFee = this.subtotal + this.convenienceFee;//???
+         console.log( this.totalFee);
          this.swipeFee = this.totalFee * 0.029 + 0.40;
+         console.log( this.swipeFee);
          this.total = this.subtotal + this.swipeFee + this.convenienceFee;
+         console.log( this.total);
          this.appFeeByGroomer = this.subtotal + this.convenienceFee;
+         console.log( this.appFeeByGroomer);
          this.appFeeByClient =this.subtotal * 0.90;
+         console.log( this.appFeeByClient);
          this.subtotalLabel =  "$" + this.subtotal.toFixed(2);
+         console.log( this.subtotalLabel);
          console.log(this.subtotalLabel);
 
          this.swipeFeedLabel = "$" + this.swipeFee.toFixed(2);
@@ -167,9 +191,6 @@ export class OrderSummaryPage implements OnInit {
          this.totalLabel = " $" + this.total.toFixed(2);
          console.log(this.totalLabel);
 
-
-
-
       }
 
 
@@ -178,7 +199,7 @@ export class OrderSummaryPage implements OnInit {
   getPet()
   {
     Parse.Cloud.run('getPetsInfo', {
-      petId: this.provider.petid
+      petId: this.provider.petid.id
     }).then((result) => {
       console.log(result);
       this.pets = result;
@@ -202,6 +223,73 @@ export class OrderSummaryPage implements OnInit {
     console.log(options);
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot("/tabs/tabs/order-success");
+  }
+
+  createService()
+  {
+    /*
+    Params:
+      - provider (groomer)
+      - duration
+      - startDate
+      - pets (id)array
+      - address (id)
+      - isManual
+      - subtotal
+      - service (full or bath)
+      - hours ()
+      - phone 
+      - date 
+      - coordinates
+      - name
+      - email
+      - size
+      - type
+      - time 
+      - appFee
+      - appFeeByGroomer
+      - appFeeByClient
+      - appFee
+      - charge
+      - payOption
+      */
+
+     Parse.Cloud.run('submitServiceRequest', {
+      provider: null,
+      duration: null ,
+      startDate: null,
+      pets: null,
+      address: null,
+      isManual: null,
+      subtotal: null,
+      service: null,
+      hours: null,
+      phone: null,
+      date : null,
+      coordinates: null,
+      name: null,
+      email: null,
+      size: null,
+      type: null,
+      time : null,
+      appFee: null,
+      appFeeByGroomer: null,
+      appFeeByClient: null,
+      charge: null,
+      payOption: null
+
+    }).then((result) => {
+      console.log(result);
+      this.pets = result;
+    });
+   
+    (error)=>{
+      console.log(error);
+    }
+
+
+
+    
   }
 
   goBack() {

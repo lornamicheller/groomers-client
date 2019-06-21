@@ -38,6 +38,9 @@ export class GroomproviderService {
 
   groomers:any;
 
+
+  typeOfService:any;
+
   cardId:any;
   
 

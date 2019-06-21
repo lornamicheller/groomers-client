@@ -10,9 +10,9 @@
 <ion-content>
 
   <!-- <ion-button expand="block" (click)="openCamera()" class="profile-btn"></ion-button> -->
-  <img ion-button expand="block" (click)="openCamera()" *ngIf="picture == null" class="imgFit"
+  <img ion-button expand="block" (click)="presentAlertConfirm()" *ngIf="picture == null" class="imgFit"
     src="assets/icon-cam.png">
-  <img ion-button expand="block" (click)="openCamera()" *ngIf="picture != null" class="imgFit2" src="{{picture}}">
+  <img ion-button expand="block" (click)="presentAlertConfirm()" *ngIf="picture != null" class="imgFit2" src="{{picture}}">
 
 
   <p
@@ -238,6 +238,7 @@
         <ion-select-option value="Wirehaired Pointing Griffon">Wirehaired Pointing Griffon</ion-select-option>
         <ion-select-option value="Xoloitzcuintli">Xoloitzcuintli</ion-select-option>
         <ion-select-option value="Yorkshire terrier">Yorkshire terrier</ion-select-option>
+        <ion-select-option value="Other">Other</ion-select-option>
 
       </ion-select>
     </ion-item>

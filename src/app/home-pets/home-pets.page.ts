@@ -203,7 +203,7 @@ export class HomePetsPage implements OnInit {
     this.provider.petSize = petId.get('size');
 
     //condicion petId.get('type') == DOG si no == CAT 
-  if(petId.get('type') == 'DOG'){
+  if(petId.get('type') == "DOG"){
   this.provider.petid = petId;
   console.log(this.provider.petid);
     console.log(options);

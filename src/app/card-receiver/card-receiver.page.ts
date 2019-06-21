@@ -50,7 +50,7 @@ export class CardReceiverPage implements OnInit {
     await alert.present();
   }
 
-  async deleteAlert(error: any) {
+  async deleteAlert() {
     const alert = await this.alertCtrl.create({
       header: 'Alert!',
       message: "Your card has been delete!",
@@ -71,13 +71,16 @@ export class CardReceiverPage implements OnInit {
   {
 
     console.log(card);
+    console.log(card.id);
+    console.log(card.customer);
 
     Parse.Cloud.run("stripeDeleteCard", {
-      customerId: Parse.User.current().id,
-      cardId: card
+      customerId: card.customer,
+      cardId: card.id
     }).then((result) => {
      console.log(result);
      console.log("Delete!!!");
+     this.deleteAlert();
     },
    
     (error)=>{

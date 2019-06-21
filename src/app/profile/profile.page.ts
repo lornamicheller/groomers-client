@@ -45,7 +45,8 @@ export class ProfilePage implements OnInit {
 
   openCamera() {
       const options: CameraOptions = {
-        quality: 100, targetWidth: 900, 
+        quality: 50, 
+        targetWidth: 900, 
         targetHeight: 600, 
         destinationType: this.camera.DestinationType.DATA_URL, 
         encodingType: this.camera.EncodingType.JPEG, 
@@ -83,7 +84,7 @@ export class ProfilePage implements OnInit {
   openLibrary() {
     const options: CameraOptions = {
       destinationType: this.camera.DestinationType.FILE_URI,
-      quality: 100,
+      quality: 50,
       targetWidth: 1000,
       targetHeight: 1000,
       encodingType: this.camera.EncodingType.JPEG, 
