@@ -15,7 +15,7 @@
     <ion-grid style="margin: 0; padding: 0;">
       <ion-row>
         <ion-col size="4" class="green-bg">
-          <ion-button class="profile-btn" (click)="openPage(pet.id)">
+          <ion-button class="profile-btn" (click)="openPage(pet)">
             <ion-ripple-effect></ion-ripple-effect>
             <ion-avatar class="avatar-border">
               <img *ngIf="pet.get('petImage') == null " class="imgFit" src="assets/perri1.jpg">

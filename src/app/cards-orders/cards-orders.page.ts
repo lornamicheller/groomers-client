@@ -184,7 +184,9 @@ export class CardsOrdersPage implements OnInit {
   }
 
 
-  this.provider.petid = petId;
+  this.provider.petid = petId.id;
+  this.provider.petType = petId.get('type');
+  console.log("type:", this.provider.petType);
   console.log(this.provider.petid);
     console.log(options);
     this.nativePageTransitions.slide(options);

@@ -40,6 +40,7 @@
     "cordova-plugin-calendar": "5.1.4",
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-facebook4": "4.2.1",
+    "cordova-plugin-firebase": "2.0.5",
     "cordova-plugin-stripe": "1.5.3",
     "core-js": "^2.5.4",
     "date-fns": "^1.30.1",

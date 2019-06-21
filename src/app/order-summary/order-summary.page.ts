@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
 import {GroomproviderService } from "./../../app/groomprovider.service";
+import { AlertController } from "@ionic/angular";
 import * as Parse from 'parse';
 let parse =require('parse');
 
@@ -12,7 +13,7 @@ let parse =require('parse');
 })
 export class OrderSummaryPage implements OnInit {
 
-  constructor(public provider: GroomproviderService,private nativePageTransitions: NativePageTransitions, public nav: NavController,
+  constructor(public alert:AlertController,public provider: GroomproviderService,private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController) 
     {
       parse.serverURL = 'https://parseapi.back4app.com/';
@@ -51,6 +52,7 @@ export class OrderSummaryPage implements OnInit {
     swipeFeedLabel:any;
     transactionLabel:any;
     totalLabel:any;
+    chargeId:any;
     nameGroomer:any;
   
 
@@ -244,20 +246,29 @@ export class OrderSummaryPage implements OnInit {
 
   makeTransaction()
   {
+      console.log("total: ",this.total);
+      console.log("customer id: ",this.provider.customerId);
+      console.log("description: ",Parse.User.current().get('email'));
+      console.log("card Id: ",this.provider.customerCardId);
+      console.log("subtotal: ",this.subtotal);
+      console.log("swipeFee: ",this.swipeFee);
+      console.log("convenienceFee: ",this.convenienceFee);
 
     Parse.Cloud.run('charge', {
-      amount: this.totalLabel,
+      amount:this.total,
       customerId: this.provider.customerId,
       description:Parse.User.current().get('email'),
       cardId:this.provider.customerCardId,
-      subtotal:this.subtotalLabel,
-      swipeFee:this.swipeFeedLabel,
-      convenienceFee:this.convenienceFee,
+      subtotal:this.subtotal,
+      swipeFee:this.swipeFee,
+      covenienceFee:this.convenienceFee,
       appFeeByClient:0.00,
       appFeeByGroomer:0.00
     }).then((result) => {
       console.log("Pago Exitoso!!!!");
-      console.log(result);
+      this.createService();
+      console.log(result.get('purchase').id);
+      this.chargeId = result.get('purchase').id;
     });
    
     (error)=>{
@@ -295,30 +306,46 @@ export class OrderSummaryPage implements OnInit {
       - payOption (now or later)
       */
 
+      // console.log("Paramsss!!:");
+      // console.log("Provider:");
+      // console.log("duration:");
+      // console.log("starDate:");
+      // console.log("pets:");
+      // console.log("address:");
+      // console.log("subtotal:");
+      // console.log("service:");
+      // console.log("phone:");
+      // console.log("date:");
+      // console.log("name:");
+      // console.log("email:");
+      // console.log("size:");
+      // console.log("end");
+
      Parse.Cloud.run('submitServiceRequest', {
-      provider: this.groomerId.get('objectId'),
+      provider: this.groomerId.id,
       duration: this.duration ,
       startDate: this.provider.startDay,
       pets: this.provider.petsArray,
       address: this.provider.addressId ,
       isManual: false,
-      subtotal: this.subtotalLabel,
+      subtotal: this.total,
       service: this.serviceRequest,
       phone: this.phone,
       date : this.provider.momentRequest,
       name: Parse.User.current().get('fullName'),
       email: Parse.User.current().get('email'),
       size: this.petSize,
-      type:  this.provider.petid,
+      type:   this.provider.petType,
       time : this.provider.momentTime,
       appFeeByGroomer: 0.00,
       appFeeByClient: 0.00,
-      charge: null,
+      charge: this.chargeId,
       payOption: this.payOptions
 
     }).then((result) => {
-      console.log(result);
-      this.pets = result;
+      console.log("Resultado");
+      this.savedInfo();
+
     });
    
     (error)=>{
@@ -326,6 +353,26 @@ export class OrderSummaryPage implements OnInit {
     }
 
   }
+
+  async savedInfo(){
+  
+    const alert = await this.alert.create({
+      header: 'ALERT!',
+      message: 'Your service success',
+      buttons: [{
+        text: 'OK',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+       
+        }
+      }]
+      });
+  
+      await alert.present();
+      
+
+}
 
   goBack() {
     let options: NativeTransitionOptions = {

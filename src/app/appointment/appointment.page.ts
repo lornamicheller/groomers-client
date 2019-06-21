@@ -37,6 +37,7 @@ datePickerObjPtBr:any;
 startDay:any;
 endDay:any;
 zipCode:any;
+chooseDay:any;
 
 chooseDate:any;
 
@@ -101,6 +102,7 @@ async openDatePicker() {
       moment().format("MMM-DD-YYY");
       // this.provider.momentDay = moment(self.startDay,"MM-DD-YY");
       this.provider.momentDay = moment(self.startDay,'DD/MM/YYYY HH:mm').format('MM/DD/YYYY');
+      this.chooseDay = this.provider.momentDay;
       this.provider.momentRequest = moment(self.startDay,'DD/MM/YYYY HH:mm').format('MM/DD/YYYY h:mm A');
       console.log("Request:", this.provider.momentRequest);
       console.log("Moment: ", this.provider.momentDay);
@@ -125,6 +127,11 @@ async openDatePicker() {
 
 searchDay()
 {
+    if(this.startDay == null )
+    {
+      this.errorAlert();
+    }
+  
 
 
     let petsID = [this.provider.petid.id];
@@ -138,6 +145,11 @@ searchDay()
     let minutes = dateTime.getMinutes();
 
     console.log("date: ", appointmentDate);
+
+    if(this.mydate == null)
+  {
+    this.hourAlert();
+  }
 
     
     //console.log("time: " + dateTime);
@@ -202,6 +214,33 @@ async presentAlert() {
               console.log('Confirm Cancel');
               this.openPage();
               this.navigate.navigateRoot('/tabs/tabs/choose-groomer');
+          }
+      }
+      ]
+  }
+  );
+  await alert.present();
+}
+
+async errorAlert() {
+  const alert=await this.alertController.create( {
+      header: 'Error!', message: ' Please choose correct date. ', buttons: [ {
+          text: 'OK', handler: () => {
+              console.log('Confirm Cancel');
+          }
+      }
+      ]
+  }
+  );
+  await alert.present();
+}
+
+
+async hourAlert() {
+  const alert=await this.alertController.create( {
+      header: 'Error!', message: ' Please choose one hour. ', buttons: [ {
+          text: 'OK', handler: () => {
+              console.log('Confirm Cancel');
           }
       }
       ]

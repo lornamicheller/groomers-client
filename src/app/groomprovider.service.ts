@@ -44,6 +44,7 @@ export class GroomproviderService {
   customerId:any;
   customerCardId:any;
 
+  petType:any;
 
 
   typeOfService:any;

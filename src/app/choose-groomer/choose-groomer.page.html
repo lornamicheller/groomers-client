@@ -35,7 +35,7 @@
         <p
           style="text-align: right; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
           HOUR:
-          <span style="color: grey; font-weight: 300; font-size: 13px;">9:00AM</span></p>
+          <span style="color: grey; font-weight: 300; font-size: 13px;">{{hour}}</span></p>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -75,7 +75,7 @@
 
           <ion-col size="8" class="grey-bg">
             <p class="name">{{groomer.get("businessName")}}</p>
-            <p class="kind-groo">Full Grooming</p>
+            <p class="kind-groo">{{typeOfService}}</p>
             <!-- rating star -->
             <div class="ratings">
               <ion-buttons>
@@ -88,7 +88,14 @@
               </ion-buttons>
             </div>
             <!-- /rating star -->
-            <p class="price">$60.00</p>
+            <!-- <p class="price">$60.00</p> -->
+            <p *ngIf="serviceType == 'Full' && petSize=='Small' " class="price">{{groomer.get("fullSmall")}}</p>
+            <p *ngIf="serviceType == 'Full' && petSize=='Medium' " class="price">{{groomer.get("fullMedium")}}</p>
+            <p *ngIf="serviceType == 'Full' && petSize=='Large' "  class="price">{{groomer.get("fullLarge")}}</p>
+            <p *ngIf="serviceType == 'Bath' && petSize=='Small' " class="price">{{groomer.get("bathSmall")}}</p>
+            <p *ngIf="serviceType == 'Bath' && petSize=='Medium' " class="price">{{groomer.get("bathMedium")}}</p>
+          <p *ngIf="serviceType == 'Bath' && petSize=='Large' " class="price">{{groomer.get("bathLarge")}}</p>
+          
           </ion-col>
 
         </ion-row>

@@ -22,8 +22,18 @@ export class ChooseGroomerPage implements OnInit {
     availableGroomers: any;
     pet:any;
     option:string;
+    hour:any;
+    typeOfService:any;
 
     day:any;
+
+//  varibale
+    serviceType:any;
+    serviceRequest:any;
+    petSize:any;
+    priceOfService:any;
+    groomerId:any;
+    duration:any;
 
   ngOnInit() {
 
@@ -34,6 +44,16 @@ export class ChooseGroomerPage implements OnInit {
 
    this.groomers = this.provider.groomers;
    this.day =   this.provider.momentDay ;
+   this.hour = this.provider.momentTime;
+   this.typeOfService = this.provider.typeOfService;
+
+    // type of service
+    this.serviceType = this.provider.typeOfService;
+    console.log(this.serviceType);
+    //size
+    this.petSize = this.provider.petSize;
+    console.log(this.petSize);
+
   }
 
   getPet()
