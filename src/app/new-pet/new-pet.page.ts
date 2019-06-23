@@ -53,7 +53,15 @@ let parse=require('parse');
     }
     openCamera() {
         const options: CameraOptions= {
-            quality: 50, targetWidth: 900, targetHeight: 600, destinationType: this.camera.DestinationType.DATA_URL, encodingType: this.camera.EncodingType.JPEG, mediaType: this.camera.MediaType.PICTURE, saveToPhotoAlbum: false, allowEdit: true, sourceType: 1
+            quality: 50, 
+            targetWidth: 900, 
+            targetHeight: 600, 
+            destinationType: this.camera.DestinationType.DATA_URL, 
+            encodingType: this.camera.EncodingType.JPEG, 
+            mediaType: this.camera.MediaType.PICTURE, 
+            saveToPhotoAlbum: false, 
+            allowEdit: true, 
+            sourceType: 1
         }
         this.camera.getPicture(options).then((imageData)=> {
             this.picture='data:image/jpeg;base64,' + imageData;
@@ -80,7 +88,14 @@ let parse=require('parse');
     }
     openLibrary() {
         const options: CameraOptions= {
-            destinationType: this.camera.DestinationType.FILE_URI, quality: 50, targetWidth: 1000, targetHeight: 1000, encodingType: this.camera.EncodingType.JPEG, sourceType: this.camera.PictureSourceType.PHOTOLIBRARY, correctOrientation: true
+            destinationType: 
+            this.camera.DestinationType.FILE_URI, 
+            quality: 50, 
+            targetWidth: 900, 
+            targetHeight: 600,  
+            encodingType: this.camera.EncodingType.JPEG, 
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY, 
+            correctOrientation: true
         }
         this.camera.getPicture(options).then((imageData)=> {
             this.picture='data:image/jpeg;base64,' + imageData;
@@ -122,6 +137,34 @@ let parse=require('parse');
         this.nativePageTransitions.slide(options);
         this.nav.navigateRoot("/tabs/tabs/cards-orders");
     }
+
+
+
+  async presentAlertConfirm() {
+    const alert = await this.alertCtrl.create({
+      header: 'Camera',
+      buttons: [
+        {
+          text: 'Camera',
+          role: 'camera',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            this.openCamera();
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Gallery',
+          handler: () => {
+            this.openLibrary();
+            console.log('Confirm Okay');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
     pet() {
         // alert("breed: " + this.breed);
         //validate require fields-inputs

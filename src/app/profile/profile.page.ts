@@ -85,8 +85,8 @@ export class ProfilePage implements OnInit {
     const options: CameraOptions = {
       destinationType: this.camera.DestinationType.FILE_URI,
       quality: 50,
-      targetWidth: 1000,
-      targetHeight: 1000,
+      targetWidth: 900, 
+      targetHeight: 600, 
       encodingType: this.camera.EncodingType.JPEG, 
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       correctOrientation: true

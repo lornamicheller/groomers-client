@@ -94,10 +94,15 @@
       "cordova-plugin-ionic-keyboard": {},
       "com.telerik.plugins.nativepagetransitions": {},
       "cordova-plugin-camera": {},
-      "cordova-plugin-calendar": {},
+      "cordova-plugin-calendar": {
+        "CALENDAR_USAGE_DESCRIPTION": " ",
+        "CONTACTS_USAGE_DESCRIPTION": " "
+      },
       "cordova-plugin-facebook4": {
         "APP_ID": "259057581380152",
-        "APP_NAME": "Groomrs"
+        "APP_NAME": "Groomrs",
+        "FACEBOOK_HYBRID_APP_EVENTS": "false",
+        "FACEBOOK_ANDROID_SDK_VERSION": "4.40.0"
       },
       "cordova-plugin-stripe": {}
     },
