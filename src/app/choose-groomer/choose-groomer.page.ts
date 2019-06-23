@@ -37,11 +37,12 @@ export class ChooseGroomerPage implements OnInit {
 
   ngOnInit() {
 
-    this.option = "groomer-available";
+    this.option = "groomers-available";
 
    this.getPet();
    console.log(this.provider.groomers);
 
+   this.availableGroomers = this.provider.groomers;
    this.groomers = this.provider.groomers;
    this.day =   this.provider.momentDay ;
    this.hour = this.provider.momentTime;
@@ -108,7 +109,7 @@ export class ChooseGroomerPage implements OnInit {
   searchFilter(groomers) {
 
     let results = [];
-    if(groomers == null || !Array.isArray(groomers)) { return results; }
+    if( groomers == null || !Array.isArray(groomers) || groomers.length === 0 ) { return results; }
 
     let search = this.search || "";
     search = search.toLowerCase();
@@ -118,15 +119,15 @@ export class ChooseGroomerPage implements OnInit {
     let words = search.split(" ");
     for(let i = 0; i < groomers.length; i++) {
       let groomerName = groomers[i].get("businessName").toLowerCase();
-      let match = false;
+      let isMatch = false;
       for(let w = 0; w < words.length; w++) {
-        if( groomerName.includes( w ) ) {
+        if( groomerName.includes( words[w] ) ) {
           //search match, add groomer to results
-          match = true;
+          isMatch = true;
           break;
         }
       }
-      if( match ) {
+      if( isMatch ) {
         //add groomer to results array
         results.push( groomers[i] );
       }
@@ -135,9 +136,24 @@ export class ChooseGroomerPage implements OnInit {
     return results;
   }
 
+  searchChange(ev) {
+    //search input changed so run query again
+    let val = ev.target.value;
+    //alert("search change: " + val);
+    this.search = val;
+    if(this.option == "groomers-available") {
+      //availables
+      this.showAvailable();
+    }
+    else {
+      this.showPreferred()
+    }
+  }
+
   showAvailable() {
     this.option = "groomers-available";
     this.groomers = this.searchFilter(this.availableGroomers);
+    console.log("showAvailable results: " + this.groomers.length);
   }
 
   showPreferred() {
@@ -150,7 +166,8 @@ export class ChooseGroomerPage implements OnInit {
 
     let currentUser = Parse.User.current();
 
-    let petsID = [this.provider.petid];
+    let petsID = [this.provider.petid.id];
+    console.log("petId: ", petsID);
 
     Parse.Cloud.run('getGroomers', {
 
@@ -165,7 +182,7 @@ export class ChooseGroomerPage implements OnInit {
     }).then((result)=> {
   
       this.preferredGroomers = result;
-      this.searchFilter( this.preferredGroomers );
+      this.groomers = this.searchFilter( this.preferredGroomers );
         
     }
     , (error)=> {

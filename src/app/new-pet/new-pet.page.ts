@@ -54,14 +54,14 @@ let parse=require('parse');
     openCamera() {
         const options: CameraOptions= {
             quality: 50, 
-            targetWidth: 900, 
-            targetHeight: 600, 
-            destinationType: this.camera.DestinationType.DATA_URL, 
-            encodingType: this.camera.EncodingType.JPEG, 
-            mediaType: this.camera.MediaType.PICTURE, 
-            saveToPhotoAlbum: false, 
-            allowEdit: true, 
-            sourceType: 1
+        targetWidth: 900, 
+        targetHeight: 600, 
+        destinationType: this.camera.DestinationType.DATA_URL, 
+        encodingType: this.camera.EncodingType.JPEG, 
+        mediaType: this.camera.MediaType.PICTURE,
+         saveToPhotoAlbum: false, 
+         allowEdit: true, 
+         sourceType: 1
         }
         this.camera.getPicture(options).then((imageData)=> {
             this.picture='data:image/jpeg;base64,' + imageData;
@@ -88,14 +88,14 @@ let parse=require('parse');
     }
     openLibrary() {
         const options: CameraOptions= {
-            destinationType: 
-            this.camera.DestinationType.FILE_URI, 
             quality: 50, 
             targetWidth: 900, 
-            targetHeight: 600,  
+            targetHeight: 600, 
+            destinationType: this.camera.DestinationType.DATA_URL, 
             encodingType: this.camera.EncodingType.JPEG, 
-            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY, 
-            correctOrientation: true
+            mediaType: this.camera.MediaType.PICTURE,
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+           
         }
         this.camera.getPicture(options).then((imageData)=> {
             this.picture='data:image/jpeg;base64,' + imageData;

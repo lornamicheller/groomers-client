@@ -19,6 +19,9 @@ export class RatingPage implements OnInit {
   userId: any;
   barberId:any;
   service:any;
+  serviceId:any;
+  preferred:any;
+  groomerId:any;
 
 
   constructor(private camera: Camera, public alertCtrl:AlertController, /*private photoLibrary: PhotoLibrary*/ private nativePageTransitions: NativePageTransitions, public nav: NavController,
@@ -31,7 +34,9 @@ export class RatingPage implements OnInit {
   ngOnInit() {
 
       this.barberId = 'ECnHdAa3YD';
-      this.service = "wF7eVFLqw4";
+      this.service = this.provider.serviceId;
+      this.groomerId = this.provider.identifyGroomer;
+
   }
 openPage() {
     let options: NativeTransitionOptions= {
@@ -49,12 +54,10 @@ openPage() {
 rating(){
 
   console.log(Parse.User.current().id);
- //success creating pet
- this.successRating();
  console.log("service", this.service);
- console.log("berberId", this.barberId);
+ console.log("GroomerId", this.barberId);
  console.log("rate", this.hoverRate);
-
+console.log("Comment:", this.comments);
   if(this.hoverRate == null)
   {
      console.log("Error");
@@ -63,12 +66,14 @@ rating(){
 
   else
   {
-      Parse.Cloud.run('submitServiceReview', {
+
+    console.log("Preferencia",this.preferred);
+      Parse.Cloud.run('createReview', {
       serviceId: this.service,
-      barberId: this.barberId,
+      groomerId: this.barberId,
       rating: this.hoverRate,
       review: this.comments,
-      userId: Parse.User.current().id
+      preferred: this.preferred
         }).then((result)=> {
         this.successRating();
     }
@@ -112,6 +117,14 @@ async errorRating(){ //alerta simple con mensaje
   });
 
   await alert.present();
+}
+
+
+
+addPreference()
+{
+
+
 }
 
 

@@ -59,7 +59,7 @@ export class OrderSummaryPage implements OnInit {
 
   ngOnInit() {
     //fullname of user
-    this.name = Parse.User.current().get('fullname');
+    this.name = Parse.User.current().get('fullName');
     //phone of user
     this.phone = Parse.User.current().get('phone');
     //payment method ( full or later)

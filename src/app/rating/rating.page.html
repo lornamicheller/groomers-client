@@ -33,6 +33,12 @@
         <ion-textarea [(ngModel)]='comments' class=input-text placeholder="Comments"></ion-textarea>
       </div>
 
+      <ion-list class="bg-transparent" lines="none">
+        <ion-item>
+          <ion-label class="label-preferred">Add this groomer to preferred</ion-label>
+          <ion-checkbox [(ngModel)]="preferred" slot="end"></ion-checkbox>
+        </ion-item>
+      </ion-list>
 
 
     </ion-card-content>

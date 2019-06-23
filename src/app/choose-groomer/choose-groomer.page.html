@@ -12,7 +12,7 @@
 
 <ion-content>
   <ion-card style="box-shadow: none;">
-    <ion-input class="search" type="text" clearInput placeholder="SEARCH">
+    <ion-input [(ngModel)]="search" class="search" type="text" clearInput placeholder="SEARCH" (ionInput)="searchChange($event)">
       <ion-icon class="search-icon" ios="ios-search" md="md-search"></ion-icon>
     </ion-input>
   </ion-card>
@@ -53,10 +53,10 @@
 
 
   <ion-segment>
-      <ion-segment-button class="allBtn" href="#allAvailable" value="all available">
+      <ion-segment-button class="allBtn" href="#allAvailable" value="all available" (click)="showAvailable()">
         <ion-label>All Available</ion-label>
       </ion-segment-button>
-      <ion-segment-button class="preferredBtn" href="#preferredAvailable" value="preferred available">
+      <ion-segment-button class="preferredBtn" href="#preferredAvailable" value="preferred available" (click)="showPreferred()">
         <ion-label>Preferred Available</ion-label>
       </ion-segment-button>
     </ion-segment>

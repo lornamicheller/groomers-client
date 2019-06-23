@@ -63,6 +63,17 @@
   margin: 5px;
 }
 
+.allBtnActive {
+  border: 2px solid #37B34A;
+  background-color: #37B34A;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  height: 50px;
+  margin: 5px;
+}
+
 .preferredBtn {
   border: 2px solid #37B34A;
   border-radius: 25px;
@@ -71,6 +82,21 @@
   font-family: 'Poppins', sans-serif;
   height: 50px;
   margin: 5px;
+}
+
+.preferredBtnActive {
+  border: 2px solid #37B34A;
+  background-color: #37B34A;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  height: 50px;
+  margin: 5px;
+}
+
+.backgroundGreen {
+  background-color: #37B34A;
 }
 
 .borders {
