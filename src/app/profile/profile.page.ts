@@ -68,6 +68,7 @@ export class ProfilePage implements OnInit {
       parseFile.save().then((savedFile)=> {
           console.log('file saved:' + savedFile);
           this.savedPhoto=this.picture;
+          this.changeInfomation.set("petImage", this.picture);
           this.photo=savedFile;
       }
       , (err)=> {
@@ -83,13 +84,15 @@ export class ProfilePage implements OnInit {
 
   openLibrary() {
     const options: CameraOptions = {
-      destinationType: this.camera.DestinationType.FILE_URI,
-      quality: 50,
+      quality: 50, 
       targetWidth: 900, 
       targetHeight: 600, 
+      destinationType: this.camera.DestinationType.DATA_URL, 
       encodingType: this.camera.EncodingType.JPEG, 
+      mediaType: this.camera.MediaType.PICTURE,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      correctOrientation: true
+       saveToPhotoAlbum: false, 
+       allowEdit: true 
     }
 
     this.camera.getPicture(options).then((imageData)=> {
@@ -102,6 +105,7 @@ export class ProfilePage implements OnInit {
       ); //convierte la foto a base64
       parseFile.save().then((savedFile)=> {
           console.log('file saved:' + savedFile);
+          this.changeInfomation.set("petImage", this.picture);
           this.savedPhoto=this.picture;
           this.photo=savedFile;
       }
@@ -200,27 +204,26 @@ export class ProfilePage implements OnInit {
 
   saveInformation()
   {
+    let self = this;
 
-    if(this.name == null || this.age == null || this.breed == null || this.size ==null)
+    if(self.name == null || self.age == null || self.breed == null || self.size ==null)
     {
-          this.errorInfo();
+      self.errorInfo();
     }
     else
     {
-    this.changeInfomation.set("name", this.name);
-    this.changeInfomation.set("age", this.age);
-    this.changeInfomation.set("breed", this.breed);
-    this.changeInfomation.set("size", this.size);
-    this.changeInfomation.set("type", this.type);
+      self.changeInfomation.set("name", self.name);
+      self.changeInfomation.set("age", self.age);
+      self.changeInfomation.set("breed", self.breed);
+      self.changeInfomation.set("size", self.size);
+      self.changeInfomation.set("type", self.type);
 
-    if(this.picture !=null)
-    {
-      this.changeInfomation.set("petImage", this.picture);
-    }
+    // if(self.picture !=null)
+    // {
+    //   self.changeInfomation.set("petImage", self.picture);
+    // }
     
- 
-
-    this.changeInfomation.save().then((result)=>
+    self.changeInfomation.save().then((result)=>
     {
       console.log("SAVED!!");
       console.log(result);

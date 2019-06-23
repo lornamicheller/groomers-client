@@ -5,6 +5,7 @@
   top: 17px;
   --background: transparent;
   --background-activated: transparent;
+  --box-shadow: none;
 }
 
 .add-btn {
@@ -85,6 +86,8 @@
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  --box-shadow: none;
+
 }
 
 .order-card {

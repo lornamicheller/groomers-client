@@ -18,6 +18,7 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
 }
 
 .arrow-icon {
@@ -80,6 +81,8 @@
   right: 0;
   --background-activated: transparent;
   --background: transparent;
+  --box-shadow: none;
+
 }
 
 .delete-icon {

@@ -5,6 +5,7 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
 }
 
 .add-btn {
@@ -49,6 +50,8 @@
   --background: url('/assets/calendar.jpg');
   background-size: cover;
   height: 100vh;
+  width: 100%;
+ 
 }
 
 .input {
@@ -64,6 +67,8 @@
   --color-activated: grey;
   --background: transparent;
   --background-activated: transparent;
+  --box-shadow: none;
+
 }
 
 span {

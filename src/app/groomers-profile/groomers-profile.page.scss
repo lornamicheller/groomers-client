@@ -8,6 +8,8 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
+
 }
 
 .add-btn {
@@ -72,6 +74,8 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   color: rgb(0, 0, 0);
+  --box-shadow: none;
+
 }
 
 .star-ratings {

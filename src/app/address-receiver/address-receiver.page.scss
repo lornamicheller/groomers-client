@@ -5,6 +5,8 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
+
 }
 
 .add-btn {
@@ -15,6 +17,8 @@
   --background-activated: transparent;
   color: #414042;
   --color-activated: #414042;
+  --box-shadow: none;
+
 }
 
 .address-btn {
@@ -78,6 +82,8 @@ margin-right: 20px;
   right: 0;
   --background-activated: transparent;
   --background: transparent;
+  --box-shadow: none;
+
 }
 
 .delete-icon {
