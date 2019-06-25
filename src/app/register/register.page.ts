@@ -125,7 +125,7 @@ export class RegisterPage implements OnInit {
         this.provider.userName = this.email;
          console.log("User signed up as: " + this.name);
         this.provider.signUp();
-        this.openPage();
+        // this.openPage();
 
         
         }

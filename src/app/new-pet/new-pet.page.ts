@@ -51,41 +51,7 @@ let parse=require('parse');
     ngOnInit() {
         console.log(Parse.User.current().id);
     }
-    // openCamera() {
-    //     const options: CameraOptions= {
-    //         quality: 50, 
-    //     targetWidth: 900, 
-    //     targetHeight: 600, 
-    //     destinationType: this.camera.DestinationType.DATA_URL, 
-    //     encodingType: this.camera.EncodingType.JPEG, 
-    //     mediaType: this.camera.MediaType.PICTURE,
-    //      saveToPhotoAlbum: false, 
-    //      allowEdit: true, 
-    //      sourceType: 1
-    //     }
-    //     this.camera.getPicture(options).then((imageData)=> {
-    //         this.picture='data:image/jpeg;base64,' + imageData;
-    //         let base64Image=this.picture;
-    //         let name="photo.jpeg";
-    //         let parseFile=new Parse.File(name, {
-    //             base64: base64Image
-    //         }
-    //         ); //convierte la foto a base64
-    //         parseFile.save().then((savedFile)=> {
-    //             console.log('file saved:' + savedFile);
-    //             this.savedPhoto=this.picture;
-    //             this.photo=savedFile;
-    //         }
-    //         , (err)=> {
-    //             console.log('error grabando file: ' + err)
-    //         }
-    //         );
-    //     }
-    //     , (err)=> {
-    //         console.log('error de camara' + err);
-    //     }
-    //     );
-    // }
+    
     openCamera() {
         const options: CameraOptions = {
           quality: 100,
@@ -93,6 +59,8 @@ let parse=require('parse');
           encodingType: this.camera.EncodingType.JPEG,
           mediaType: this.camera.MediaType.PICTURE
         }
+
+        let self = this;
         this.camera.getPicture(options).then((imageData) => {
     
           this.picture = 'data:image/jpeg;base64,' + imageData;
@@ -105,49 +73,63 @@ let parse=require('parse');
           }); //convierte la foto a base64
           parseFile.save().then((savedFile) => {
             console.log('file saved:' + savedFile);
-            this.photo = this.picture;
+            this.savedPhoto= this.picture;
+  
+            self.photo = savedFile;
           }, (err) => {
             console.log('error grabando file: ' + err)
           });
     
-        }, (err) => {
-          console.log('error de camara' + err);
-        });
+        }, 
+     (err)=> {
+        console.log('error de camara' + err);
+        alert(err);
+    }
+    );
+    }
+  
+    openLibrary() {
+      const options: CameraOptions = {
+        quality: 50, 
+        targetWidth: 900, 
+        targetHeight: 600, 
+        destinationType: this.camera.DestinationType.DATA_URL, 
+        encodingType: this.camera.EncodingType.JPEG, 
+        mediaType: this.camera.MediaType.PICTURE,
+        sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+         saveToPhotoAlbum: false, 
+         allowEdit: true 
       }
-    // openLibrary() {
-    //     const options: CameraOptions= {
-    //         quality: 50, 
-    //         targetWidth: 900, 
-    //         targetHeight: 600, 
-    //         destinationType: this.camera.DestinationType.DATA_URL, 
-    //         encodingType: this.camera.EncodingType.JPEG, 
-    //         mediaType: this.camera.MediaType.PICTURE,
-    //         sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-           
-    //     }
-    //     this.camera.getPicture(options).then((imageData)=> {
-    //         this.picture='data:image/jpeg;base64,' + imageData;
-    //         let base64Image=this.picture;
-    //         let name="photo.jpeg";
-    //         let parseFile=new Parse.File(name, {
-    //             base64: base64Image
-    //         }
-    //         ); //convierte la foto a base64
-    //         parseFile.save().then((savedFile)=> {
-    //             console.log('file saved:' + savedFile);
-    //             this.savedPhoto=this.picture;
-    //             this.photo=savedFile;
-    //         }
-    //         , (err)=> {
-    //             console.log('error grabando file: ' + err)
-    //         }
-    //         );
-    //     }
-    //     , (err)=> {
-    //         console.log('error de camara' + err);
-    //     }
-    //     );
-    // }
+  
+      let self = this;
+  
+      this.camera.getPicture(options).then((imageData)=> {
+        self.picture='data:image/jpeg;base64,' + imageData;
+        
+        let base64Image=self.picture;
+        let name="photo.jpeg";
+        let parseFile=new Parse.File(name, {
+            base64: base64Image
+        }
+        ); //convierte la foto a base64
+        parseFile.save().then((savedFile)=> {
+            console.log('file saved:' + savedFile);
+           self.photo = savedFile;
+  
+        }
+        , (err)=> {
+            console.log('error grabando file: ' + err);
+            alert(err);
+        }
+        );
+    }
+    , (err)=> {
+        console.log('error de camara' + err);
+        alert(err);
+    }
+    );
+  }
+
     openPage() {
         let options: NativeTransitionOptions= {
             direction: 'left', duration: 400, slowdownfactor: -1, slidePixels: 20, iosdelay: 100
@@ -183,7 +165,7 @@ let parse=require('parse');
         }, {
           text: 'Gallery',
           handler: () => {
-            // this.openLibrary();
+            this.openLibrary();
             console.log('Confirm Okay');
           }
         }

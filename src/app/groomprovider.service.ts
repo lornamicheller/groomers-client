@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {NavController, AlertController } from "@ionic/angular";
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import * as Parse from 'parse';
 
 
@@ -64,7 +65,7 @@ export class GroomproviderService {
   startDay: Date;
   endDay: Date;
  
-  constructor( public nav: NavController, public provider : GroomproviderService,
+  constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController, public provider : GroomproviderService,
     public alertCtrl : AlertController) {
       
       parse.serverURL = 'https://parseapi.back4app.com/';
@@ -79,7 +80,21 @@ export class GroomproviderService {
    
 
   }
-  
+  openPage(){ //funcion para pasar de una pagina a otra. 
+
+    let options: NativeTransitionOptions = {
+      direction: 'left', 
+      duration: 400, 
+      slowdownfactor: -1, 
+      slidePixels: 20, 
+      iosdelay: 100
+  }
+  console.log(options);
+  this.nativePageTransitions.slide(options);
+  console.log("transition")
+  this.nav.navigateRoot("/tabs/tabs/add-pet");
+  console.log("transition working");   
+}
   
 
   signUp(){
@@ -96,6 +111,7 @@ export class GroomproviderService {
     user.signUp().then((user) => {
       console.log('Im in!');
       this.currentUser = user;
+      this.openPage();
     }).catch((error) => {
       console.log(error);
       return false;
