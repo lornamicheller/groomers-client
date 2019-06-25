@@ -43,16 +43,47 @@
 
   <ion-card style="box-shadow: none;">
     <div class="star-ratings">
-     <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
-      </ion-icon></span>
-      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
-      </ion-icon></span>
-      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
-      </ion-icon></span>
-      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
-      </ion-icon></span>
-      <span><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
-      </ion-icon></span>
+      <!-- One rating  -->
+     <span *ngIf="rating == 1" ><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon> <ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon></span>
+      
+    <!-- Two rating  -->
+    <span *ngIf="rating == 2" ><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon> <ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon></span>
+
+    <!-- Three rating  -->
+    <span *ngIf="rating == 3" ><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon> <ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: gray;" ios="ios-star" md="md-star">
+    </ion-icon></span>
+
+    <!-- Four rating  -->
+    <span *ngIf="rating == 4" ><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon> <ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px;  color: gray;" ios="ios-star" md="md-star">
+    </ion-icon></span>
+
+    <!-- Five rating  -->
+    <span *ngIf="rating == 5" ><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+      </ion-icon> <ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon><ion-icon style="margin: 5px; width: 25px; height: 25px; color: rgb(255, 217, 0);" ios="ios-star" md="md-star">
+    </ion-icon></span>
+
+
       <ion-button expand="full" class="view-btn">View</ion-button>
     </div>
   </ion-card>

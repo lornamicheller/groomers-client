@@ -35,9 +35,7 @@ const routes: Routes = [
   { path: 'add-new-card', loadChildren: './add-new-card/add-new-card.module#AddNewCardPageModule' },
   { path: 'rating', loadChildren: './rating/rating.module#RatingPageModule' },
   { path: 'home-pets', loadChildren: './home-pets/home-pets.module#HomePetsPageModule' },
-  { path: 'facebook-form', loadChildren: './facebook-form/facebook-form.module#FacebookFormPageModule' },
-  { path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' },
-  { path: 'calendar-embedded', loadChildren: './calendar-embedded/calendar-embedded.module#CalendarEmbeddedPageModule' }
+  { path: 'facebook-form', loadChildren: './facebook-form/facebook-form.module#FacebookFormPageModule' }
 ];
 @NgModule({
   imports: [

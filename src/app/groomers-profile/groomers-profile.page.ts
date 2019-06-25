@@ -20,6 +20,7 @@ export class GroomersProfilePage implements OnInit {
 
     groomerId:any;
     name: any;
+    rating:any;
 
 
   ngOnInit() {
@@ -27,6 +28,9 @@ export class GroomersProfilePage implements OnInit {
       this.groomerId = this.provider.groomerId;
       console.log("Groomer Id: ", this.groomerId);  
       console.log(this.provider.setGromId) ;
+      this.rating = this.provider.groomerId.get('ratingCount');
+      console.log("Rating:", this.rating);
+      console.log(this.rating.length);
       // this.name = this.groomerId.get('name'); 
 
       this.getInfo();
@@ -37,9 +41,9 @@ export class GroomersProfilePage implements OnInit {
   {
     console.log("entrando al get Infor");
     Parse.Cloud.run('getGoomerId', {
-      userId: this.provider.setGromId  
+      userId: this.provider.groomerId.id 
     }).then((result)=>{
-     
+      this.provider.groomerId = result;
       this.groomerId = result;
       console.log(this.groomerId);
     }

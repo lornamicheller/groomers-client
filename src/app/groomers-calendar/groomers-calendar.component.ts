@@ -116,9 +116,9 @@ export class GroomersCalendarComponent implements OnInit {
     console.log(this.selectedDate);
     this.checkStatus = false;
 
-    this.provider.setGromId = this.provider.groomer;
-    console.log(this.provider.groomer);
-    this.groomerId = this.provider.groomer.id;
+    this.provider.setGromId = this.provider.groomerId.id;
+    console.log(this.provider.groomerId);
+    this.groomerId = this.provider.groomerId.id;
     console.log("Groomer Id:", this.groomerId);
     
     this.today = new Date();

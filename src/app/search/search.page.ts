@@ -46,8 +46,8 @@ export class SearchPage implements OnInit {
         iosdelay: 100
     }
     //hold reference to selected groomer before continuing with the proccess
-    this.provider.groomer = groomer;
-    console.log(this.provider.groomer);
+    this.provider.groomerId = groomer;
+    console.log(this.provider.groomerId);
     this.provider.search = "Search";
 
     console.log(options);

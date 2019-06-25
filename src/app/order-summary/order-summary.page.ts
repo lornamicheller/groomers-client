@@ -266,9 +266,10 @@ export class OrderSummaryPage implements OnInit {
       appFeeByGroomer:0.00
     }).then((result) => {
       console.log("Pago Exitoso!!!!");
-      this.createService();
+      
       console.log(result.get('purchase').id);
       this.chargeId = result.get('purchase').id;
+      this.createService();
     });
    
     (error)=>{
@@ -306,20 +307,23 @@ export class OrderSummaryPage implements OnInit {
       - payOption (now or later)
       */
 
-      // console.log("Paramsss!!:");
-      // console.log("Provider:");
-      // console.log("duration:");
-      // console.log("starDate:");
-      // console.log("pets:");
-      // console.log("address:");
-      // console.log("subtotal:");
-      // console.log("service:");
-      // console.log("phone:");
-      // console.log("date:");
-      // console.log("name:");
-      // console.log("email:");
-      // console.log("size:");
-      // console.log("end");
+      console.log("Paramsss!!:");
+      console.log("Provider:", this.groomerId.id);
+      console.log("duration:", this.duration);
+      console.log("starDate:", this.provider.startDay);
+      console.log("pets:", this.provider.petsArray);
+      console.log("address:",this.provider.addressId);
+      console.log("subtotal:", this.total);
+      console.log("service:", this.serviceRequest);
+      console.log("phone:", this.phone);
+      console.log("date:", this.provider.momentRequest);
+      console.log("name:",Parse.User.current().get('fullName'));
+      console.log("email:", Parse.User.current().get('email'));
+      console.log("size:", this.petSize);
+      console.log("size:", this.provider.momentTime);
+      console.log("charge:", this.chargeId);
+      console.log("payoptions:", this.payOptions);
+      console.log("end");
 
      Parse.Cloud.run('submitServiceRequest', {
       provider: this.groomerId.id,

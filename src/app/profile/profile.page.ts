@@ -51,39 +51,35 @@ export class ProfilePage implements OnInit {
         encodingType: this.camera.EncodingType.JPEG,
         mediaType: this.camera.MediaType.PICTURE
       }
-
-      let self = this;
-
-      
-    this.camera.getPicture(options).then((imageData)=> {
-      self.picture='data:image/jpeg;base64,' + imageData;
-      self.changeInfomation.set("petImage", self.picture);
-      let base64Image=this.picture;
-      let name="photo.jpeg";
-      let parseFile=new Parse.File(name, {
+      this.camera.getPicture(options).then((imageData) => {
+  
+        this.picture = 'data:image/jpeg;base64,' + imageData;
+  
+        let base64Image = this.picture;
+        let name = "photo.jpeg";
+  
+        let parseFile = new Parse.File(name, {
           base64: base64Image
-      }
-      ); //convierte la foto a base64
-      parseFile.save().then((savedFile)=> {
+        }); //convierte la foto a base64
+        parseFile.save().then((savedFile) => {
           console.log('file saved:' + savedFile);
-          self.savedPhoto=self.picture;
-          self.photo=savedFile;
-          this.savedInfo();
-          this.changeInfomation.set("petImage", self.photo);
-          this.changeInfomation.save().then((result) =>
-          {
-              console.log("SAVEDD");
-          });
+          this.savedPhoto= this.picture;
 
-          alert("Se Guardo!!!!");
-      }
-      , (err)=> {
+          this.changeInfomation.set("petImage", savedFile);
+
+          this.changeInfomation.save().then((result)=>
+          {
+            console.log(result);
+          
+          });
+          
+          this.provider.photo = savedFile; //foto tomada
+        }, (err) => {
           console.log('error grabando file: ' + err)
-          alert(err);
-      }
-      );
-  }
-  , (err)=> {
+        });
+  
+      }, 
+   (err)=> {
       console.log('error de camara' + err);
       alert(err);
   }
@@ -119,13 +115,7 @@ export class ProfilePage implements OnInit {
          
           self.savedPhoto=self.picture;
           self.photo=savedFile;
-          this.changeInfomation.set("petImage", self.photo);
-          this.changeInfomation.save().then((result) =>
-          {
-              console.log("SAVEDD");
-          });
 
-          alert("Se Guardoooo!");
       }
       , (err)=> {
           console.log('error grabando file: ' + err);
@@ -238,6 +228,7 @@ export class ProfilePage implements OnInit {
       self.changeInfomation.set("breed", self.breed);
       self.changeInfomation.set("size", self.size);
       self.changeInfomation.set("type", self.type);
+      // self.changeInfomation.set("petImage", self.picture);
     
     self.changeInfomation.save().then((result)=>
     {

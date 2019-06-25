@@ -18,7 +18,7 @@
           <ion-button class="profile-btn" (click)="openPage(pet)">
             <ion-ripple-effect></ion-ripple-effect>
             <ion-avatar class="avatar-border">
-              <img *ngIf="pet.get('petImage') == null " class="imgFit" src="assets/perri1.jpg">
+              <img *ngIf="pet.get('petImage') == null " class="imgFit" src="assets/icon-cam.png">
               <img *ngIf="pet.get('petImage') != null" class="imgFit" src="{{pet.get('petImage').url()}}">
             </ion-avatar>
           </ion-button>

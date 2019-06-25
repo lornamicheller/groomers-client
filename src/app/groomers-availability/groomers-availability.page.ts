@@ -39,10 +39,14 @@ export class GroomersAvailabilityPage implements OnInit {
   ngOnInit() {
     this.openDatePicker();
 
-    this.groomerId = this.provider.groomer.id;
+    this.groomerId = this.provider.groomerId.id;
     console.log("Groomer Id:", this.groomerId);
     
     this.today = new Date();
+
+    let petsID = [this.provider.petid.id];
+    this.provider.petsArray = petsID;
+    console.log("PET ID:", this.provider.petsArray);
 
     console.log(this.today.getDate());
     console.log(this.today.getMonth());
