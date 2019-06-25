@@ -34,13 +34,12 @@
           <ion-col size="8" class="grey-bg">
             <p class="name">{{groomer.get("businessName")}}</p>
             <!-- rating star -->
-            <div class="ratings">
-              <ion-buttons class="star">
+            <div  class="ratings">
+              <ion-buttons>
                 <ion-button [disabled]="readonly" fill="clear" [size]="size"
-                  *ngFor="let current of [1, 2, 3, 4, 5]; let i = index" (mouseover)="hoverRate = i + 1"
-                  (mouseleave)="hoverRate = 0">
+                  *ngFor="let current of [1, 2, 3, 4, 5]; let i = index" >
                   <ion-icon slot="icon-only" name="star"
-                    [class.filled]="(i + 1 <= hoverRate || (!hoverRate && i + 1 <= rate))"></ion-icon>
+                    [class.filled]="index"></ion-icon>
                 </ion-button>
               </ion-buttons>
             </div>

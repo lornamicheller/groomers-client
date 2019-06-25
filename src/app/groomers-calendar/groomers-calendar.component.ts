@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ViewChild } from "@angular/core";
+import {CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, ViewChild } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { NavParams, ModalController, IonContent } from '@ionic/angular';
+import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
+import {GroomproviderService} from "./../../app/groomprovider.service";
+import { AlertController } from '@ionic/angular';
 import * as moment_ from 'moment';
+import * as Parse from 'parse';
+import { NavController } from "@ionic/angular";
+
+let parse = require('parse');
 
 const moment = moment_;
 
@@ -41,6 +49,26 @@ export class GroomersCalendarComponent implements OnInit {
   currentYearSelected;
   numColumns;
 
+  starDay:any;
+  endDay:any;
+
+  checkStatus:any;
+
+  groomerId:any;
+
+   startDay:any;
+   chooseDay:any;
+
+   petSize:any;
+   duration:any;
+   datePickerObjPtBr:any;
+   startHour:any;
+   endHour:any;
+
+   allHours:any;
+   mydate:any;
+
+
   rows = [0, 7, 14, 21, 28, 35];
   cols = [0, 1, 2, 3, 4, 5, 6];
   monthsList = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
@@ -58,21 +86,77 @@ export class GroomersCalendarComponent implements OnInit {
   scrollingMonthOrYearArray: any = [];
 
   constructor(
+    public nativePageTransitions: NativePageTransitions,
+    public navigate: NavController,
+    public provider: GroomproviderService,
     private navParams: NavParams,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    public alertController: AlertController
   ) {
     this.today = this.resetHMSM(new Date()).getTime();
+
+    console.log("Time:", this.today);
+    
     if (this.navParams.get('selectedDate')) {
       // console.log('Selected date =>', this.navParams.get('selectedDate'));
       this.selectedDate.date = this.navParams.get('selectedDate');
     }
     this.mainObj = this.initDatePickerObj(this.navParams.get('objConfig'));
+
+
+
+    Parse.serverURL = 'https://parseapi.back4app.com/';
+    Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
+
+
   }
 
   ngOnInit() {
     this.initDatePicker();
     console.log(this.selectedDate);
+    this.checkStatus = false;
+
+    this.provider.setGromId = this.provider.groomer;
+    console.log(this.provider.groomer);
+    this.groomerId = this.provider.groomer.id;
+    console.log("Groomer Id:", this.groomerId);
+    
+    this.today = new Date();
+
+    console.log(this.today.getDate());
+    console.log(this.today.getMonth());
+
+    this.petSize = this.provider.petSize;
+    console.log(this.petSize);
+
+
+    if(this.petSize == "Small")
+    {
+      this.duration = this.provider.groomer.get("dogSmallDuration");
+    }
+    if(this.petSize == "Medium")
+    {
+      this.duration = this.provider.groomer.get("dogMediumDuration");
+    }
+    if(this.petSize == "Large")
+    {
+      this.duration = this.provider.groomer.get("dogLargeDuration");
+    }
+
+    console.log(this.duration);
+
+
+
   }
+
+  openPage() {
+    let options: NativeTransitionOptions= {
+        direction: 'left', duration: 400, slowdownfactor: -1, slidePixels: 20, iosdelay: 100
+    }
+    console.log(options);
+    this.nativePageTransitions.slide(options);
+    this.navigate.navigateRoot("/tabs/tabs/groomers-profile");
+}
 
   // Reset the hours, minutes, seconds and milli seconds
   resetHMSM(currentDate) {
@@ -206,20 +290,128 @@ export class GroomersCalendarComponent implements OnInit {
   // Date selected
   dateSelected(selectedDate) {
     // console.log('dateSelected =>', selectedDate);
+
+    console.log("Selected Date: ",selectedDate);
+   
+    
     if (selectedDate && !selectedDate.disabled) {
       if (!selectedDate || Object.keys(selectedDate).length === 0) { return; }
       this.selctedDateEpoch = selectedDate.epoch;
+
+      this.checkStatus = true;
+     
+      console.log(this.checkStatus);
+
+
+      console.log("Select date: ",this.selctedDateEpoch);
       this.selectedDateString = this.formatDate();
+      console.log("Select date 2: ",this.selctedDateEpoch);
+      console.log(new Date(this.selectedDateString));
+      this.provider.chooseDate = this.selctedDateEpoch;
+      this.startDay = new Date(this.provider.chooseDate);
+      console.log(this.startDay);
+      this.endDay = new Date(this.provider.chooseDate + (86400*1000));
+      console.log(this.endDay);
+
+      this.getGroomerHours();
+
+      console.log("Provider", this.provider.chooseDate);
       if (this.mainObj.closeOnSelect) {
         this.closeModal(this.selctedDateEpoch);
       }
     }
   }
 
+
+  getGroomerHours()
+  {
+
+    let appointmentDate = new Date( this.startDay.getTime() );
+    console.log(appointmentDate);
+      this.provider.startDay = appointmentDate;
+      console.log(this.provider.startDay);
+
+      console.log(this.groomerId);
+    console.log(this.petSize);
+    console.log(this.duration);
+    console.log(this.startDay);
+    console.log(this.endDay);
+      console.log("ENTRANDO GET SCHEDULE");
+      Parse.Cloud.run('getScheduleAvailable', {
+        groomerId:this.groomerId,
+        fullMonth: false,
+        petSize:this.petSize,
+        duration:this.duration,
+        startDate:this.startDay,
+        endDate:this.endDay
+        
+      }).then((result)=>{
+        console.log(result);
+        this.allHours = result;
+      }
+      , (error)=> {
+          //an error occur
+          console.log(error);
+          //this.openPage();
+      });
+  }
+
+  getHours(starD, endD)
+{
+  let startHour = moment(starD,'DD/MM/YYYY HH:mm').format('h:mm A');
+  let endHour  = moment(endD,'DD/MM/YYYY HH:mm').format('h:mm A');
+
+    return  startHour + "-" + endHour; 
+}
+
+getHoursDay(mydate)
+{
+  this.provider.momentTime =moment(mydate,'YYYY-MM-DD hh:mm').format('h:mm A');
+
+}
+
+goTo()
+
+{
+  if(this.provider.momentTime == null)
+  {
+    this.errorAlert();
+  }
+  else{
+    this.closeModal(null);
+    this.provider.setGromId = this.groomerId;
+    console.log(this.provider.setGromId);
+    this.navigate.navigateRoot("/tabs/tabs/groomers-profile");
+  }
+}
+
+showMessage(data)
+{
+    console.log(data);
+}
+
+async errorAlert() {
+  const alert=await this.alertController.create( {
+      header: 'Alert!', message: ' Please choose one hour ', buttons: [ {
+          text: 'OK', handler: () => {
+              console.log('Confirm Cancel');
+          }
+      }
+      ]
+  }
+  );
+  await alert.present();
+}
+
+
+
+
   // Set today as date for the modal
   setIonicDatePickerTodayDate() {
     // console.log('setIonicDatePickerTodayDate');
     const today = new Date(this.today);
+
+    console.log("Today", today);
     const today_obj = {
       date: today.getDate(),
       month: today.getMonth(),
@@ -364,7 +556,9 @@ export class GroomersCalendarComponent implements OnInit {
   // close modal button
   closeIonicDatePickerModal() {
     // console.log('closeIonicDatePickerModal');
-    this.closeModal(null);
+    // this.closeModal(null);
+
+    console.log("Cerrando");
   }
 
   // get years list  ( GIVE HERE MIN OR MAX YEAR IN DATE_PICKER )

@@ -38,6 +38,8 @@ export class GroomproviderService {
   momentTime:any;
   serviceId:any;
 
+  setGromId:any;
+
   groomers:any;
   petsArray:any;
   addressId:any;

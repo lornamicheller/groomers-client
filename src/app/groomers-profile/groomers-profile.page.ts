@@ -3,6 +3,7 @@ import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/na
 import { ToastController, NavController } from '@ionic/angular';
 import {GroomproviderService} from "./../../app/groomprovider.service";
 import * as Parse from 'parse';
+import { getInheritedFactory } from '@angular/core/src/render3';
 
 let parse = require('parse'); 
 
@@ -24,8 +25,30 @@ export class GroomersProfilePage implements OnInit {
   ngOnInit() {
 
       this.groomerId = this.provider.groomerId;
-      console.log("Groomer Id: ", this.groomerId);   
+      console.log("Groomer Id: ", this.groomerId);  
+      console.log(this.provider.setGromId) ;
       // this.name = this.groomerId.get('name'); 
+
+      this.getInfo();
+
+  }
+
+  getInfo()
+  {
+    console.log("entrando al get Infor");
+    Parse.Cloud.run('getGoomerId', {
+      userId: this.provider.setGromId  
+    }).then((result)=>{
+     
+      this.groomerId = result;
+      console.log(this.groomerId);
+    }
+    , (error)=> {
+        //an error occur
+        console.log(error);
+        //this.openPage();
+    });
+
   }
 
   openPage() {

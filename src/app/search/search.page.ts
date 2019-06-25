@@ -15,6 +15,12 @@ export class SearchPage implements OnInit {
 
   search: string;
   groomers: any;
+  value=true;
+  subrating:any;
+  rating:number;
+  finishRating =0;
+  hoverRate:any;
+  index:any;
 
   constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController, public provider : GroomproviderService) {
@@ -32,20 +38,27 @@ export class SearchPage implements OnInit {
 
   openPage(groomer) {
     let options: NativeTransitionOptions = {
+      
         direction: 'left', 
         duration: 400, 
         slowdownfactor: -1, 
         slidePixels: 20, 
         iosdelay: 100
     }
-
     //hold reference to selected groomer before continuing with the proccess
     this.provider.groomer = groomer;
+    console.log(this.provider.groomer);
     this.provider.search = "Search";
 
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot("/tabs/tabs/cards-orders");
+    this.nav.navigateRoot("/home-pets");
+  }
+  
+
+  getValue()
+  {
+    console.log("Value");
   }
 
   searchChange(ev) {
@@ -77,6 +90,41 @@ export class SearchPage implements OnInit {
         //this.openPage();
     });
   }
+
+
+
+  // getIdGroomers(groom)
+  // {
+
+  //   console.log("calculando el id: ", groom);
+  //   var rating2 =0 ;
+  //   console.log(groom);
+  //   Parse.Cloud.run('getReviews', {
+  //     groomerId: groom
+  //   }).then((result)=> {
+        
+  //     console.log(result);
+  //     // console.log(result[0].get("rating"));
+  //     for(let i=0; i < result.length; i++)
+  //     { 
+  //       rating2 += result[i].get("rating");
+  //       console.log(rating2);
+      
+      
+  //     }
+  //     console.log("Out of for");
+  //     this.index = rating2/result.length;
+
+  //     console.log("Rating", this.index);
+
+  //     console.log("TERMINANDO");
+  //   }
+  //   , (error)=> {
+  //       //an error occur
+  //       console.log(error);
+  //       //this.openPage();
+  //   });
+  // }
 
 
 }

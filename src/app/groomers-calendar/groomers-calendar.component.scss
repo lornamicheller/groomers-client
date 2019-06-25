@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+
 :host {
   ion-header {
     height: 90px;
@@ -8,7 +11,6 @@
       align-items: center;
       display: flex;
       color: var(--ion-color-primary-contrast);
-      --background: url('/assets/huesitos.jpg') !important;
 
       ion-title {
         font-size: 15px;
@@ -30,18 +32,11 @@
     }
   }
 
-  app-calendar.ion-page {
-    float: left !important;
-    height: 600px !important;
-    margin-top: 96px !important;
-    --background: url('/assets/huesitos.jpg') !important;
-}
-
-  .ionic_datepicker_modal_content {
-    position: absolute;
-    height: 400px !important;
-    bottom: 0;
-  }
+  // .ionic_datepicker_modal_content {
+  //   position: absolute;
+  //   height: 400px;
+  //   bottom: 0;
+  // }
 
   .ionic_datepicker_modal_content {
     .dp-month-year-container {
@@ -252,4 +247,19 @@
     border-left: 1px solid white;
   }
 
+}
+
+.hour-btn {
+  height: 25px;
+  width: 25px;
+  border: 1px solid #37B34A;
+  border-radius: 50px;
+  --color-checked: #37B34A;
+  color: white;
+}
+
+.hours-container {
+  height: 400px;
+  overflow: scroll;
+  padding-bottom: 100px;
 }

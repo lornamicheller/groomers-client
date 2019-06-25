@@ -18,10 +18,13 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { Stripe } from '@ionic-native/stripe/ngx';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+import { GroomersCalendarComponent } from './groomers-calendar/groomers-calendar.component';
+// import { Calendar } from '@ionic-native/calendar';
 
 
 @NgModule({
-  declarations: [AppComponent, CalendarComponent],
+  declarations: [AppComponent, CalendarComponent, GroomersCalendarComponent],
   entryComponents: [],
   imports: [
     BrowserModule, 
@@ -38,8 +41,9 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
     NativePageTransitions,
     Calendar,
     NavController,
+    Push,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  bootstrap: [AppComponent, CalendarComponent]
+  bootstrap: [AppComponent, CalendarComponent, GroomersCalendarComponent]
 })
 export class AppModule {}
