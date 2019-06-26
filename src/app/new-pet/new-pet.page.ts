@@ -30,6 +30,9 @@ import {
 from '@ionic/angular';
 //import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
 let parse=require('parse');
+import { GroomproviderService } from "./../../app/groomprovider.service";
+
+
 @Component( {
     selector: 'app-new-pet', templateUrl: './new-pet.page.html', styleUrls: ['./new-pet.page.scss'],
 }
@@ -41,26 +44,27 @@ let parse=require('parse');
     breed: any;
     photo: any;
     type: any;
-    constructor(private camera: Camera, public alertCtrl: AlertController, /*private photoLibrary: PhotoLibrary*/
+    constructor(public provider:GroomproviderService,private camera: Camera, public alertCtrl: AlertController, /*private photoLibrary: PhotoLibrary*/
     private nativePageTransitions: NativePageTransitions, public nav: NavController, public toastCtrl: ToastController) {
         parse.serverURL='https://parseapi.back4app.com/';
         Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");
     }
     picture:any;
     savedPhoto:any;
+    petPicture:any;
     ngOnInit() {
         console.log(Parse.User.current().id);
     }
     
     openCamera() {
+
+        let self = this;
         const options: CameraOptions = {
-          quality: 100,
+          quality: 150,
           destinationType: this.camera.DestinationType.DATA_URL,
           encodingType: this.camera.EncodingType.JPEG,
           mediaType: this.camera.MediaType.PICTURE
         }
-
-        let self = this;
         this.camera.getPicture(options).then((imageData) => {
     
           this.picture = 'data:image/jpeg;base64,' + imageData;
@@ -74,8 +78,8 @@ let parse=require('parse');
           parseFile.save().then((savedFile) => {
             console.log('file saved:' + savedFile);
             this.savedPhoto= this.picture;
-  
-            self.photo = savedFile;
+            
+            self.provider.photo = savedFile; //foto tomada
           }, (err) => {
             console.log('error grabando file: ' + err)
           });
@@ -101,12 +105,12 @@ let parse=require('parse');
          allowEdit: true 
       }
   
-      let self = this;
+      let self= this;
   
       this.camera.getPicture(options).then((imageData)=> {
-        self.picture='data:image/jpeg;base64,' + imageData;
+        this.picture='data:image/jpeg;base64,' + imageData;
         
-        let base64Image=self.picture;
+        let base64Image=this.picture;
         let name="photo.jpeg";
         let parseFile=new Parse.File(name, {
             base64: base64Image
@@ -114,7 +118,7 @@ let parse=require('parse');
         ); //convierte la foto a base64
         parseFile.save().then((savedFile)=> {
             console.log('file saved:' + savedFile);
-           self.photo = savedFile;
+            this.provider.photo = savedFile;
   
         }
         , (err)=> {
@@ -152,7 +156,8 @@ let parse=require('parse');
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
-      header: 'Camera',
+      header: 'Image for Pet',
+      subHeader:'Choose an option',
       buttons: [
         {
           text: 'Camera',
@@ -168,7 +173,13 @@ let parse=require('parse');
             this.openLibrary();
             console.log('Confirm Okay');
           }
-        }
+        },
+        {
+            text: 'Cancel',
+            handler: () => {
+              console.log('Confirm Okay');
+            }
+          }
       ]
     });
 
@@ -176,6 +187,7 @@ let parse=require('parse');
   }
 
     pet() {
+        
         // alert("breed: " + this.breed);
         //validate require fields-inputs
         console.log(this.age);
@@ -184,6 +196,14 @@ let parse=require('parse');
         console.log(this.size);
         console.log(this.breed);
         console.log(Parse.User.current().id);
+
+
+            if(this.provider.photo == null )
+            
+            {
+                this.addingPhoto("No Photo");
+            }
+
         if( this.name==null || this.breed==null || this.age==null || this.size==null || this.type==null) {
             //show alert
             this.alertMessage("All fields are require.");
@@ -191,9 +211,10 @@ let parse=require('parse');
         }
         else {
             Parse.Cloud.run('createPet', {
-                user: Parse.User.current().id, name: this.name, breed: this.breed, age: this.age, size: this.size, photo: this.photo, type: this.type
+                user: Parse.User.current().id, name: this.name, breed: this.breed, age: this.age, size: this.size, photo: this.provider.photo, type: this.type
             }
             ).then((result)=> {
+                console.log(result);
                 //success creating pet
                 this.SuccessPet();
                 console.log("PET INFO", this.name);
@@ -231,6 +252,22 @@ let parse=require('parse');
         //alerta simple con mensaje
         const alert=await this.alertCtrl.create( {
             header: 'Alert!', message: "Pets added", buttons: [ {
+                text: 'OK', role: 'cancel', cssClass: 'secondary', handler: ()=> {
+                    this.openPage();
+                }
+            }
+            ]
+        }
+        );
+        await alert.present();
+    }
+
+
+
+    async addingPhoto(err) {
+        //alerta simple con mensaje
+        const alert=await this.alertCtrl.create( {
+            header: 'Alert!', message: err, buttons: [ {
                 text: 'OK', role: 'cancel', cssClass: 'secondary', handler: ()=> {
                     this.openPage();
                 }

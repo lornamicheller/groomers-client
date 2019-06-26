@@ -23,7 +23,7 @@
 
   <ion-item class="date" lines="none">
     <ion-label>CHOOSE TIME</ion-label>
-    <ion-datetime displayFormat="h:mm, A " [(ngModel)]="mydate"></ion-datetime>
+    <ion-datetime displayFormat="h:mm, A " minuteValues="0,30" [(ngModel)]="mydate"></ion-datetime>
   </ion-item>
 
   <ion-button class="book-btn" (click)="searchDay()" expand="block">BOOK NOW</ion-button>

@@ -89,6 +89,38 @@ export class AddressReceiverPage implements OnInit {
     this.nativePageTransitions.slide(options);
     this.nav.navigateRoot('/tabs/tabs/tab1');
   }
+
+  goAdd() {
+    let options: NativeTransitionOptions = {
+      direction: 'right',
+      duration: 400,
+      slowdownfactor: -1,
+      slidePixels: 20,
+      iosdelay: 100
+  }
+    console.log(options);
+    this.nativePageTransitions.slide(options);
+    this.nav.navigateRoot('/tabs/tabs/tab2');
+  }
+  goEdit() {
+    let options: NativeTransitionOptions = {
+      direction: 'right',
+      duration: 400,
+      slowdownfactor: -1,
+      slidePixels: 20,
+      iosdelay: 100
+  }
+    console.log(options);
+    this.nativePageTransitions.slide(options);
+    this.nav.navigateRoot('/address-edit');
+  }
+
+  editInfo(addId)
+  {
+    this.provider.addressId = addId;
+    this.goEdit();
+
+  }
  
   // saveAddressForm() {
   //   console.log("Entrando al address form");
@@ -123,8 +155,12 @@ export class AddressReceiverPage implements OnInit {
     }).then((result) => {
       console.log(result)
        this.addrs = result;
-       
 
+        console.log("Address:", result);       
+        if(result == 0)
+        {
+          this.goAdd();
+        }
     });
     (error)=>{
       console.log(error);

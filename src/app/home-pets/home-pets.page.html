@@ -15,7 +15,7 @@
     <ion-grid style="margin: 0; padding: 0;">
       <ion-row>
         <ion-col size="4" class="green-bg">
-          <ion-button class="profile-btn" (click)="openPage(pet)">
+          <ion-button class="profile-btn" >
             <ion-ripple-effect></ion-ripple-effect>
             <ion-avatar class="avatar-border">
               <img *ngIf="pet.get('petImage') == null " class="imgFit" src="assets/icon-cam.png">
@@ -28,9 +28,13 @@
           <p [(ngModel)]=age class="age">Age: <span>{{pet.get("age")}}</span></p>
           <p [(ngModel)]=size class="size">Size: <span>{{pet.get("size")}}</span></p>
           <p [(ngModel)]=breed class="breed">Breed: <span>{{pet.get("breed")}}</span></p>
-          <ion-button (click)="goToEdit(pet.id)" class="edit-btn" expand="block">
+     
+         
+
+          <ion-icon ion-button (click)="goToEdit(pet.id)" class="edit-btn" ios="ios-create" md="md-create"></ion-icon>
+          <ion-button (click)="openPage(pet)" class="make-btn" expand="block">
             <ion-ripple-effect></ion-ripple-effect>
-            EDIT
+            Make Service 
           </ion-button>
           <ion-button (click)="deleteDog(pet)" class="delete-btn">
             <ion-ripple-effect></ion-ripple-effect>

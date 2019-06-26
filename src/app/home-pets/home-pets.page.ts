@@ -123,6 +123,20 @@ export class HomePetsPage implements OnInit {
 
   }
 
+  openPageForAddPet() {
+    let options: NativeTransitionOptions = {
+        direction: 'left', 
+        duration: 400, 
+        slowdownfactor: -1, 
+        slidePixels: 20, 
+        iosdelay: 100
+    }
+    console.log(options);
+    this.nativePageTransitions.slide(options);
+    //this.navigate.navigateRoot("/tabs/tabs/tab2");
+    this.nav.navigateRoot("/tabs/tabs/add-pet");
+  } 
+
 
   
 
@@ -235,8 +249,15 @@ export class HomePetsPage implements OnInit {
       userId: Parse.User.current().id
     }).then((result) => {
       console.log(result.name);
+      console.log("Result",result);
       this.pets = result;
     this.checkImage= result.petImage;
+        if(result == 0 )
+        {
+          this.openPageForAddPet();
+          console.log("No pets");
+        }
+        
     });
    
     (error)=>{

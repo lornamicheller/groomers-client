@@ -4,14 +4,15 @@ import { ToastController, NavController } from '@ionic/angular';
 import {GroomproviderService} from "./../../app/groomprovider.service";
 import * as Parse from 'parse';
 import { AlertController } from "@ionic/angular";
+import { getInheritedFactory } from '@angular/core/src/render3';
 
 let parse = require('parse');
 @Component({
-  selector: 'app-address-form',
-  templateUrl: './address-form.page.html',
-  styleUrls: ['./address-form.page.scss'],
+  selector: 'app-address-edit',
+  templateUrl: './address-edit.page.html',
+  styleUrls: ['./address-edit.page.scss'],
 })
-export class AddressFormPage implements OnInit {
+export class AddressEditPage implements OnInit {
 
   placeName:string;
   address:string;
@@ -29,10 +30,24 @@ export class AddressFormPage implements OnInit {
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");
 }
 
-  ngOnInit() {
-   // saveAddressForm();
+addressObject:any;
 
-  
+
+  ngOnInit() {
+    console.log("Entrando al address edit");
+    this.addressObject = this.provider.addressId;
+    console.log(this.addressObject);
+    this.placeName = this.addressObject.get('name');
+    console.log(this.addressObject.get('name'));
+
+    this.address = this.addressObject.get('address1');
+    this.apt = this.addressObject.get('address2');
+    this.city = this.addressObject.get('city');
+    this.state = this.addressObject.get('state');
+    this.zip = this.addressObject.get('zipcode');
+    this.phone = this.addressObject.get('phone');
+
+
 
 
   }
@@ -122,20 +137,23 @@ saveAddressForm() {
 
   }else
   {
-      Parse.Cloud.run('createAddress', {
-          user: Parse.User.current().id,
-          name: this.placeName,
-          address1: this.address,
-          address2: this.apt,
-          city: this.city,
-          state: this.state,
-          zipcode: this.zip,
-          phone: this.phone
-      }).then((result) => {
-          console.log("Address info", this.placeName);
-          // this.validateInputs();
-          this.openPage();
+      this.addressObject.set('name', this.placeName);
+      this.addressObject.set('address1', this.address);
+      this.addressObject.set('address2', this.apt);
+      this.addressObject.set('city', this.city);
+      this.addressObject.set('state', this.state);
+      this.addressObject.set('zipcode', this.zip);
+      this.addressObject.set('phone', this.phone);
+
+
+
+      this.addressObject.save().then((result)=>
+      {
+          console.log("Saved!!");
+          this.goBack();
+          
       });
+
     }
 }
 

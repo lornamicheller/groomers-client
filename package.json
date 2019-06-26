@@ -36,7 +36,7 @@
     "angular-calendar": "^0.27.11",
     "animate.css": "^3.7.1",
     "com.telerik.plugins.nativepagetransitions": "0.6.5",
-    "cordova-ios": "5.0.1",
+    "cordova-ios": "^5.0.1",
     "cordova-plugin-calendar": "5.1.4",
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-facebook4": "4.2.1",

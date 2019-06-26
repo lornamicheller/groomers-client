@@ -41,18 +41,27 @@
 }
 
 .order-card {
+  // box-shadow: 0 8px 6px -6px black;
+  // height: auto;
+  // border-radius: 25px;
+
   box-shadow: 0 8px 6px -6px black;
+  // border-radius: 25px;
+  background-color: #fafafa;
   height: auto;
-  border-radius: 25px;
+  // margin-left: 30px;
+  margin-right: 30px;
+  margin-left: 12px;
+  width: 351px;
 }
 
 .green-bg {
-  background-color: #E6E7E8;
+  background-color: #fafafa;
   height: 200px;
 }
 
 .grey-bg {
-  background-color: #E6E7E8;
+  background-color: #fafafa;
   height: 200px;
 }
 
@@ -67,10 +76,11 @@
 
 .name {
   font-weight: 700;
-  font-size: 17px;
-  color: #37B34A;
-  margin-bottom: 7px;
-  font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    color: #37B34A;
+    margin-bottom: 7px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 37px;
 
 }
 
@@ -91,9 +101,9 @@
   text-align: center;
 }
 
-.edit-btn {
+.make-btn {
   --border-radius: 25px;
-  margin-top: 10px;
+  margin-top: 9px;
   margin-left: 50px;
   margin-right: 50px;
   --background: #37B34A;
@@ -102,10 +112,15 @@
   font-size: 13px;
 }
 
-.edit {
-  font-weight: 700;
-  font-size: 12px;
+
+.edit-btn{
+  position: absolute;
+  top: 15px;
+  right: 47px;
+    font-size: 20px;
+    color: #414042;
 }
+
 
 .delete-btn {
   position: absolute;

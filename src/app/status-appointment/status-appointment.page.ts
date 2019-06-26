@@ -91,7 +91,7 @@ export class StatusAppointmentPage implements OnInit {
   }
   async cancelAlert() {
     const alert = await this.alertCtrl.create({
-      header: 'The service has been cancel!',
+      header: 'Your service has been cancel!',
       buttons: [
         {
           text: 'OK',
@@ -108,17 +108,17 @@ export class StatusAppointmentPage implements OnInit {
 
   async presentAlertConfirm() {
     const alert = await this.alertCtrl.create({
-      header: 'You want cancel this service?',
+      header: 'Would you like to cancel this service?',
       buttons: [
         {
-          text: 'Cancel Service',
+          text: 'Yes',
           role: 'Yes',
           cssClass: 'secondary',
           handler: (blah) => {
             this.cancelService();
           }
         }, {
-          text: 'NO',
+          text: 'No',
           handler: () => {
            
           }

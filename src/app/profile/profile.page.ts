@@ -46,7 +46,7 @@ export class ProfilePage implements OnInit {
 
   openCamera() {
       const options: CameraOptions = {
-        quality: 100,
+        quality: 150,
         destinationType: this.camera.DestinationType.DATA_URL,
         encodingType: this.camera.EncodingType.JPEG,
         mediaType: this.camera.MediaType.PICTURE
@@ -70,6 +70,8 @@ export class ProfilePage implements OnInit {
           this.changeInfomation.save().then((result)=>
           {
             console.log(result);
+            // this.savePhoto();
+            
           
           });
           
@@ -116,6 +118,15 @@ export class ProfilePage implements OnInit {
           self.savedPhoto=self.picture;
           self.photo=savedFile;
 
+
+          this.changeInfomation.set("petImage", savedFile)
+
+          this.changeInfomation.save().then((result)=>
+          {
+            console.log("SAVEDD LIBRARY");
+            // this.savePhoto();
+          });
+
       }
       , (err)=> {
           console.log('error grabando file: ' + err);
@@ -130,31 +141,37 @@ export class ProfilePage implements OnInit {
   );
 }
 
-
-  async presentAlertConfirm() {
-    const alert = await this.alert.create({
-      header: 'Camera',
-      buttons: [
-        {
-          text: 'Camera',
-          role: 'camera',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            this.openCamera();
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Gallery',
+async presentAlertConfirm() {
+  const alert = await this.alert.create({
+    header: 'Image for Pet',
+    subHeader:'Choose an option',
+    buttons: [
+      {
+        text: 'Camera',
+        role: 'camera',
+        cssClass: 'secondary',
+        handler: (blah) => {
+          this.openCamera();
+          console.log('Confirm Cancel: blah');
+        }
+      }, {
+        text: 'Gallery',
+        handler: () => {
+          this.openLibrary();
+          console.log('Confirm Okay');
+        }
+      },
+      {
+          text: 'Cancel',
           handler: () => {
-            this.openLibrary();
             console.log('Confirm Okay');
           }
         }
-      ]
-    });
+    ]
+  });
 
-    await alert.present();
-  }
+  await alert.present();
+}
 
 
 
@@ -168,7 +185,7 @@ export class ProfilePage implements OnInit {
       }
       console.log(options);
       this.nativePageTransitions.slide(options);
-      this.nav.navigateRoot("tabs/tabs/cards-orders");
+      this.nav.navigateRoot("/home-pets");
     }
 
     goBack() {
@@ -181,7 +198,7 @@ export class ProfilePage implements OnInit {
       }
       console.log(options);
       this.nativePageTransitions.slide(options);
-      this.nav.navigateRoot("tabs/tabs/cards-orders");
+      this.nav.navigateRoot("/home-pets");
     }
 
   getPetInfo() {
@@ -196,6 +213,7 @@ export class ProfilePage implements OnInit {
           console.log(result.get("size"));
 
           this.changeInfomation = result;
+          console.log("Pet", this.changeInfomation);
 
           this.name = result.get("name");
           this.age = result.get("age");
@@ -260,6 +278,25 @@ export class ProfilePage implements OnInit {
   
       await alert.present();
       
+
+}
+
+async savePhoto(){
+  
+  const alert = await this.alert.create({
+    header: 'ALERT!',
+    message: 'Your new picture has been saved!',
+    buttons: [{
+      text: 'OK',
+      role: 'cancel',
+      cssClass: 'secondary',
+      handler: () => {
+      }
+    }]
+    });
+
+    await alert.present();
+    
 
 }
 

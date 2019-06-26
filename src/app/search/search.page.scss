@@ -76,16 +76,18 @@
 .order-card {
   box-shadow: 0 8px 6px -6px black;
   height: 140px;
-  border-radius: 25px;
+  // border-radius: 25px;
+    margin-left: 12px;
+  width: 351px;
 }
 
 .green-bg {
-  background-color: #E6E7E8;
+  background-color: #ededed;
   height: 200px;
 }
 
 .grey-bg {
-  background-color: #E6E7E8;
+  background-color: #ededed;
 }
 
 .avatar-border {

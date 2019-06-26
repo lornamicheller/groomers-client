@@ -23,10 +23,10 @@
 
     <ion-segment >
       <ion-segment-button (click)="dog()" class="dogBtn" href="#dogs" value="dogs">
-        <ion-label>Dogs</ion-label>
+        <ion-label>Dog</ion-label>
       </ion-segment-button>
       <ion-segment-button (click)="cat()" class="catBtn" href="#cats" value="cats">
-        <ion-label>Cats</ion-label>
+        <ion-label>Cat</ion-label>
       </ion-segment-button>
     </ion-segment>
 
@@ -39,15 +39,15 @@
     <!-- <ion-input [(ngModel)]="breed" clearInput type="text" class=" breed" placeholder="BREED"></ion-input> -->
     <ion-item lines="none" class="size">
       <ion-label>SIZE</ion-label>
-      <ion-select [(ngModel)]="size" value="" placeholder="" okText="Okay" cancelText="Cancel">
+      <ion-select [(ngModel)]="size" value="" placeholder="" okText="Ok" cancelText="Cancel">
         <ion-select-option value="Small">Small</ion-select-option>
         <ion-select-option value="Medium">Medium</ion-select-option>
         <ion-select-option value="Large">Large</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item lines="none" class="breed">
+    <ion-item *ngIf="type != CAT" lines="none" class="breed">
       <ion-label>BREED</ion-label>
-      <ion-select [(ngModel)]="breed" value="" placeholder="" okText="Okay" cancelText="Cancel">
+      <ion-select [(ngModel)]="breed" value="" placeholder="" okText="Ok" cancelText="Cancel">
         <ion-select-option value="Affenpinscher Brussels Griffon">Affenpinscher Brussels Griffon</ion-select-option>
         <ion-select-option value="Afghan Hound">Afghan Hound</ion-select-option>
         <ion-select-option value="Airedale terrier">Airedale terrier</ion-select-option>

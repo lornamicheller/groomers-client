@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+.arrow-btn {
+  position: absolute;
+  top: 25px;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+  z-index: 100;
+}
+
+.add-btn {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  --background: transparent;
+  --background-activated: transparent;
+  color: #414042;
+  --color-activated: #414042;
+}
+
+.arrow-icon {
+  color: #37B34A;
+  width: 25px;
+  height: 25px;
+}
+
+.add-icon {
+  color: #37B34A;
+  width: 30px;
+  height: 30px;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+  height: 90px;
+  width: 100px;
+}
+
+.borders {
+  // border-bottom: 1px solid rgb(199, 199, 199);
+  background-color: rgba(255, 255, 255, 0.596);
+  height: 100px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.bg {
+  --background: url('/assets/form.jpg');
+  background-size: cover;
+  height: 100vh;
+  position: bottom;
+}
+
+// .address-btn {
+//   --background: #414042;
+//   --background-activated: #414042;
+//   --border-radius: 25px;
+//   font-weight: 700;
+//   font-size: 13px;
+//   letter-spacing: 1px;
+//   height: 50px;
+//   margin-left: 20px;
+//   margin-right: 20px;
+//   margin-bottom: 50px;
+//   --box-shadow: none;
+// }
+
+.place-name {
+  font-weight: 700;
+  --placeholder-opacity: 10;
+  font-size: 12px;
+  margin-top: 120px;
+  --color: #37B34A;
+  --placeholder-color: #37B34A;
+  border-bottom: 2px solid #37B34A;
+  --padding-start: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.address, .suite, .city, .phone {
+  font-weight: 700;
+  --placeholder-opacity: 10;
+  font-size: 12px;
+  margin-top: 10px;
+  --color: #37B34A;
+  --placeholder-color: #37B34A;
+  border-bottom: 2px solid #37B34A;
+  --padding-start: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.zipcode, .state {
+  font-weight: 700;
+  --placeholder-opacity: 10;
+  font-size: 12px;
+  margin-top: 10px;
+  --color: #37B34A;
+  --placeholder-color: #37B34A;
+  border-bottom: 2px solid #37B34A;
+  --padding-start: 10px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.address-btn {
+  --background: #37B34A;
+  --background-activated: #37B34A;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  --border-radius: 25px;
+  height: 50px;
+  letter-spacing: 1px;
+}
