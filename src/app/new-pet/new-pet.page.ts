@@ -149,7 +149,7 @@ import { GroomproviderService } from "./../../app/groomprovider.service";
         }
         console.log(options);
         this.nativePageTransitions.slide(options);
-        this.nav.navigateRoot("/tabs/tabs/cards-orders");
+        this.nav.navigateRoot("/home-pets");
     }
 
 
@@ -228,10 +228,12 @@ import { GroomproviderService } from "./../../app/groomprovider.service";
         }
     }
     cat() {
+        this.type = null;
         this.type="CAT";
         console.log("CAT: ", this.type);
     }
     dog() {
+        this.type = null;
         this.type="DOG";
         console.log("DOG: ", this.type);
     }

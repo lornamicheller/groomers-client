@@ -40,8 +40,8 @@ export class CardsOrdersPage implements OnInit {
 
   ngOnInit() {
 
-    console.log("entrando al ngOnIniti");
-    this.getPetObjects();
+    // console.log("entrando al ngOnIniti");
+    // this.getPetObjects();
    
    
     
@@ -99,115 +99,115 @@ export class CardsOrdersPage implements OnInit {
 
   }
 
-  ngOnDestroy(){
+//   ngOnDestroy(){
 
-    console.log("Destroyed");
+//     console.log("Destroyed");
     
-  }
+//   }
 
 
-  deleteDog(dogs)
-  { 
-    console.log(dogs);
-    dogs.destroy().then((result)=>
-    {
-        console.log("Destroyed!!!");
-        this.savedInfo();
+//   deleteDog(dogs)
+//   { 
+//     console.log(dogs);
+//     dogs.destroy().then((result)=>
+//     {
+//         console.log("Destroyed!!!");
+//         this.savedInfo();
 
-    });
+//     });
 
-  }
+//   }
  
 
 
 
-  goToEdit(petid)
-  {
-    console.log(petid);
-      this.provider.petid = petid;
-      let options: NativeTransitionOptions = {
-        direction: 'left', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
-    }
-      console.log(options);
-      this.ngOnDestroy();
-      this.nativePageTransitions.slide(options);
-      this.nav.navigateRoot('tabs/tabs/profile');
-  }
+//   goToEdit(petid)
+//   {
+//     console.log(petid);
+//       this.provider.petid = petid;
+//       let options: NativeTransitionOptions = {
+//         direction: 'left', 
+//         duration: 400, 
+//         slowdownfactor: -1, 
+//         slidePixels: 20, 
+//         iosdelay: 100
+//     }
+//       console.log(options);
+//       this.ngOnDestroy();
+//       this.nativePageTransitions.slide(options);
+//       this.nav.navigateRoot('tabs/tabs/profile');
+//   }
 
-  async savedInfo(){
+//   async savedInfo(){
   
-    const alert = await this.alert.create({
-      header: 'ALERT!',
-      message: 'Your pet has been deleted!',
-      buttons: [{
-        text: 'OK',
-        role: 'cancel',
-        cssClass: 'secondary',
-        handler: () => {
-          this.getPetObjects();
-          this.nav.navigateRoot('tabs/tabs/cards-orders');
-        }
-      }]
-      });
+//     const alert = await this.alert.create({
+//       header: 'ALERT!',
+//       message: 'Your pet has been deleted!',
+//       buttons: [{
+//         text: 'OK',
+//         role: 'cancel',
+//         cssClass: 'secondary',
+//         handler: () => {
+//           this.getPetObjects();
+//           this.nav.navigateRoot('tabs/tabs/cards-orders');
+//         }
+//       }]
+//       });
   
-      await alert.present();
+//       await alert.present();
       
 
-}
+// }
 
-  addNewPetTransition() {
-      let options: NativeTransitionOptions = {
-        direction: 'left', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
-    }
-      console.log(options);
-      this.ngOnDestroy();
-      this.nativePageTransitions.slide(options);
-      this.nav.navigateRoot('tabs/tabs/new-pet');
-  }
-
-
-  openPage(petId) {
-    let options: NativeTransitionOptions = {
-      direction: 'left', 
-      duration: 400, 
-      slowdownfactor: -1, 
-      slidePixels: 20, 
-      iosdelay: 100
-  }
+//   addNewPetTransition() {
+//       let options: NativeTransitionOptions = {
+//         direction: 'left', 
+//         duration: 400, 
+//         slowdownfactor: -1, 
+//         slidePixels: 20, 
+//         iosdelay: 100
+//     }
+//       console.log(options);
+//       this.ngOnDestroy();
+//       this.nativePageTransitions.slide(options);
+//       this.nav.navigateRoot('tabs/tabs/new-pet');
+//   }
 
 
-  this.provider.petid = petId.id;
-  this.provider.petType = petId.get('type');
-  console.log("type:", this.provider.petType);
-  console.log(this.provider.petid);
-    console.log(options);
-    this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot('/tabs/tabs/tab1');
-}
+//   openPage(petId) {
+//     let options: NativeTransitionOptions = {
+//       direction: 'left', 
+//       duration: 400, 
+//       slowdownfactor: -1, 
+//       slidePixels: 20, 
+//       iosdelay: 100
+//   }
 
-  getPetObjects(){
-    //console.log("get pet info")
-    console.log(Parse.User.current().id);
-    Parse.Cloud.run('getPetsByUserId', {
-      userId: Parse.User.current().id
-    }).then((result) => {
-      console.log(result.name);
-      this.pets = result;
-    this.checkImage= result.petImage;
-    });
+
+//   this.provider.petid = petId.id;
+//   this.provider.petType = petId.get('type');
+//   console.log("type:", this.provider.petType);
+//   console.log(this.provider.petid);
+//     console.log(options);
+//     this.nativePageTransitions.slide(options);
+//     this.nav.navigateRoot('/tabs/tabs/tab1');
+// }
+
+//   getPetObjects(){
+//     //console.log("get pet info")
+//     console.log(Parse.User.current().id);
+//     Parse.Cloud.run('getPetsByUserId', {
+//       userId: Parse.User.current().id
+//     }).then((result) => {
+//       console.log(result.name);
+//       this.pets = result;
+//     this.checkImage= result.petImage;
+//     });
    
-    (error)=>{
-      console.log(error);
-    }
-  }
+//     (error)=>{
+//       console.log(error);
+//     }
+//   }
 
 
  
