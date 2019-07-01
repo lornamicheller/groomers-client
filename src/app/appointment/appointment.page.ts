@@ -190,6 +190,8 @@ searchDay()
       console.log(result);
       if(result.length == 0) {
         console.log("no hay groomers available");
+        this.openPage();
+        this.navigate.navigateRoot('/tabs/tabs/choose-groomer');
       }
       else {
 

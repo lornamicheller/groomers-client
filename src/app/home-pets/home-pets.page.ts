@@ -114,6 +114,7 @@ export class HomePetsPage implements OnInit {
   deleteDog(dogs)
   { 
     console.log(dogs);
+
     dogs.destroy().then((result)=>
     {
         console.log("Destroyed!!!");
@@ -225,8 +226,10 @@ export class HomePetsPage implements OnInit {
     console.log(petId.get('type'));
     console.log(petId.get('size'));
 
+
     this.provider.petid = petId.id;
     this.provider.petSize = petId.get('size');
+    this.provider.petName = petId.get('name');
 
     //condicion petId.get('type') == DOG si no == CAT 
   if(petId.get('type') == "DOG"){

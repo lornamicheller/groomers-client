@@ -1,5 +1,4 @@
-<ion-content>
-  <div class="green-container">
+<div class="green-container">
     <ion-card style="box-shadow: none; margin: 0;">
       <img class="logo" src="assets/logoblanco.svg" width="100px" height="80px;">
     </ion-card>
@@ -8,9 +7,10 @@
     </ion-button>
   </div>
 
+<ion-content>
   <ion-card style="box-shadow: none; margin: 0; border-radius: 0;">
     <img *ngIf="picture != null" src="{{picture}}" style="height: 300px; object-fit: cover;">
-    <img *ngIf="picture == null" src="assets/fotogroo3.jpg" style="height: 300px; object-fit: cover;">
+    <img *ngIf="picture == null" src="assets/logoverde.svg" style="height: 250px; object-fit: cover;">
     <p class="status-app">Status: <span style="color: red;">{{status}}</span></p>
   </ion-card>
 

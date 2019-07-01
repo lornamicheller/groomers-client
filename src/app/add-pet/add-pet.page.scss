@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,800&display=swap');
+
+
 .arrow-btn {
   position: absolute;
   top: 17px;
@@ -65,4 +68,14 @@
   margin-top: 40px;
   margin-bottom: 50px;
   --box-shadow: none;
+}
+
+.center-text {
+  text-align: center; 
+  color: rgb(0, 0, 0); 
+  margin-top: 240px; 
+  margin-left: 40px; 
+  margin-right: 40px; 
+  font-size: 17px; 
+  font-family: 'Poppins', sans-serif !important;
 }

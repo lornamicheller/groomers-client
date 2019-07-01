@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
 import { AlertController } from "@ionic/angular";
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import * as Parse from 'parse';
 let parse =require('parse');
 
@@ -14,7 +15,7 @@ export class ClientProfilePage implements OnInit {
 
 service:any;
 
-  constructor(public alert:AlertController,private nativePageTransitions: NativePageTransitions, public nav: NavController)
+  constructor(public alert:AlertController,private nativePageTransitions: NativePageTransitions, public nav: NavController, private iab: InAppBrowser)
   { 
     parse.serverURL = 'https://parseapi.back4app.com/';
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
@@ -81,14 +82,16 @@ service:any;
 
   closeAccount() {
     let options: NativeTransitionOptions = {
-        direction: 'left', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
-    }
-    console.log(options);
-    this.nativePageTransitions.slide(options);
+      direction: 'right', 
+      duration: 400, 
+      slowdownfactor: -1, 
+      slidePixels: 20, 
+      iosdelay: 100
+  }
+  console.log('transition');
+  console.log(options);
+  
+  this.nativePageTransitions.slide(options);
     this.nav.navigateRoot("/login");
   }
 
@@ -104,6 +107,15 @@ service:any;
     })
   }
   
-   
+  openTerms() {
+    window.open('http://groomrs.com/terms-conditions.html', '_system');
+  }
 
+  openPrivacy() {
+    window.open('http://groomrs.com/privacy-policy.html', '_system');
+  }
+
+  openFacebook() {
+    window.open('https://www.facebook.com/groomrs/', '_system');
+  }
 }

@@ -20,22 +20,38 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <p
+        <p *ngIf= "groomers != null"
           style="text-align: left; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
           PET:
           <span style="color: grey; font-weight: 300; font-size: 13px ; ">{{petName}}</span></p>
+
+          <p *ngIf= "groomers == null"
+          style="text-align: left; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
+          PET:
+          <span style="color: grey; font-weight: 300; font-size: 13px ; ">Rocky</span></p>
+        
       </ion-col>
       <ion-col>
-        <p
+        <p *ngIf= "groomers != null"
           style="text-align: center; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
           DATE:
-          <span style="color: grey; font-weight: 300; font-size: 13px;">{{day}}</span></p>
+          <span  style="color: grey; font-weight: 300; font-size: 13px;">{{day}}</span></p>
+
+          <p *ngIf= "groomers == null"
+          style="text-align: center; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
+          DATE:
+          <span  style="color: grey; font-weight: 300; font-size: 13px;">01/02/2019</span></p>
       </ion-col>
       <ion-col>
-        <p
+        <p *ngIf= "groomers != null"
           style="text-align: right; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
           HOUR:
           <span style="color: grey; font-weight: 300; font-size: 13px;">{{hour}}</span></p>
+
+          <p *ngIf= "groomers == null"
+          style="text-align: right; color: #37B34A; font-weight: 700; font-size: 13px; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;">
+          HOUR:
+          <span style="color: grey; font-weight: 300; font-size: 13px;">12:00 pm</span></p>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -60,6 +76,8 @@
         <ion-label>Preferred Available</ion-label>
       </ion-segment-button>
     </ion-segment>
+
+    <p *ngIf="groomers == null" style="text-align: center"class="msg-not groomers"> No Groomers Available </p>
 
   <ion-button *ngFor = "let groomer of groomers" (click)="openPage(groomer)" class="btnCard" expand="block">
     <ion-card class="order-card">

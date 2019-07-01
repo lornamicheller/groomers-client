@@ -60,14 +60,14 @@
       </ion-row>
   </ion-grid>
   <h5 *ngIf="checkStatus" style="text-align: center; color: grey; font-family: 'Poppins', sans-serif;" >View Hours</h5>
-  <div class="hours-container" *ngIf="checkStatus" (click)="getGroomerHours()">
+  <div class="hours-container" *ngIf="checkStatus" >
       
       <ion-list>
           
           <ion-radio-group >
               <ion-item id="rate" *ngFor="let hour of allHours">
                   <ion-label>{{getHours(hour.start, hour.end)}}</ion-label>
-                  <ion-radio   class="hour-btn" slot="end"  [value]="getHours(hour.start, hour.end)"   (ionSelect)="getHoursDay(getHoursDay(hour.start))" ></ion-radio>
+                  <ion-radio   class="hour-btn" slot="end"  [value]="getHours(hour.start, hour.end)"   (ionSelect)="getHoursDay(getHoursDay(hour.start))" checked ></ion-radio>
               </ion-item>
               <!-- <ion-item>
                   <ion-label>hola</ion-label>

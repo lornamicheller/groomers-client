@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { AlertController } from "@ionic/angular";
+import {GroomproviderService } from "./../../app/groomprovider.service";
 import * as Parse from 'parse';
 let parse = require('parse');
 
@@ -11,7 +12,7 @@ let parse = require('parse');
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  constructor(public alert: AlertController,public navigate : NavController, public nativePageTransitions: NativePageTransitions) 
+  constructor(public provider: GroomproviderService,public alert: AlertController,public navigate : NavController, public nativePageTransitions: NativePageTransitions) 
   { 
     parse.serverURL = 'https://parseapi.back4app.com/';
     Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0"); 
@@ -73,26 +74,36 @@ ngOnInit() {
 
   openPage() {
     let options: NativeTransitionOptions = {
-        direction: 'left', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
-    }
-    console.log(options);
-    this.nativePageTransitions.slide(options);
+      direction: 'left', 
+      duration: 400, 
+      slowdownfactor: -1, 
+      slidePixels: 20, 
+      iosdelay: 100
+  }
+  console.log('transition');
+  console.log(options);
+  
+  this.nativePageTransitions.slide(options);
     this.navigate.navigateRoot("/tabs/tabs/address-form");
   }
 
+
+
   goBack() {
     let options: NativeTransitionOptions = {
-        direction: 'right', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
+      direction: 'right', 
+    duration: 400, 
+    slowdownfactor: -1, 
+    slidePixels: 20, 
+    iosdelay: 100
     }
     console.log(options);
+    if(this.provider.search == "Search")
+    {
+      this.provider.search = "";
+    }
+
+    console.log(this.provider.search);
     this.nativePageTransitions.slide(options);
     this.navigate.navigateRoot("/tabs/tabs/tab1");
   }

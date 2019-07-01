@@ -20,14 +20,16 @@ bathService:any;
 
   openPage() {
     let options: NativeTransitionOptions = {
-        direction: 'left', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
-    }
-    console.log(options);
-    this.nativePageTransitions.slide(options);
+      direction: 'left', 
+      duration: 400, 
+      slowdownfactor: -1, 
+      slidePixels: 20, 
+      iosdelay: 100
+  }
+  console.log('transition');
+  console.log(options);
+  
+  this.nativePageTransitions.slide(options);
     //this.navigate.navigateRoot("/tabs/tabs/tab2");
     this.navigate.navigateRoot("/address-receiver");
   }
@@ -35,11 +37,11 @@ bathService:any;
 
   goBack() {
     let options: NativeTransitionOptions = {
-        direction: 'right', 
-        duration: 400, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        iosdelay: 100
+      direction: 'right', 
+    duration: 400, 
+    slowdownfactor: -1, 
+    slidePixels: 20, 
+    iosdelay: 100
     }
 
     if(this.provider.search == "Search")

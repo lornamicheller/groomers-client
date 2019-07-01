@@ -174,6 +174,12 @@ export class AddressReceiverPage implements OnInit {
       androiddelay: 0
   }
     console.log(options);
+    if(this.provider.search == "Search")
+    {
+      this.provider.search = "";
+    }
+    console.log(this.provider.search);
+    
     this.nativePageTransitions.fade(options);
     this.nav.navigateRoot('/tabs/tabs/history-order');
 }
@@ -185,6 +191,11 @@ openSearch() {
     androiddelay: 0
 }
   console.log(options);
+  if(this.provider.search == "Search")
+  {
+    this.provider.search = ";"
+  }
+  console.log(this.provider.search);
   this.nativePageTransitions.fade(options);
   this.nav.navigateRoot('/tabs/tabs/search');
 }
@@ -196,6 +207,11 @@ openHome() {
     androiddelay: 0
 }
   console.log(options);
+  if(this.provider.search == "Search")
+  {
+    this.provider.search = "";
+  }
+  console.log(this.provider.search );
   this.nativePageTransitions.fade(options);
   this.nav.navigateRoot('/home-pets');
 }
@@ -207,6 +223,11 @@ openProfile() {
     androiddelay: 0
 }
   console.log(options);
+  if(this.provider.search == "Search")
+  {
+    this.provider.search ="";
+  }
+  console.log(this.provider.search);
   this.nativePageTransitions.fade(options);
   this.nav.navigateRoot('/tabs/tabs/client-profile');
 }

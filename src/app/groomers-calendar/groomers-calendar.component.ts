@@ -132,19 +132,21 @@ export class GroomersCalendarComponent implements OnInit {
 
     if(this.petSize == "Small")
     {
-      this.duration = this.provider.groomer.get("dogSmallDuration");
+      this.duration = this.provider.groomerId.get("dogSmallDuration");
     }
     if(this.petSize == "Medium")
     {
-      this.duration = this.provider.groomer.get("dogMediumDuration");
+      this.duration = this.provider.groomerId.get("dogMediumDuration");
     }
     if(this.petSize == "Large")
     {
-      this.duration = this.provider.groomer.get("dogLargeDuration");
+      this.duration = this.provider.groomerId.get("dogLargeDuration");
     }
 
     console.log(this.duration);
 
+
+    this.setIonicDatePickerTodayDate() ;
 
 
   }

@@ -1,5 +1,4 @@
-<ion-content>
-  <div class="green-container">
+<div class="green-container">
     <ion-card style="box-shadow: none; margin: 0;">
       <img class="logo" src="assets/logoblanco.svg" width="100px" height="80px;">
     </ion-card>
@@ -9,15 +8,17 @@
     </p>
   </div>
 
+<ion-content>
+
   <ion-input [(ngModel)]="fullName" class="input-color" clearInput type="text" placeholder="{{fullName}}"></ion-input>
   <ion-input [(ngModel)]="email" class="input-color" clearInput type="text" placeholder="{{email}}"></ion-input>
   <ion-input [(ngModel)]="phone" class="input-color" clearInput type="tel" placeholder="{{phone}}"></ion-input>
 
 
 <ion-card class="card-btn">
-  <p class="terms-btn"  ion-button>Terms and Conditions</p>
-  <p class="privacy-btn" ion-button>Privacy Policy</p>
-  <p class="facebook-btn" ion-button>Facebook</p>
+  <p class="terms-btn" (click)="openTerms()" ion-button>Terms and Conditions</p>
+  <p class="privacy-btn" (click)="openPrivacy()" ion-button>Privacy Policy</p>
+  <p class="facebook-btn" (click)="openFacebook()" ion-button>Facebook</p>
 </ion-card>
 
 <h5 style="text-align: center; font-size: 13px; font-family: 'Poppins', sans-serif;">Developed by PIXNABI</h5>

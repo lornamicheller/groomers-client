@@ -5,6 +5,8 @@ import { GroomproviderService } from "./../../app/groomprovider.service";
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions/ngx';
 import { ToastController, NavController } from '@ionic/angular';
 import { AlertController } from "@ionic/angular";
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 
 let parse = require('parse');
 
@@ -252,7 +254,8 @@ async presentAlertConfirm() {
     {
       console.log("SAVED!!");
       console.log(result);
-      this.savedInfo();
+      // this.savedInfo();
+      this.openPage();
      
     });
 

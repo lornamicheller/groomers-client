@@ -198,11 +198,11 @@ import { GroomproviderService } from "./../../app/groomprovider.service";
         console.log(Parse.User.current().id);
 
 
-            if(this.provider.photo == null )
+            // if(this.provider.photo == null )
             
-            {
-                this.addingPhoto("No Photo");
-            }
+            // {
+            //     this.addingPhoto("Photo is necessary ");
+            // }
 
         if( this.name==null || this.breed==null || this.age==null || this.size==null || this.type==null) {
             //show alert
@@ -216,7 +216,8 @@ import { GroomproviderService } from "./../../app/groomprovider.service";
             ).then((result)=> {
                 console.log(result);
                 //success creating pet
-                this.SuccessPet();
+                // this.SuccessPet();
+                this.openPage();
                 console.log("PET INFO", this.name);
             }
             , (error)=> {

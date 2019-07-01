@@ -33,14 +33,11 @@ export class TutorialPage implements OnInit {
   };
 
   openPage() {
-    let options: NativeTransitionOptions = {
-        direction: 'left', 
-        duration: 500, 
-        slowdownfactor: -1, 
-        slidePixels: 20, 
-        androiddelay: 0,
-        iosdelay: 100
-    }
+    let options: NativeTransitionOptions = { 
+      duration: 500, 
+      iosdelay: 0,
+      androiddelay: 0
+  }
     console.log(options);
     this.nativePageTransitions.fade(options);
     this.nav.navigateRoot("/login");

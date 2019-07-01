@@ -38,6 +38,7 @@ export class GroomproviderService {
   momentDay:any;
   momentTime:any;
   serviceId:any;
+  petName:any;
 
   setGromId:any;
 

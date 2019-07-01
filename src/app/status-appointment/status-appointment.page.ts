@@ -53,7 +53,7 @@ export class StatusAppointmentPage implements OnInit {
     console.log(this.provider.petServiceInfo);
     this.serviceId = this.provider.petServiceInfo.id;
     console.log(this.serviceId);
-    this.name = this.provider.petServiceInfo.get("name");
+    this.name = this.provider.petServiceInfo.get("petName");
     this.date = this.provider.petServiceInfo.get("date");
     this.service = this.provider.petServiceInfo.get("service");
     this.address = this.provider.petServiceInfo.get("address").get("address1");

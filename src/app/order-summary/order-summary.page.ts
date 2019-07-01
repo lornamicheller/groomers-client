@@ -344,6 +344,7 @@ export class OrderSummaryPage implements OnInit {
       appFeeByGroomer: 0.00,
       appFeeByClient: 0.00,
       charge: this.chargeId,
+      petName: this.provider.petName,
       payOption: this.payOptions
 
     }).then((result) => {

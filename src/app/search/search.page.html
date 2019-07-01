@@ -20,6 +20,8 @@
 
 
   <!-- groomer card begin -->
+
+  <ion-card style="box-shadow: none;">
     <ion-card ion-button *ngFor = "let groomer of groomers" (click)="openPage(groomer)" class="order-card">
       <ion-grid style="margin: 0; padding: 0;">
         <ion-row>
@@ -95,6 +97,7 @@
         </ion-row>
       </ion-grid>
     </ion-card>
+  </ion-card>
  
   <!-- groomer card end -->
 

@@ -2,7 +2,7 @@
 
 .arrow-btn {
   position: absolute;
-  top: 25px;
+  top: 35px;
   --background: transparent;
   --background-activated: transparent;
   color: #414042;
@@ -71,37 +71,36 @@
 
 .place-name {
   font-weight: 500;
-  --placeholder-opacity: 10;
-  font-size: 12px;
-  margin-top: 120px;
-  --color: rgb(53, 53, 53);
-  --placeholder-color: rgb(53, 53, 53);
+  font-size: 13px;
+  color: rgb(170, 170, 170);
   border-bottom: 2px solid #37B34A;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif !important;
+  --placeholder-opacity: 10;
   --padding-start: 10px;
-  font-family: 'Poppins', sans-serif;
+  margin-top: 100px;
 }
 
 .address, .suite, .city, .phone {
   font-weight: 500;
-  --placeholder-opacity: 10;
-  font-size: 12px;
-  margin-top: 10px;
-  --color: rgb(53, 53, 53);
-  --placeholder-color: rgb(53, 53, 53);
+  font-size: 13px;
+  color: rgb(170, 170, 170);
   border-bottom: 2px solid #37B34A;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif !important;
+  --placeholder-opacity: 10;
   --padding-start: 10px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .zipcode, .state {
   font-weight: 500;
-  --placeholder-opacity: 10;
-  font-size: 12px;
-  margin-top: 10px;
-  --color: rgb(53, 53, 53);
-  --placeholder-color: rgb(53, 53, 53);
+  font-size: 13px;
+  color: rgb(170, 170, 170);
   border-bottom: 2px solid #37B34A;
-  font-family: 'Poppins', sans-serif;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif !important;
+  --placeholder-opacity: 10;
+  --padding-start: 10px;
 }
 
 .address-btn {
@@ -115,3 +114,4 @@
   height: 50px;
   letter-spacing: 1px;
 }
+

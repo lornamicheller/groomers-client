@@ -17,9 +17,6 @@
     <ion-input [(ngModel)]=apt class="suite" type="text" placeholder="{{addressObject.get('address2')}}"></ion-input>
     <ion-input [(ngModel)]=city class="city" type="text" placeholder="{{addressObject.get('city')}}"></ion-input>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
           <!-- <ion-input [(ngModel)]=state class="state" type="text" placeholder="STATE"></ion-input> -->
           <ion-item lines="none" class="state">
             <ion-label>STATE</ion-label>
@@ -79,9 +76,7 @@
             </ion-select>
           </ion-item>
 
-        </ion-col>
-
-        <ion-col>
+     
           <!-- <ion-input [(ngModel)]=zip class="zipcode" type="text" placeholder="ZIPCODE"></ion-input> -->
           <ion-item lines="none" class="zipcode">
             <ion-label>ZIPCODE</ion-label>
@@ -144,12 +139,6 @@
       
             </ion-select>
           </ion-item>
-
-
-
-        </ion-col>
-      </ion-row>
-    </ion-grid>
 
     <ion-input [(ngModel)]=phone class="phone" type="tel" placeholder="{{addressObject.get('phone')}}"></ion-input>
 

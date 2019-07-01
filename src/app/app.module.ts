@@ -24,6 +24,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { Firebase } from '@ionic-native/firebase/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+
 
 import { GroomersCalendarComponent } from './groomers-calendar/groomers-calendar.component';
 // import { Calendar } from '@ionic-native/calendar';
@@ -59,6 +61,7 @@ const config = {
     NativePageTransitions,
     Calendar,
     Firebase,
+    InAppBrowser,
     ToastController,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NavController,

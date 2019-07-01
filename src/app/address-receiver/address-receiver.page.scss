@@ -1,6 +1,6 @@
 .arrow-btn {
   position: absolute;
-  top: 17px;
+  top: 27px;
   --background: transparent;
   --background-activated: transparent;
   color: #414042;
@@ -11,7 +11,7 @@
 
 .add-btn {
   position: absolute;
-  top: 17px;
+  top: 27px;
   right: 0;
   --background: transparent;
   --background-activated: transparent;
@@ -67,6 +67,7 @@
   margin-right: auto;
   height: 90px;
   width: 100px;
+  margin-top: 10px;
 }
 
 .borders {
