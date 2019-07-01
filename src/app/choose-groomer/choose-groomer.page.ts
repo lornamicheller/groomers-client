@@ -61,8 +61,9 @@ export class ChooseGroomerPage implements OnInit {
   {
       let pet = "BKMOYQdVGW";
       this.provider.petid;
+      console.log(this.provider.petid.id);
     Parse.Cloud.run('getPetsInfo', {
-      petId: pet
+      petId: this.provider.petid.id
     }).then((result) => {
       
       console.log(result);

@@ -70,39 +70,37 @@
 // }
 
 .place-name {
-  font-weight: 700;
+  font-weight: 500;
   --placeholder-opacity: 10;
   font-size: 12px;
   margin-top: 120px;
-  --color: #37B34A;
-  --placeholder-color: #37B34A;
+  --color: rgb(53, 53, 53);
+  --placeholder-color: rgb(53, 53, 53);
   border-bottom: 2px solid #37B34A;
   --padding-start: 10px;
   font-family: 'Poppins', sans-serif;
 }
 
 .address, .suite, .city, .phone {
-  font-weight: 700;
+  font-weight: 500;
   --placeholder-opacity: 10;
   font-size: 12px;
   margin-top: 10px;
-  --color: #37B34A;
-  --placeholder-color: #37B34A;
+  --color: rgb(53, 53, 53);
+  --placeholder-color: rgb(53, 53, 53);
   border-bottom: 2px solid #37B34A;
   --padding-start: 10px;
   font-family: 'Poppins', sans-serif;
 }
 
 .zipcode, .state {
-  font-weight: 700;
+  font-weight: 500;
   --placeholder-opacity: 10;
   font-size: 12px;
   margin-top: 10px;
-  --color: #37B34A;
-  --placeholder-color: #37B34A;
+  --color: rgb(53, 53, 53);
+  --placeholder-color: rgb(53, 53, 53);
   border-bottom: 2px solid #37B34A;
-  --padding-start: 10px;
-  text-align: center;
   font-family: 'Poppins', sans-serif;
 }
 

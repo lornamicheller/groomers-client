@@ -41,6 +41,11 @@ bathService:any;
         slidePixels: 20, 
         iosdelay: 100
     }
+
+    if(this.provider.search == "Search")
+    {
+      this.provider.search = "";
+    }
     console.log(options);
     this.nativePageTransitions.slide(options);
     this.navigate.navigateRoot("/home-pets");

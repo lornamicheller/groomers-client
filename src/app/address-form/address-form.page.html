@@ -12,17 +12,15 @@
   </ion-button>
 
   <ion-card style="box-shadow: none; border-radius: 0; padding: 25px;">
-    <ion-input [(ngModel)]=placeName class="place-name" type="text" placeholder="PLACE'S NAME"></ion-input>
-    <ion-input [(ngModel)]=address class="address" type="text" placeholder="ADDRESS"></ion-input>
-    <ion-input [(ngModel)]=apt class="suite" type="text" placeholder="SUIT, FLOOR, APT (OPTIONAL)"></ion-input>
-    <ion-input [(ngModel)]=city class="city" type="text" placeholder="CITY"></ion-input>
+    <ion-input [(ngModel)]=placeName class="place-name" type="text" placeholder="Place's Name"></ion-input>
+    <ion-input [(ngModel)]=address class="address" type="text" placeholder="Address"></ion-input>
+    <ion-input [(ngModel)]=apt class="suite" type="text" placeholder="Suit, Floor, Apt (Optional)"></ion-input>
+    <ion-input [(ngModel)]=city class="city" type="text" placeholder="City"></ion-input>
 
-    <ion-grid>
-      <ion-row>
-        <ion-col>
+
           <!-- <ion-input [(ngModel)]=state class="state" type="text" placeholder="STATE"></ion-input> -->
           <ion-item lines="none" class="state">
-            <ion-label>STATE</ion-label>
+            <ion-label>State</ion-label>
             <ion-select [(ngModel)]=state value="" placeholder="" okText="Ok" cancelText="Cancel">
               <ion-select-option value="Alabama">Alabama (AL)</ion-select-option>
               <ion-select-option value="Alaska">Alaska (AK)</ion-select-option>
@@ -79,12 +77,11 @@
             </ion-select>
           </ion-item>
 
-        </ion-col>
 
-        <ion-col>
+      
           <!-- <ion-input [(ngModel)]=zip class="zipcode" type="text" placeholder="ZIPCODE"></ion-input> -->
           <ion-item lines="none" class="zipcode">
-            <ion-label>ZIPCODE</ion-label>
+            <ion-label>Zipcode</ion-label>
             <ion-select  [(ngModel)]=zip value="" placeholder="" okText="Ok" cancelText="Cancel">
               <ion-select-option value="33004">33004</ion-select-option>
               <ion-select-option value="33009">33009</ion-select-option>
@@ -140,18 +137,13 @@
               <ion-select-option value="33351">33351</ion-select-option>
               <ion-select-option value="33441">33441</ion-select-option>
               <ion-select-option value="33442">33442</ion-select-option>
-            
       
             </ion-select>
           </ion-item>
 
 
 
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-
-    <ion-input [(ngModel)]=phone class="phone" type="tel" placeholder="PHONE"></ion-input>
+    <ion-input [(ngModel)]=phone class="phone" type="tel" placeholder="Phone"></ion-input>
 
     <ion-button (click)="saveAddressForm()" class="address-btn" expand="block">Add Address</ion-button>
   </ion-card>

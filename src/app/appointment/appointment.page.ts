@@ -78,7 +78,7 @@ goBack() {
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.navigate.navigateRoot('/tabs/tabs/address-receiver');
+    this.navigate.navigateRoot('/address-receiver');
 }
 
 async openDatePicker() {

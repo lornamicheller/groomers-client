@@ -62,7 +62,7 @@ addressObject:any;
     }
     console.log(options);
     this.nativePageTransitions.slide(options);
-    this.nav.navigateRoot("tabs/tabs/address-receiver");
+    this.nav.navigateRoot("/address-receiver");
 }
 
 openPage() { //funcion para pasar de una pagina a otra. 
@@ -76,7 +76,7 @@ openPage() { //funcion para pasar de una pagina a otra.
   }
   console.log(options);
   this.nativePageTransitions.slide(options);
-  this.nav.navigateRoot("/tabs/tabs/address-receiver");
+  this.nav.navigateRoot("/address-receiver");
 }
 
 validateInputs() {
