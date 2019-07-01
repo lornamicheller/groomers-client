@@ -33,24 +33,32 @@ export class AppComponent {
     });
   }
 
-  private async presentToast(message) {
+  private async presentToast(textMessage) {
     const toast = await this.toastController.create({
-      message,
-      duration: 3000
+      message: textMessage,
+      duration: 3000,
+      position:'top'
     });
     toast.present();
   }
 
   private notificationSetup() {
     this.fcm.getToken();
-    // this.alert(this.fcm.getToken());
     this.fcm.onNotifications().subscribe(
       (msg) => {
+        this.alert(JSON.stringify(msg));
+        this.alert(msg.aps.alert);
+ 
         if (this.platform.is('ios')) {
-          this.presentToast(msg.aps.alert);
-        } else {
+          this.alert("Entrando al IOS");
+          this.presentToast(msg.body);
+        } else if(this.platform.is('android')) {
+          this.alert("Entrando al ANDROID");
           this.presentToast(msg.body);
         }
+
+
+        this.presentToast(msg.body);
       });
   }
 

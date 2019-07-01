@@ -1,5 +1,4 @@
-<ion-content class="bg">
-    <div class="borders">
+<div class="borders">
         <ion-card style="box-shadow: none; height: 80px; margin: 0;">
             <img class="logo" src="assets/logoblanco.svg">
             <ion-button (click)="goBack()" class="arrow-btn">
@@ -12,6 +11,8 @@
             </ion-button>
         </ion-card>
     </div>
+
+    <ion-content class="bg">
 
     <ion-card *ngFor="let ad of addrs" class="card">
         <ion-ripple-effect></ion-ripple-effect>
@@ -42,14 +43,38 @@
                         Use address
                     </ion-button>
 
-                    <ion-button (click)="editInfo(ad)" class="edit-btn">
+                    <ion-icon ion-button (click)="editInfo(ad)" class="edit-btn" ios="ios-create" md="md-create"></ion-icon>
+
+
+                    <!-- <ion-button (click)="editInfo(ad)" class="edit-btn">
                         Edit
-                    </ion-button>
+                    </ion-button> -->
                 </ion-col>
             </ion-row>
         </ion-grid>
     </ion-card>
 
-
-
 </ion-content>
+
+<ion-tab-bar slot="bottom" style="padding-top: 5px; padding-bottom: 20px;">
+    <ion-tab-button (click)="openHome()" >
+      <img src="assets/suv-icon.png" width="30px" height="30px">
+      <ion-label style="color: #37B34A;">Services</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button (click)="openOrder()">
+      <img  src="assets/calendar-icon.png" width="30px" height="30px">
+      <ion-label style="color: #37B34A;">Orders</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button (click)="openSearch()">
+      <img src="assets/search-icon.png" width="30px" height="30px">
+      <ion-label style="color: #37B34A;">Search</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button (click)="openProfile()">
+      <img src="assets/profile-icon.png" width="30px" height="30px">
+      <ion-label style="color: #37B34A;">Profile</ion-label>
+    </ion-tab-button>
+  
+  </ion-tab-bar>

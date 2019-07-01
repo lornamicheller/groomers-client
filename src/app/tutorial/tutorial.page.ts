@@ -28,6 +28,10 @@ export class TutorialPage implements OnInit {
   //   this.nav.navigateRoot("/login");
   // }
 
+  slideOpts = {
+    effect: 'flip'
+  };
+
   openPage() {
     let options: NativeTransitionOptions = {
         direction: 'left', 

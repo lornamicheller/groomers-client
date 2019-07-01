@@ -22,7 +22,7 @@ import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { Firebase } from '@ionic-native/firebase/ngx';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
 
 import { GroomersCalendarComponent } from './groomers-calendar/groomers-calendar.component';
@@ -45,6 +45,7 @@ const config = {
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
+    IonicStorageModule.forRoot(),
     CalendarModule,
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule
@@ -58,6 +59,7 @@ const config = {
     NativePageTransitions,
     Calendar,
     Firebase,
+    ToastController,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NavController,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

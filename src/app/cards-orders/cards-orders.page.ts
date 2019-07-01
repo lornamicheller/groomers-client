@@ -210,6 +210,15 @@ export class CardsOrdersPage implements OnInit {
 //   }
 
 
- 
+openOrder() {
+  let options: NativeTransitionOptions = { 
+    duration: 500, 
+    iosdelay: 0,
+    androiddelay: 0
+}
+  console.log(options);
+  this.nativePageTransitions.fade(options);
+  this.nav.navigateRoot('/tabs/tabs/history-order');
+}
 
 }

@@ -43,7 +43,7 @@ export class FcmserviceService {
         await this.firebase.grantPermission();
       }
   
-      this.saveToken(token);
+        return  this.saveToken(token);
     }
   
     private saveToken(token) {

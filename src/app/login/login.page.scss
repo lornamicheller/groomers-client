@@ -30,19 +30,21 @@
 
 .email,
 .password {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 13px;
-  color: grey;
+  color: rgb(170, 170, 170);
   border-bottom: 2px solid #37B34A;
   margin-bottom: 10px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
+  --placeholder-opacity: 10;
+  --padding-start: 10px;
 }
 
 .icon {
   width: 25px;
   height: 25px;
   color: #37B34A;
-  margin-right: 10px;
+  padding-top: 13px;
 }
 
 .input-card {

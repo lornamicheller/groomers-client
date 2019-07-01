@@ -8,18 +8,39 @@
   </ion-card>
 
   <ion-card class="input-card">
-    <ion-input [(ngModel)]="email" clearInput type="email" placeholder="Email" class="email" expand="block">
-      <ion-icon class="icon" ios="ios-mail" md="md-mail"></ion-icon>
-    </ion-input>
-    <ion-input [(ngModel)]="password" clearInput type="password" placeholder="Password" class="password" expand="block">
-      <ion-icon class="icon" ios="ios-lock" md="md-lock"></ion-icon>
-    </ion-input>
+
+      <ion-grid style="padding: 0;">
+          <ion-row>
+              <ion-col size="1" style="padding: 0;">
+                  <ion-icon class="icon" ios="ios-mail" md="md-mail"></ion-icon>
+              </ion-col>
+
+              <ion-col size="11" style="padding: 0;">
+                  <ion-input [(ngModel)]="email" clearInput type="email" placeholder="Email" class="email"></ion-input>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+      <ion-grid style="padding: 0;">
+          <ion-row>
+              <ion-col size="1" style="padding: 0;">
+                  <ion-icon class="icon" ios="ios-lock" md="md-lock"></ion-icon>
+              </ion-col>
+
+              <ion-col size="11" style="padding: 0;">
+                  <ion-input [(ngModel)]="password" clearInput type="password" placeholder="Password" class="password">
+                    </ion-input>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+
+
     <ion-button class="login-btn" (click)="singIn()" expand="block">
       <ion-ripple-effect></ion-ripple-effect>
-      LOGIN</ion-button>
+      Login</ion-button>
     <ion-button class="register-btn" (click)="openRegister()" expand="block">
       <ion-ripple-effect></ion-ripple-effect>
-      REGISTER</ion-button>
+      Register</ion-button>
 
     <ion-button class="forgot" href="/forgot" expand="block">
       <ion-ripple-effect></ion-ripple-effect>
