@@ -38,10 +38,10 @@
 //   text-align: center;
 // }
 
-ion-slides {
-  --bullet-background: rgb(255, 255, 255);
-  --bullet-background-active: rgb(255, 255, 255);
-}
+// ion-slides {
+//   --bullet-background: rgb(255, 255, 255);
+//   --bullet-background-active: rgb(255, 255, 255);
+// }
 
 // .start-btn {
 //   --background: rgb(255, 255, 255);
@@ -60,42 +60,42 @@ ion-slides {
 //   --box-shadow: none;
 // }
 
-.done-btn {
-  --background: #414042;
-  --background-activated: #414042;
-  --border-radius: 25px;
-  font-weight: 400;
-  font-size: 13px;
-  letter-spacing: 1px;
-  height: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 30px;
-  margin-bottom: 70px;
-  --box-shadow: none;
-  font-family: 'Poppins', sans-serif;
-}
+// .done-btn {
+//   --background: #414042;
+//   --background-activated: #414042;
+//   --border-radius: 25px;
+//   font-weight: 400;
+//   font-size: 13px;
+//   letter-spacing: 1px;
+//   height: 50px;
+//   margin-left: 20px;
+//   margin-right: 20px;
+//   margin-top: 30px;
+//   margin-bottom: 70px;
+//   --box-shadow: none;
+//   font-family: 'Poppins', sans-serif;
+// }
 
-.circle-img {
-  width: 150px;
-  height: 150px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 230px;
-}
+// .circle-img {
+//   width: 150px;
+//   height: 150px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-top: 230px;
+// }
 
-.tutorial-first-card {
-  box-shadow: none;
-}
+// .tutorial-first-card {
+//   box-shadow: none;
+// }
 
-.title-service {
-  font-size: 20px;
-  font-weight: 300;
-  margin-top: 15px;
-  font-size: 13px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
+// .title-service {
+//   font-size: 20px;
+//   font-weight: 300;
+//   margin-top: 15px;
+//   font-size: 13px;
+//   color: white;
+//   font-family: 'Poppins', sans-serif;
+// }
 
 // .service-info {
 //   line-height: 25px;
@@ -115,3 +115,39 @@ ion-slides {
 // ion-card-content {
 //   margin-top: 0;
 // }
+
+.title-service {
+  font-size: 25px;
+  font-weight: 300;
+  margin-top: 15px;
+  color: #FD5440;
+}
+
+.circle-img {
+  width: 350px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tutorial-first-card {
+  box-shadow: none;
+}
+
+.service-info {
+  line-height: 25px;
+  font-weight: 300;
+  font-size: 16px;
+  text-align: center;
+}
+
+ion-slides {
+  --bullet-background: #FFC93A;
+  --bullet-background-active: #FD5440;
+}
+
+.start-btn {
+  --background: #FD5440;
+  --background-activated: #FFC93A;
+  --border-radius: 25px;
+}
