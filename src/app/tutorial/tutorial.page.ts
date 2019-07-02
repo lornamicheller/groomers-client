@@ -9,6 +9,10 @@ import { ToastController, NavController } from '@ionic/angular';
 })
 export class TutorialPage implements OnInit {
 
+  public slideOpts = {
+    effect: 'flip',
+  };
+
   constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController,
     public toastCtrl : ToastController,) { }
 
@@ -28,9 +32,7 @@ export class TutorialPage implements OnInit {
   //   this.nav.navigateRoot("/login");
   // }
 
-  slideOpts = {
-    effect: 'flip'
-  };
+  
 
   openPage() {
     let options: NativeTransitionOptions = { 

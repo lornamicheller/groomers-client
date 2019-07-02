@@ -38,7 +38,7 @@
   </ion-slide>
 </ion-content> -->
 
-<ion-content class="green-bg" no-bounce has-bouncing="false" forceOverscroll="false">
+<!-- <ion-content class="green-bg" no-bounce has-bouncing="false" forceOverscroll="false">
   <ion-slide class="full-slide">
     <ion-slides pager="true">
       <ion-slide>
@@ -79,4 +79,40 @@
       </ion-slide>
     </ion-slides>
   </ion-slide>
+</ion-content> -->
+
+<ion-content class="green-bg">
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <ion-card class="tutorial-first-card">
+                <ion-img class="circle-img" src="/assets/icon1.png"></ion-img>
+
+                  <h5 class="title-service">It's simple! Choose what type of pet and the service you want.
+                  </h5>
+               
+              </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card class="tutorial-first-card">
+                <ion-img class="circle-img" src="/assets/icon2.png"></ion-img>
+    
+                  <h5 class="title-service">Then choose where and when you want the service.
+                  </h5>
+  
+              </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card class="tutorial-first-card">
+                <ion-img class="circle-img" src="/assets/icon3.png"></ion-img>
+           
+                  <h5 class="title-service">Evaluate the groomers that are near your area either by price or by
+                    rating.
+                  </h5>
+           
+                <ion-button class="done-btn" (click)="openPage()" expand="block">
+                  <ion-ripple-effect></ion-ripple-effect>
+                  START</ion-button>
+              </ion-card>
+        </ion-slide>
+      </ion-slides>
 </ion-content>
