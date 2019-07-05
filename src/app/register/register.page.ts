@@ -51,7 +51,8 @@ export class RegisterPage implements OnInit {
       const popover = await this.popoverCtrl.create({
         component: LoaderComponent,
         event: ev,
-        translucent: true
+        translucent: true,
+        cssClass: "popover_class"
       });
       return await popover.present();
     }

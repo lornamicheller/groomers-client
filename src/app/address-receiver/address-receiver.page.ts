@@ -167,28 +167,55 @@ export class AddressReceiverPage implements OnInit {
     }
   }
 
-  openOrder() {
-    let options: NativeTransitionOptions = { 
-      duration: 500, 
-      iosdelay: 0,
-      androiddelay: 0
-  }
-    console.log(options);
-    if(this.provider.search == "Search")
-    {
-      this.provider.search = "";
-    }
-    console.log(this.provider.search);
+//   openOrder() {
+//     let options: NativeTransitionOptions = { 
+//       duration: 500, 
+//       iosdelay: 0,
+//       androiddelay: 0
+//   }
+//     console.log(options);
+//     if(this.provider.search == "Search")
+//     {
+//       this.provider.search = "";
+//     }
+//     console.log(this.provider.search);
     
-    this.nativePageTransitions.fade(options);
-    this.nav.navigateRoot('/tabs/tabs/history-order');
+//     this.nativePageTransitions.fade(options);
+//     this.nav.navigateRoot('/tabs/tabs/history-order');
+// }
+
+openOrder() {
+  let options: NativeTransitionOptions = { 
 }
+  console.log(options);
+  if(this.provider.search == "Search")
+  {
+    this.provider.search = "";
+  }
+  console.log(this.provider.search);
+  
+  this.nav.navigateRoot('/tabs/tabs/history-order');
+}
+
+// openSearch() {
+//   let options: NativeTransitionOptions = { 
+//     duration: 500, 
+//     iosdelay: 0,
+//     androiddelay: 0
+// }
+//   console.log(options);
+//   if(this.provider.search == "Search")
+//   {
+//     this.provider.search = ";"
+//   }
+//   console.log(this.provider.search);
+//   this.nativePageTransitions.fade(options);
+//   this.nav.navigateRoot('/tabs/tabs/search');
+// }
 
 openSearch() {
   let options: NativeTransitionOptions = { 
-    duration: 500, 
-    iosdelay: 0,
-    androiddelay: 0
+   
 }
   console.log(options);
   if(this.provider.search == "Search")
@@ -196,15 +223,28 @@ openSearch() {
     this.provider.search = ";"
   }
   console.log(this.provider.search);
-  this.nativePageTransitions.fade(options);
+ 
   this.nav.navigateRoot('/tabs/tabs/search');
 }
 
+// openHome() {
+//   let options: NativeTransitionOptions = { 
+//     duration: 500, 
+//     iosdelay: 0,
+//     androiddelay: 0
+// }
+//   console.log(options);
+//   if(this.provider.search == "Search")
+//   {
+//     this.provider.search = "";
+//   }
+//   console.log(this.provider.search );
+//   this.nativePageTransitions.fade(options);
+//   this.nav.navigateRoot('/home-pets');
+// }
+
 openHome() {
   let options: NativeTransitionOptions = { 
-    duration: 500, 
-    iosdelay: 0,
-    androiddelay: 0
 }
   console.log(options);
   if(this.provider.search == "Search")
@@ -212,15 +252,28 @@ openHome() {
     this.provider.search = "";
   }
   console.log(this.provider.search );
-  this.nativePageTransitions.fade(options);
+
   this.nav.navigateRoot('/home-pets');
 }
 
+// openProfile() {
+//   let options: NativeTransitionOptions = { 
+//     duration: 500, 
+//     iosdelay: 0,
+//     androiddelay: 0
+// }
+//   console.log(options);
+//   if(this.provider.search == "Search")
+//   {
+//     this.provider.search ="";
+//   }
+//   console.log(this.provider.search);
+//   this.nativePageTransitions.fade(options);
+//   this.nav.navigateRoot('/tabs/tabs/client-profile');
+// }
+
 openProfile() {
   let options: NativeTransitionOptions = { 
-    duration: 500, 
-    iosdelay: 0,
-    androiddelay: 0
 }
   console.log(options);
   if(this.provider.search == "Search")
@@ -228,7 +281,6 @@ openProfile() {
     this.provider.search ="";
   }
   console.log(this.provider.search);
-  this.nativePageTransitions.fade(options);
   this.nav.navigateRoot('/tabs/tabs/client-profile');
 }
 }
