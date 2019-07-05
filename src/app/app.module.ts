@@ -25,6 +25,7 @@ import { Firebase } from '@ionic-native/firebase/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 import { ToastController } from '@ionic/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { LoaderComponent } from "./loader/loader.component";
 
 
 import { GroomersCalendarComponent } from './groomers-calendar/groomers-calendar.component';
@@ -41,8 +42,10 @@ const config = {
     appId: "1:657688545643:web:5e20285fd54be76c"
 }
 @NgModule({
-  declarations: [AppComponent, CalendarComponent, GroomersCalendarComponent],
-  entryComponents: [],
+  declarations: [AppComponent, CalendarComponent, GroomersCalendarComponent, LoaderComponent],
+  entryComponents: [
+    LoaderComponent
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
@@ -63,6 +66,7 @@ const config = {
     Firebase,
     InAppBrowser,
     ToastController,
+    LoaderComponent,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     NavController,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

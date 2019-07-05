@@ -4,6 +4,9 @@ import {GroomproviderService } from "./../../app/groomprovider.service";
 import * as Parse from 'parse';
 import { ToastController, NavController } from '@ionic/angular';
 import { AlertController } from "@ionic/angular";
+import { LoaderComponent } from "./../loader/loader.component";
+import { PopoverController } from '@ionic/angular';
+
 
 var parse = require ('parse');
 
@@ -25,7 +28,7 @@ export class RegisterPage implements OnInit {
   result:string;
 
   constructor(private nativePageTransitions: NativePageTransitions, public nav: NavController, public provider : GroomproviderService,
-    public toastCtrl : ToastController, public alertCtrl : AlertController) {
+    public toastCtrl : ToastController, public alertCtrl : AlertController, public popoverCtrl: PopoverController) {
       
       parse.serverURL = 'https://parseapi.back4app.com/';
       Parse.initialize("q9MLrOgwK69Glh41XZeZuX0LPWR9bN4RoCCDZaNP", "bKRfBYhBe8kiUC0xdCInQoLoiMXShn1X7HUay1u0");
@@ -42,6 +45,18 @@ export class RegisterPage implements OnInit {
       this.register = registro;
       console.log("Status changed")
     }
+
+
+    async presentPopover(ev: any) {
+      const popover = await this.popoverCtrl.create({
+        component: LoaderComponent,
+        event: ev,
+        translucent: true
+      });
+      return await popover.present();
+    }
+
+
 
     openPage(){ //funcion para pasar de una pagina a otra. 
 
